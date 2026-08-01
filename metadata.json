@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Método do Código Visual",
+  "description": "App mobile para criadores de conteúdo com ganchos, CTAs, prompts de vídeo e ferramentas de transmissão.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
