@@ -44,18 +44,6 @@ export const NARRATIVES: NarrativeItem[] = [
     description: 'Use the uploaded image as the ONLY reference for the clothing set. \n\nIMPORTANT: The clothing set must be an exact copy of the reference image. \n\nCreate a realistic fashion UGC video. \n\nScene: A modern bedroom with a neatly made bed. The influencer picks up the hanger and shows the outfit. \n\nShe says: "Tenho almoço, vou resolver algumas coisas no shopping e queria uma roupa elegante que servisse para o dia inteiro."'
   },
   {
-    id: 'prob-1',
-    category: 'problema',
-    title: 'O Dilema do Armário Cheio',
-    description: 'O maior problema não é não ter o que vestir, é ter as peças erradas que não se comunicam entre si. Isso gera frustração e perda de tempo todas as manhãs.',
-  },
-  {
-    id: 'prob-2',
-    category: 'problema',
-    title: 'Cores que Te Apagam',
-    description: 'Você já comprou uma roupa linda, mas quando vestiu sentiu que seu rosto parecia pálido ou cansado? O problema pode ser o subtom da cor.',
-  },
-  {
     id: 'cta-car-key',
     category: 'cta',
     title: 'Pegando a chave do carro',
@@ -65,6 +53,119 @@ export const NARRATIVES: NarrativeItem[] = [
 ];
 
 export const VIDEO_PROMPTS: PromptItem[] = [
+  {
+    id: 'p-oculos-cafe',
+    title: 'Óculos de Sol | Café de Luxo',
+    type: 'lifestyle',
+    category: 'Óculos',
+    videoUrl: 'https://drive.google.com/file/d/1wwfusfsZVhfLfjPAMzAX7J-xLjukemHT/preview',
+    content: `# Prompt Otimizado para Veo 3.1 – Óculos de Sol (8 segundos) | Café de Luxo
+
+Create an ultra-realistic **8-second vertical luxury fashion commercial** featuring a **fictional AI-generated female fashion influencer based exclusively on the reference image**.
+
+## CHARACTER CONSISTENCY (EXTREMELY IMPORTANT)
+
+**Do not change the influencer under any circumstances.**
+
+The influencer must remain **100% identical** to the reference image from the first frame to the last frame.
+
+Never modify or regenerate:
+
+* Face
+* Facial structure
+* Eyes
+* Eyebrows
+* Nose
+* Lips
+* Skin tone
+* Hair color
+* Hair length
+* **Hairstyle (must remain exactly the same as the reference image)**
+* Makeup
+* Body proportions
+* Age
+* Identity
+* Facial features
+* Clothing fit
+* Facial expressions (only natural variations)
+
+The model must be recognized as **the exact same fictional AI-generated influencer** throughout the entire video.
+
+---
+
+## CLOTHING
+
+Dress the influencer in an elegant casual-chic outfit suitable for a luxury café.
+
+Suggested clothing:
+* White linen shirt or elegant beige blouse.
+* High-waisted neutral trousers or a sophisticated midi skirt.
+* Minimalist jewelry.
+* Soft neutral colors (white, beige, off-white or light brown).
+
+The outfit must look: Elegant, Modern, Sophisticated, Comfortable, Feminine, **Not revealing**, **Not sensual**.
+
+---
+
+## PRODUCT CONSISTENCY (CRITICAL)
+
+Use **ONLY the sunglasses from the reference image**.
+The sunglasses must remain **100% identical** during the entire video.
+
+---
+
+## LOCATION
+
+Luxury outdoor café with a sophisticated European aesthetic. Elegant wooden tables, comfortable upholstered chairs, large windows, natural daylight, soft golden sunlight, fresh flowers, minimalist architecture.
+
+---
+
+## AUDIO
+
+* No speech.
+* No dialogue.
+* No narration.
+* No voice-over.
+* No music.
+* No captions.
+* No subtitles.
+* No logos.
+* No text.
+
+---
+
+# HOOK (0–2.5s)
+
+The influencer is seated at an elegant café table already wearing the exact sunglasses from the reference image. She naturally picks up a cup of coffee. Takes a slow sip while looking toward the window. Natural sunlight creates beautiful reflections across the sunglasses.
+
+---
+
+# CONTEXT (2.5–5s)
+
+She gently places the coffee cup back on the table. Looks naturally toward the camera. Lightly adjusts the sunglasses with one hand. A soft breeze moves only the loose ends of her hair while **preserving exactly the same hairstyle**.
+
+---
+
+# SOLUTION (5–7s)
+
+Still seated. She gently rests one hand on the table. With the other hand, she lightly touches one temple of the sunglasses. She naturally turns her face slightly to the left and then back toward the camera. She smiles softly and confidently.
+
+---
+
+# CTA (7–8s)
+
+She looks directly into the camera. Maintains a natural, confident smile. Slowly raises one hand and **points downward with her index finger**, keeping the gesture natural and elegant.
+
+---
+
+# CINEMATIC STYLE
+
+* Ultra-photorealistic.
+* Authentic facial expressions.
+* Natural blinking and breathing.
+* Soft natural lighting.
+* Vertical 9:16 format.`
+  },
   {
     id: 'p-provador',
     type: 'lifestyle',
@@ -338,7 +439,7 @@ sem áudio só movimentos`
     id: 'p-oculos-sol',
     title: 'Prompt Detalhado Óculos',
     type: 'lifestyle',
-    category: 'Acessórios',
+    category: 'Óculos',
     videoUrl: 'https://drive.google.com/file/d/1-AQLOlniGeJCk-koMnKkQP9wVzXrxHbf/preview',
     content: `Create a short, ultra-realistic product video using the exact sunglasses from the reference image.
 
@@ -682,7 +783,7 @@ export const GARIMPADOS: ProductItem[] = [
     image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1000&auto=format&fit=crop',
     video: 'https://drive.google.com/file/d/163xuBzfUvnZ5e76a8NMIF0W0sfmug3H8/preview',
     link: 'https://vt.tiktok.com/ZS9rTCnfArFUT-o1cPA/',
-    category: 'Acessórios',
+    category: 'Óculos',
     stats: {
       orders: 37,
       ctr: '3,6',

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { NARRATIVES } from '../data';
 import { useState } from 'react';
 
-type NarrativeCategory = 'gancho' | 'contexto' | 'problema' | 'solucao' | 'cta';
+type NarrativeCategory = 'gancho' | 'contexto' | 'solucao' | 'cta';
 
 interface NarrativesTabProps {
   toggleFavorite: (id: string) => void;
@@ -23,7 +23,6 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
   const categories = [
     { id: 'gancho', label: 'Gancho', icon: Zap, color: 'text-rose-600', bg: 'bg-rose-50', accent: 'bg-rose-600' },
     { id: 'contexto', label: 'Contexto', icon: Brain, color: 'text-indigo-600', bg: 'bg-indigo-50', accent: 'bg-indigo-600' },
-    { id: 'problema', label: 'Problema', icon: Users, color: 'text-amber-600', bg: 'bg-amber-50', accent: 'bg-amber-600' },
     { id: 'solucao', label: 'Solução', icon: Target, color: 'text-emerald-600', bg: 'bg-emerald-50', accent: 'bg-emerald-600' },
     { id: 'cta', label: 'CTA', icon: MessageCircle, color: 'text-blue-600', bg: 'bg-blue-50', accent: 'bg-blue-600' },
   ] as const;

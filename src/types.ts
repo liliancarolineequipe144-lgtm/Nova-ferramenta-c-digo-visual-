@@ -36,5 +36,5 @@ export interface NarrativeItem {
   title: string;
   description: string;
   videoUrl?: string;
-  category: 'gancho' | 'contexto' | 'problema' | 'solucao' | 'cta';
+  category: 'gancho' | 'contexto' | 'solucao' | 'cta';
 }
