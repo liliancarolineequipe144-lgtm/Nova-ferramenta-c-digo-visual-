@@ -1,23 +1,31 @@
 import { GARIMPADOS } from '../data';
-import { ShoppingBag, ExternalLink, Tag, Copy, Check, Trash2, Lock, X, Share2 } from 'lucide-react';
+import { ShoppingBag, ExternalLink, Tag, Copy, Check, Trash2, Lock, X, Share2, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useToast } from '../hooks/useToast';
 
 export default function ProductsTab() {
   const [products, setProducts] = useState(GARIMPADOS);
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
+  const [searchQuery, setSearchQuery] = useState('');
   const [copiedAllIndex, setCopiedAllIndex] = useState<number | null>(null);
   const [copiedHookKey, setCopiedHookKey] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [sharedIndex, setSharedIndex] = useState<number | null>(null);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const { showToast } = useToast();
 
-  const categories = ['Todos', ...new Set(products.map(p => p.category))];
+  const categories = useMemo(() => ['Todos', ...new Set(products.map(p => p.category))], [products]);
 
-  const filteredProducts = products.filter(p => 
-    selectedCategory === 'Todos' ? true : p.category === selectedCategory
-  );
+  const filteredProducts = useMemo(() => {
+    return products.filter(p => {
+      const matchesCategory = selectedCategory === 'Todos' ? true : p.category === selectedCategory;
+      const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            p.description?.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [products, selectedCategory, searchQuery]);
 
   const handleShare = async (product: any, index: number) => {
     const hooksText = product.hooks && product.hooks.length > 0 
@@ -49,6 +57,7 @@ export default function ProductsTab() {
       } else {
         await navigator.clipboard.writeText(shareText);
         setSharedIndex(index);
+        showToast('Link de afiliado copiado para compartilhamento!');
         setTimeout(() => setSharedIndex(null), 2000);
       }
     } catch (err) {
@@ -61,12 +70,14 @@ export default function ProductsTab() {
     const text = hooks.map((h, i) => `${i + 1}. ${h}`).join('\n');
     navigator.clipboard.writeText(text);
     setCopiedAllIndex(index);
+    showToast('Todos os ganchos foram copiados!');
     setTimeout(() => setCopiedAllIndex(null), 2000);
   };
 
   const handleCopySingleHook = (hook: string, productIndex: number, hookIndex: number) => {
     navigator.clipboard.writeText(hook);
     setCopiedHookKey(`${productIndex}-${hookIndex}`);
+    showToast('Gancho copiado!');
     setTimeout(() => setCopiedHookKey(null), 2000);
   };
 
@@ -77,6 +88,7 @@ export default function ProductsTab() {
       setDeletingId(null);
       setPassword('');
       setError(false);
+      showToast('Produto excluído com sucesso', 'info');
     } else {
       setError(true);
       setTimeout(() => setError(false), 2000);
@@ -85,24 +97,38 @@ export default function ProductsTab() {
 
   return (
     <div className="space-y-12 pb-20">
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-[2px] bg-emerald-600 rounded-full" />
-          <span className="text-[11px] font-black uppercase tracking-[0.3em] text-emerald-400">
-            Achados Selecionados
-          </span>
-        </div>
-        <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-[2px] bg-emerald-600 rounded-full" />
+            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-emerald-400">
+              Achados Selecionados
+            </span>
+          </div>
           <div className="flex items-end gap-3">
             <h2 className="text-4xl font-black text-slate-900 tracking-tight">Produtos Garimpados</h2>
             <span className="mb-1 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold border border-emerald-100 shadow-sm">
               {filteredProducts.length}
             </span>
           </div>
+          <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
+            Uma curadoria exclusiva de peças e acessórios de alta qualidade para elevar o nível das suas produções.
+          </p>
         </div>
-        <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
-          Uma curadoria exclusiva de peças e acessórios de alta qualidade para elevar o nível das suas produções.
-        </p>
+
+        {/* Search Bar */}
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+            <Search size={18} className="text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+          </div>
+          <input
+            type="text"
+            placeholder="Buscar por produto, estilo ou categoria..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-14 pr-6 py-5 bg-white border border-slate-100 rounded-3xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-600 transition-all shadow-sm"
+          />
+        </div>
       </div>
 
       {/* Category Tabs */}
@@ -111,13 +137,13 @@ export default function ProductsTab() {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${
+            className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
               selectedCategory === cat
                 ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-200'
                 : 'bg-white text-slate-400 hover:text-slate-600 border border-slate-100 hover:border-slate-200'
             }`}
           >
-            <span className="relative z-10">{cat}</span>
+            <span>{cat}</span>
             <span className={`px-1.5 py-0.5 rounded-md text-[9px] font-black ${selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'}`}>
               {cat === 'Todos' ? products.length : products.filter(p => p.category === cat).length}
             </span>
@@ -136,7 +162,7 @@ export default function ProductsTab() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.3 } }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.6 }}
                 className="group relative bg-white rounded-[48px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col xl:flex-row hover:shadow-[0_60px_120px_-20px_rgba(0,0,0,0.12)] transition-all duration-700"
               >
                 {/* Action Buttons (Top Right) */}
@@ -290,19 +316,19 @@ export default function ProductsTab() {
                 {/* Stats Grid */}
                 {product.stats && (
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-colors group-hover:bg-white transition-all duration-300">
+                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Pedidos</p>
                       <p className="text-2xl font-black text-slate-900">{product.stats.orders}</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-colors group-hover:bg-white transition-all duration-300">
+                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">CTR</p>
                       <p className="text-2xl font-black text-emerald-600">{product.stats.ctr}%</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-colors group-hover:bg-white transition-all duration-300">
+                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Criadores</p>
                       <p className="text-2xl font-black text-slate-900">{product.stats.creators}</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-colors group-hover:bg-white transition-all duration-300">
+                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Carrinho</p>
                       <p className="text-2xl font-black text-slate-900">{product.stats.cart}</p>
                     </div>

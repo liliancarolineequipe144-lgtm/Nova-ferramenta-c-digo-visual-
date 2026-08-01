@@ -1,7 +1,8 @@
-import { Brain, PlayCircle, Copy, Check, Target, Zap, Users, MessageCircle, Heart } from 'lucide-react';
+import { Brain, PlayCircle, Copy, Check, Target, Zap, MessageCircle, Heart, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { NARRATIVES } from '../data';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useToast } from '../hooks/useToast';
 
 type NarrativeCategory = 'gancho' | 'contexto' | 'solucao' | 'cta';
 
@@ -13,10 +14,13 @@ interface NarrativesTabProps {
 export default function NarrativesTab({ toggleFavorite, isFavorite }: NarrativesTabProps) {
   const [activeCategory, setActiveCategory] = useState<NarrativeCategory>('gancho');
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const { showToast } = useToast();
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
+    showToast('Texto copiado com sucesso!');
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -27,27 +31,50 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
     { id: 'cta', label: 'CTA', icon: MessageCircle, color: 'text-blue-600', bg: 'bg-blue-50', accent: 'bg-blue-600' },
   ] as const;
 
-  const filteredItems = NARRATIVES.filter(item => item.category === activeCategory);
+  const filteredItems = useMemo(() => {
+    return NARRATIVES.filter(item => {
+      const matchesCategory = item.category === activeCategory;
+      const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            item.description.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, searchQuery]);
 
   return (
     <div className="space-y-10 pb-20">
       {/* Header */}
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-[2px] bg-indigo-600 rounded-full" />
-          <span className="text-[11px] font-black uppercase tracking-[0.3em] text-indigo-400">
-            Narrativas Completas
-          </span>
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-[2px] bg-indigo-600 rounded-full" />
+            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-indigo-400">
+              Narrativas Completas
+            </span>
+          </div>
+          <div className="flex items-end gap-3">
+            <h2 className="text-4xl font-black text-slate-900 tracking-tight">Fluxo Estratégico</h2>
+            <span className="mb-1 px-3 py-1 bg-slate-100 text-slate-500 rounded-full text-xs font-bold border border-slate-200 shadow-sm">
+              {filteredItems.length}
+            </span>
+          </div>
+          <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
+            Navegue pelas etapas da narrativa para construir um conteúdo de alta conversão.
+          </p>
         </div>
-        <div className="flex items-end gap-3">
-          <h2 className="text-4xl font-black text-slate-900 tracking-tight">Fluxo Estratégico</h2>
-          <span className="mb-1 px-3 py-1 bg-slate-100 text-slate-500 rounded-full text-xs font-bold border border-slate-200 shadow-sm">
-            {filteredItems.length}
-          </span>
+
+        {/* Search Bar */}
+        <div className="relative group">
+          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+            <Search size={18} className="text-slate-400 group-focus-within:text-indigo-600 transition-colors" />
+          </div>
+          <input
+            type="text"
+            placeholder="Buscar em narrativas..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-14 pr-6 py-5 bg-white border border-slate-100 rounded-3xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-600 transition-all shadow-sm"
+          />
         </div>
-        <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
-          Navegue pelas etapas da narrativa para construir um conteúdo de alta conversão.
-        </p>
       </div>
 
       {/* Mini Tabs Navigation */}
@@ -83,7 +110,7 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
       <div className="grid grid-cols-1 gap-8">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory}
+            key={`${activeCategory}-${searchQuery}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -126,27 +153,31 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
                     </div>
                     <div className="flex items-center gap-3">
                       <button
-                        onClick={() => toggleFavorite(item.id)}
-                        className={`p-2 rounded-xl border transition-all duration-300 ${
+                        onClick={() => {
+                          const currentlyFavorite = isFavorite(item.id);
+                          toggleFavorite(item.id);
+                          showToast(!currentlyFavorite ? 'Adicionado aos favoritos' : 'Removido dos favoritos', currentlyFavorite ? 'info' : 'success');
+                        }}
+                        className={`p-2.5 rounded-xl border transition-all duration-300 active:scale-90 ${
                           isFavorite(item.id)
                             ? 'bg-rose-50 border-rose-100 text-rose-500 shadow-sm'
                             : 'bg-white border-slate-100 text-slate-300 hover:text-rose-400 hover:border-rose-100'
                         }`}
                       >
-                        <Heart size={18} fill={isFavorite(item.id) ? "currentColor" : "none"} />
+                        <Heart size={20} fill={isFavorite(item.id) ? "currentColor" : "none"} />
                       </button>
                       <button
                         onClick={() => copyToClipboard(item.description, item.id)}
-                        className={`flex items-center gap-1.5 px-4 py-2 rounded-xl font-bold text-[10px] transition-all duration-500 shadow-sm active:scale-95 uppercase tracking-wider shrink-0 ${
+                        className={`flex items-center gap-2 px-5 py-3 rounded-xl font-black text-[11px] transition-all duration-500 shadow-sm active:scale-95 uppercase tracking-widest shrink-0 ${
                           copiedId === item.id
                             ? 'bg-emerald-500 text-white shadow-emerald-200'
-                            : 'bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-indigo-100'
+                            : 'bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-indigo-200'
                         }`}
                       >
                         {copiedId === item.id ? (
-                          <><Check size={12} strokeWidth={3} /> Copiado</>
+                          <><Check size={14} strokeWidth={3} /> Copiado</>
                         ) : (
-                          <><Copy size={12} strokeWidth={3} /> Copiar Texto</>
+                          <><Copy size={14} strokeWidth={3} /> Copiar Texto</>
                         )}
                       </button>
                     </div>
@@ -163,11 +194,14 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
             ))}
 
             {filteredItems.length === 0 && (
-              <div className="py-20 text-center space-y-4">
-                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto text-slate-300">
-                  <Brain size={32} />
+              <div className="py-20 text-center space-y-6 bg-slate-50/50 rounded-[40px] border border-dashed border-slate-200">
+                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto text-slate-300 shadow-sm">
+                  <Search size={32} />
                 </div>
-                <p className="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Nenhum conteúdo nesta categoria ainda</p>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-black text-slate-900">Nenhum resultado</h3>
+                  <p className="text-slate-500 text-sm font-medium max-w-xs mx-auto">Tente ajustar sua busca ou navegar por outras categorias.</p>
+                </div>
               </div>
             )}
           </motion.div>

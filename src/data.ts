@@ -499,6 +499,118 @@ The sunglasses must be the exact same product in every scene. Never change the s
 sem áudio só os movimentos`
   },
   {
+    id: 'p-oculos-praia',
+    title: 'Óculos de Sol | Praia de Luxo',
+    type: 'lifestyle',
+    category: 'Óculos',
+    videoUrl: 'https://drive.google.com/file/d/1p-cCTXXnjmzD4hKf0zN5ecdwJC5YtUDB/preview',
+    content: `# Prompt Otimizado para Veo 3.1 – Óculos de Sol (8 segundos) | Praia de Luxo
+
+Create an ultra-realistic **8-second vertical luxury fashion commercial** featuring a **fictional AI-generated female fashion influencer based exclusively on the reference image**.
+
+## CHARACTER CONSISTENCY (EXTREMELY IMPORTANT)
+
+**Do not change the influencer under any circumstances.**
+
+The influencer must remain **100% identical** to the reference image from the first frame to the last frame.
+
+Never modify or regenerate:
+* Face
+* Facial structure
+* Eyes
+* Eyebrows
+* Nose
+* Lips
+* Skin tone
+* Hair color
+* Hair length
+* Hairstyle (**keep exactly the same hairstyle from the reference image**)
+* Makeup
+* Body proportions
+* Age
+* Identity
+* Facial expressions (only natural variations)
+
+The model must be recognized as **the exact same fictional AI-generated influencer** throughout the video.
+
+---
+
+## CLOTHING
+
+Dress the influencer in a **light, elegant beach cover-up (saída de praia)**.
+
+The cover-up must be: Sophisticated, Lightweight, Neutral-colored (white, beige or off-white), Chic and modern, Comfortable, **Not revealing**, **Not sensual**.
+
+---
+
+## PRODUCT CONSISTENCY (CRITICAL)
+
+Use **ONLY the sunglasses from the reference image**.
+The sunglasses must remain **100% identical** during the entire video.
+
+---
+
+## LOCATION
+
+Luxury tropical beach. Crystal-clear ocean. Golden-hour sunlight. Soft waves. Elegant summer atmosphere. The influencer remains seated in a beautiful wooden beach chair throughout the video.
+
+---
+
+## AUDIO
+
+* No speech.
+* No dialogue.
+* No narration.
+* No voice-over.
+* No music.
+* No captions.
+* No subtitles.
+* No logos.
+* No text on screen.
+
+---
+
+# HOOK (0–2.5s)
+
+The influencer is comfortably seated in the beach chair already wearing the exact sunglasses from the reference image. She gently turns her face toward the sunlight. The camera slowly moves closer. She lightly adjusts the sunglasses. Natural sunlight creates beautiful reflections across the lenses.
+
+---
+
+# CONTEXT (2.5–5s)
+
+Still seated. She looks toward the ocean. Then slowly returns her gaze to the camera. A gentle ocean breeze naturally moves only the loose ends of her hair while **preserving the exact hairstyle from the reference image**. She smiles softly. The camera slowly circles around her, highlighting the sunglasses from different angles.
+
+---
+
+# SOLUTION (5–7s)
+
+Still seated. She comfortably relaxes in the chair. She lightly touches one temple of the sunglasses. The camera performs an elegant cinematic close-up showing the sunglasses with realistic sunlight reflections.
+
+---
+
+# CTA (7–8s)
+
+Still seated. She looks directly into the camera. Smiles naturally. Points downward with her index finger toward the bottom of the screen, indicating the shopping link. Maintains the pointing gesture until the video ends.
+
+---
+
+# CINEMATIC STYLE
+
+* Ultra-photorealistic.
+* Extremely humanized AI influencer.
+* Natural breathing and blinking.
+* Realistic skin texture.
+* Soft natural lighting.
+* Vertical 9:16 format.`
+  },
+  {
+    id: 'p-comando-narrativa-universal',
+    title: 'comando para narrativa',
+    type: 'universal',
+    category: 'Universal',
+    content: `faz uma narrativa para esse produto com a estrutura gancho contexto- solucao e cta com ganchos visuais em cada cena não quero que mude o produto e nem a influencer mantenha constância dos dois em todas as cenas`
+  },
+  {
     id: 'p-comando-original',
     title: 'Comando Narrativa Provador',
     type: 'sales',
