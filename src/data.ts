@@ -1060,6 +1060,199 @@ Destacar:
 * Manter exatamente a mesma iluminação.
 
 **Sem fala, sem diálogo, sem narração, sem música e sem qualquer tipo de áudio. Apenas movimentos naturais, realistas e humanizados.**`
+  },
+  {
+    id: 'p-sandalia-ficticia-8s',
+    title: 'UGC Ultra-Realista | Sandália Feminina (8s)',
+    type: 'lifestyle',
+    category: 'Calçados',
+    videoUrl: 'https://drive.google.com/file/d/1fuQ7mbIQMCV4V_VhcqYYiydfoENFyoBu/preview',
+    content: `# PROMPT UNIVERSAL — VEO 3.1 | UGC ULTRA-REALISTA | 8 SEGUNDOS | SANDÁLIA FEMININA | SEM ÁUDIO
+
+Crie um vídeo UGC ultra-realista de **exatamente 8 segundos**, utilizando **uma influencer fictícia gerada por IA**, mantendo **consistência visual baseada exclusivamente nas imagens de referência**, sem representar ou reproduzir a identidade de qualquer pessoa real ou famosa.
+
+## PERSONAGEM
+
+A personagem deve ser uma **influencer fictícia criada por IA**.
+
+Utilize as imagens apenas para manter a consistência de:
+
+* roupa
+* cabelo
+* maquiagem
+* proporções
+* estilo visual
+* iluminação
+* enquadramento
+
+Não copiar a identidade de nenhuma pessoa real.
+
+A personagem deve permanecer consistente durante todo o vídeo.
+
+---
+
+# REGRA ABSOLUTA — PRESERVAÇÃO DO PRODUTO
+
+A sandália deve permanecer **100% idêntica ao produto mostrado nas imagens de referência**.
+
+É proibido:
+
+* alterar o modelo
+* alterar a cor
+* alterar o formato
+* alterar a espessura das tiras
+* alterar o salto
+* alterar a fivela
+* alterar a textura
+* alterar o acabamento
+* adicionar detalhes
+* remover detalhes
+* substituir por outro modelo
+
+Preservar exatamente:
+
+* cor nude/bege
+* salto bloco quadrado
+* tiras trançadas
+* ponta quadrada
+* tira do tornozelo
+* fivela metálica
+* costuras
+* acabamento
+* proporções
+
+A sandália nunca deve deformar.
+
+Nunca deve mudar durante o vídeo.
+
+Ela deve ser sempre o elemento principal.
+
+---
+
+# DURAÇÃO
+
+Exatamente **8 segundos**.
+
+---
+
+# CENA 1 — GANCHO VISUAL (0–2s)
+
+A influencer fictícia está em pé diante de um espelho em um quarto elegante com iluminação natural.
+
+Ela observa rapidamente o look.
+
+Em seguida levanta discretamente a barra da roupa para revelar a sandália.
+
+A câmera acompanha o movimento descendo lentamente até os pés.
+
+O produto torna-se imediatamente o foco principal.
+
+---
+
+# CENA 2 — MOVIMENTO NATURAL (2–4s)
+
+A influencer dá dois passos lentos em direção à câmera.
+
+A câmera acompanha apenas da altura dos joelhos para baixo.
+
+Cada passo destaca:
+
+* as tiras trançadas
+* o salto bloco
+* a ponta quadrada
+* o acabamento nude
+
+Movimentos suaves e naturais.
+
+---
+
+# CENA 3 — CLOSE PREMIUM (4–6s)
+
+A influencer para.
+
+Cruza levemente um pé à frente do outro.
+
+Com uma das mãos passa delicadamente os dedos sobre as tiras trançadas e depois toca suavemente a fivela apenas para destacar o acabamento.
+
+Não abrir a fivela.
+
+Não modificar a sandália.
+
+A câmera realiza um close cinematográfico extremamente detalhado.
+
+---
+
+# CENA 4 — CTA VISUAL (6–8s)
+
+A influencer olha para a câmera com um sorriso discreto.
+
+Sem falar.
+
+Sem mover os lábios.
+
+Ela aponta suavemente para baixo.
+
+A câmera finaliza com um hero shot da sandália mostrando:
+
+* tiras trançadas
+* salto bloco
+* fivela metálica
+* acabamento nude
+
+A sandália permanece perfeitamente idêntica à referência.
+
+---
+
+# ESTILO VISUAL
+
+* Vertical 9:16
+* UGC premium
+* Ultra-realista
+* Qualidade cinematográfica
+* Luz natural
+* Quarto moderno e aconchegante
+* Movimentos suaves de câmera
+* Profundidade de campo cinematográfica
+* Pele extremamente realista
+* Mãos anatomicamente corretas
+* Física realista
+* Sem deformações
+* Sem glitches
+* Produto sempre em foco
+
+---
+
+# REGRAS OBRIGATÓRIAS
+
+* Utilizar uma **personagem fictícia criada por IA**, inspirada apenas no estilo visual das imagens de referência.
+* Não reproduzir a identidade de qualquer pessoa real ou famosa.
+* Manter a personagem consistente durante todo o vídeo.
+* Preservar exatamente o mesmo modelo da sandália.
+* Não alterar cor.
+* Não alterar formato.
+* Não alterar textura.
+* Não alterar acabamento.
+* Não trocar o produto.
+* Não criar uma versão semelhante.
+* A sandália deve ser o protagonista absoluto do vídeo.
+
+---
+
+# ÁUDIO
+
+**Não gerar qualquer tipo de áudio.**
+
+* Sem fala.
+* Sem diálogo.
+* Sem narração.
+* Sem música.
+* Sem efeitos sonoros.
+* Sem ruídos ambientes.
+* Sem passos audíveis.
+* Sem respiração.
+* Sem sons sincronizados.
+
+**O vídeo deve ser completamente silencioso (mute), contendo apenas as imagens e movimentos naturais da personagem fictícia.**`
   }
 ];
 
