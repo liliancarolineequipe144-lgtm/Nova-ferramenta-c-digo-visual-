@@ -1253,6 +1253,44 @@ A sandália permanece perfeitamente idêntica à referência.
 * Sem sons sincronizados.
 
 **O vídeo deve ser completamente silencioso (mute), contendo apenas as imagens e movimentos naturais da personagem fictícia.**`
+  },
+  {
+    id: 'p-conjunto-pov-8s',
+    title: 'Narrativa POV | Conjunto Lilás (8s)',
+    type: 'lifestyle',
+    category: 'Conjuntos',
+    videoUrl: 'https://drive.google.com/file/d/1-cmur1zUUQ0jDIL_COypojtWjrCd4EH-/preview',
+    content: `**Prompt otimizado – Narrativa POV (8 segundos | sem áudio | apenas movimentos)**
+
+**Estilo:** Ultra-realista | POV (primeira pessoa) | Apenas as mãos aparecem | Mãos femininas morenas, elegantes e bem cuidadas | Unhas curtas com esmalte nude | Iluminação natural suave | Fundo neutro e clean | Movimentos lentos, delicados e humanizados | Produto 100% idêntico à imagem de referência.
+
+### CENA ÚNICA (0–8s)
+
+A câmera inicia em um plano superior mostrando o **conjunto lilás completo** organizado sobre uma superfície neutra, exatamente como na imagem de referência: **a blusa em tecido alfaiataria com modelagem sobreposta (efeito de camada frontal) posicionada acima do shorts lilás combinando**, mantendo o mesmo tom de lilás, a mesma modelagem, o mesmo tecido, acabamento e proporções do conjunto original.
+
+**Movimentos**
+
+* As mãos femininas morenas entram suavemente no quadro e passam delicadamente sobre as duas peças, como quem aprecia o tecido.
+* **Primeiro, pegam apenas a blusa**, levantando-a com as duas mãos de forma natural e elegante. Aproximam levemente da câmera para evidenciar o tecido alfaiataria, o caimento, a modelagem sobreposta e o acabamento. A blusa é devolvida exatamente à mesma posição.
+* **Somente após devolver a blusa**, as mãos pegam apenas o shorts lilás, levantando-o suavemente para mostrar a modelagem, o tecido, os bolsos e o acabamento. O shorts também é devolvido exatamente ao lugar original.
+* As mãos alinham delicadamente as duas peças, deixando o conjunto perfeitamente organizado.
+* Finalizam com um gesto natural apontando para baixo, indicando o link do produto.
+
+### Regras obrigatórias
+
+* **Nunca pegar as duas peças ao mesmo tempo.**
+* **Sempre levantar apenas uma peça por vez.**
+* A próxima peça só pode ser tocada depois que a anterior for devolvida ao lugar.
+* Manter movimentos lentos, naturais, elegantes e humanizados.
+* **Não alterar absolutamente nada do conjunto original.**
+* Não trocar a cor lilás.
+* Não modificar a modelagem da blusa sobreposta.
+* Não alterar o shorts, bolsos, tecido, costuras, acabamento ou proporções.
+* Não mudar o modelo do produto.
+* Nenhuma fala.
+* Nenhum texto na tela.
+* Nenhuma pessoa aparece além das mãos.
+* **Sem áudio, apenas movimentos naturais e suaves.**`
   }
 ];
 
