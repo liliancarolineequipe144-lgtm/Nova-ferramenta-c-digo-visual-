@@ -4,7 +4,7 @@ export interface PromptItem {
   id: string;
   title: string;
   content: string;
-  type: 'educational' | 'sales' | 'lifestyle';
+  type: 'educational' | 'sales' | 'lifestyle' | 'universal';
   category?: string;
   videoUrl?: string;
 }
@@ -18,6 +18,7 @@ export interface ProductItem {
   video?: string;
   link: string;
   category: string;
+  description?: string;
   stats?: {
     orders: number;
     ctr: string;

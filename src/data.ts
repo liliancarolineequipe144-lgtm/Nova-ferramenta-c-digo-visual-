@@ -858,6 +858,208 @@ Não criar uma sandália semelhante.
 Usar **exatamente o produto das imagens de referência**.
 
 **Sem fala, sem diálogo, sem narração, sem música e sem qualquer tipo de áudio. Apenas movimentos naturais e realistas.**`
+  },
+  {
+    id: 'p-sandalia-veo-3-8s',
+    title: 'UGC Ultra-Realista | Sandália em Destaque',
+    type: 'lifestyle',
+    category: 'Calçados',
+    videoUrl: 'https://drive.google.com/file/d/1i3BkgKNE26H5axw7wsgd8BNA0hEeLtGB/preview',
+    content: `# PROMPT UNIVERSAL — VEO 3.1 | UGC ULTRA-REALISTA | SANDÁLIA EM DESTAQUE (8 SEGUNDOS)
+
+Crie um vídeo UGC ultra-realista de **8 segundos**, vertical (9:16), utilizando **exatamente a mesma influencer e exatamente a mesma sandália das imagens de referência**.
+
+## REGRA ABSOLUTA — LOCK DO PRODUTO
+
+A sandália mostrada nas imagens de referência deve ser tratada como **um único objeto físico contínuo durante todo o vídeo**.
+
+**A IA deve rastrear (track) a mesma sandália do primeiro ao último frame, sem recriá-la, reinterpretá-la ou substituí-la durante qualquer movimento.**
+
+A sandália deve permanecer absolutamente idêntica em todos os enquadramentos, closes, mudanças de câmera e movimentos da influencer.
+
+**Mesmo durante a caminhada, a sandália NÃO pode ser regenerada. Deve permanecer exatamente a mesma sandália da referência.**
+
+Nunca alterar:
+
+* modelo
+* design
+* silhueta
+* formato
+* largura
+* altura
+* proporções
+* cor nude/bege
+* material
+* textura
+* acabamento
+* brilho
+* salto bloco quadrado
+* altura do salto
+* espessura do salto
+* tiras trançadas
+* posição das tiras
+* largura das tiras
+* ponta aberta
+* tira do tornozelo
+* fivela metálica
+* costuras
+* curvas
+* encaixe no pé
+
+É proibido:
+
+* gerar outra sandália
+* reinterpretar o modelo
+* modificar detalhes durante a caminhada
+* trocar a fivela
+* alterar o salto
+* alterar a textura
+* alterar a cor
+* alterar as tiras
+* alterar as proporções
+* criar qualquer versão semelhante
+
+A sandália deve parecer **o mesmo objeto físico filmado continuamente**, como em uma gravação real.
+
+A influencer também deve permanecer exatamente igual à referência, mantendo o mesmo rosto, cabelo, corpo, roupa, maquiagem e identidade visual.
+
+---
+
+# CENA 1 (0–1,5s)
+
+No quarto elegante, a influencer entra segurando uma pequena caixa de sapatos.
+
+Ela senta na cama.
+
+Coloca a caixa ao lado.
+
+Passa delicadamente a mão sobre a tampa.
+
+Travelling suave.
+
+Ainda não revelar completamente a sandália.
+
+---
+
+# CENA 2 (1,5–3s)
+
+Ela abre lentamente a caixa.
+
+Close cinematográfico revelando parcialmente a sandália.
+
+Ela sorri discretamente.
+
+Todo o foco permanece na sandália.
+
+---
+
+# CENA 3 (3–5s)
+
+Ela retira cuidadosamente a sandália.
+
+Passa os dedos pelas tiras trançadas.
+
+Desliza a mão pelo acabamento.
+
+Toca o salto.
+
+Ajusta suavemente a fivela.
+
+A câmera alterna entre:
+
+* close das mãos
+* close da textura
+* close do salto
+* detalhe da fivela
+
+Sem qualquer deformação do produto.
+
+---
+
+# CENA 4 (5–6,8s)
+
+Ela calça cuidadosamente a sandália.
+
+**Após calçar, a sandália deve permanecer exatamente a mesma da referência.**
+
+Durante toda a caminhada:
+
+**A câmera deve apenas acompanhar o movemento da sandália já existente.**
+
+**Não recriar o calçado.**
+
+**Não redesenhar o calçado.**
+
+**Não gerar uma nova versão ao caminhar.**
+
+Mostrar somente:
+
+* dois passos lentos
+* movimento natural
+* estabilidade
+* conforto
+
+A câmera acompanha lateralmente os pés.
+
+A sandália permanece exatamente igual à referência durante todos os frames.
+
+---
+
+# CENA 5 (6,8–8s)
+
+Ela para próxima à cama.
+
+Cruza uma perna.
+
+Levanta levemente o pé.
+
+Olha para a câmera.
+
+Sorri.
+
+Aponta  para baixo indicando o link 
+
+Finalizar com um hero shot cinematográfico aproximando lentamente da sandália.
+
+Destacar:
+
+* tiras trançadas
+* salto bloco
+* fivela metálica
+* acabamento nude
+* textura original
+
+---
+
+# ESTILO VISUAL
+
+* Vertical 9:16
+* Duração total de 8 segundos
+* UGC Premium
+* Ultra-realista
+* Iluminação natural
+* Quarto elegante
+* Movimentos suaves de câmera
+* Profundidade de campo cinematográfica
+* Pele hiper-realista
+* Física realista
+* Mãos anatomicamente corretas
+* Expressões espontâneas
+* Sem cortes bruscos
+
+# CONSISTÊNCIA ABSOLUTA
+
+* A sandália deve ser tratada como **um único objeto físico rastreado (tracked object)** durante todo o vídeo.
+* **Nunca regenerar o produto durante a animação.**
+* **Nunca substituir o modelo ao caminhar.**
+* **Nunca modificar o design entre os frames.**
+* **A sandália deve manter identidade visual perfeita do primeiro ao último frame.**
+* Manter exatamente a mesma influencer.
+* Manter exatamente a mesma roupa.
+* Manter exatamente o mesmo quarto.
+* Manter exatamente a mesma iluminação.
+
+**Sem fala, sem diálogo, sem narração, sem música e sem qualquer tipo de áudio. Apenas movimentos naturais, realistas e humanizados.**`
   }
 ];
 
