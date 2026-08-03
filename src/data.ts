@@ -1816,5 +1816,25 @@ export const GARIMPADOS: ProductItem[] = [
       'pode parar tudo e olhar o caimento desse conjunto'
     ],
     hashtags: ['#mulheres', '#lookelegante', '#lookdodia', '#estilofeminino', '#tiktokshop']
+  },
+  {
+    id: 'garimpo-5',
+    title: 'Camiseta Personalizada',
+    price: 'R$ 6,29',
+    status: 'Produto para escalar - Tendência do produto (últimos 7 dias)',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop',
+    video: 'https://drive.google.com/file/d/1YTuI2oH-g3NxxxrAnAlSbc6CBtemq38p/preview',
+    link: 'https://vt.tiktok.com/ZS9hfFKpsU5Ce-g8keS/',
+    category: 'Presentes',
+    stats: {
+      orders: 550,
+      ctr: '3,3',
+      creators: 207,
+      cart: 4700
+    },
+    commission: '6,29',
+    ticket: 'baixo',
+    style: 'provador',
+    hashtags: ['#presentediadospais', '#camisetapersonslizada', '#ideiadepresente', '#tiktokshop88']
   }
 ];
