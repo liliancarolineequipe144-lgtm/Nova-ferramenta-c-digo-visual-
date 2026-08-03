@@ -1390,6 +1390,354 @@ Maintain the exact facial identity, hairstyle, skin texture, body proportions, a
 * **No background music.**
 * **No sound effects.**
 * **Only the influencer's natural voice speaking in Brazilian Portuguese (pt-BR).**`
+  },
+  {
+    id: 'p-veo-3-bolsa',
+    title: 'VEO 3.1 / FLOW – ULTRA-REALISTIC PRODUCT VIDEO',
+    type: 'lifestyle',
+    category: 'Bolsas',
+    videoUrl: 'https://drive.google.com/file/d/1XwGfyLhjUBEy_ckMskNBs2WtQaBv2uf-/preview',
+    content: `# **VEO 3.1 / FLOW – ULTRA-REALISTIC PRODUCT VIDEO (8 SECONDS)**
+
+### **STRICT REFERENCE LOCK – NO PRODUCT MODIFICATIONS**
+
+Use the attached reference images as the **absolute source of truth**.
+
+The generated video **must follow the reference images with 100% accuracy**.
+
+## NON-NEGOTIABLE RULES
+
+* **DO NOT redesign, reinterpret, or modify the product.**
+* Maintain **exactly** the same:
+
+  * shape
+  * proportions
+  * corduroy fabric texture
+  * stitching
+  * seams
+  * zipper position
+  * shoulder strap
+  * strap adjustment buckle
+  * leather logo patch
+  * dimensions
+  * pockets
+  * colors
+  * every visible detail.
+
+The product must remain **pixel-faithful** to the reference.
+
+If any detail is uncertain, **copy the reference exactly.**
+
+---
+
+# POCKET ACCURACY (VERY IMPORTANT)
+
+**The bag has ONLY ONE EXTERNAL POCKET.**
+
+This pocket is positioned **ONLY ON THE RIGHT SIDE OF THE BAG**, exactly as shown in the reference images.
+
+### STRICTLY FORBIDDEN
+
+* DO NOT create a front pocket.
+* DO NOT invent any additional pocket.
+* DO NOT mirror the pocket.
+* DO NOT move the pocket.
+* DO NOT place any pocket on the front panel.
+* DO NOT create decorative flaps on the front.
+* DO NOT generate symmetrical pockets.
+* DO NOT modify the pocket size or shape.
+
+The front face of the bag must remain completely clean, containing **ONLY the leather logo patch**.
+
+The side pocket must remain exactly where it appears in the reference images.
+
+---
+
+# HANDS ONLY
+
+Only elegant female hands are visible.
+
+No face.
+
+No body.
+
+No arms.
+
+No sleeves.
+
+No reflections.
+
+No shadows of a person.
+
+No influencer visible.
+
+Only natural human hands interacting with the product.
+
+Movements must feel soft, realistic and spontaneous.
+
+---
+
+# CAMERA
+
+Vertical 9:16
+
+Ultra-realistic.
+
+Luxury e-commerce style.
+
+Natural daylight.
+
+Smooth cinematic movements.
+
+No sudden camera motion.
+
+---
+
+# ABSOLUTELY NO AUDIO
+
+This video must be completely silent.
+
+**STRICTLY FORBIDDEN:**
+
+* Voice
+* Narration
+* Speech
+* Whispering
+* Music
+* Background music
+* Ambient sound
+* Room sound
+* Foley
+* Fabric sounds
+* Hand sounds
+* Footsteps
+* Notification sounds
+* Sound effects
+* Artificial audio
+* Generated audio
+
+Generate a **100% silent video**.
+
+---
+
+# STRICTLY FORBIDDEN
+
+* Text
+* Captions
+* Subtitles
+* Titles
+* Logos
+* Graphics
+* Watermarks
+* Icons
+* Emojis
+* UI elements
+* Buttons
+
+---
+
+# SCENE
+
+The bag is lying naturally on a soft neutral rug exactly like a lifestyle product photo.
+
+---
+
+# HOOK (0–2s)
+
+One hand gently slides the bag toward the camera.
+
+The second hand slowly glides across the corduroy fabric, highlighting its premium texture.
+
+The bag remains in its original position and design.
+
+---
+
+# CONTEXT (2–4s)
+
+One hand rotates the bag slightly to reveal **ONLY THE SIDE POCKET**.
+
+The hand opens the side pocket.
+
+A small earbud case is placed inside.
+
+The item is removed.
+
+The side pocket is gently closed.
+
+**Do not show or generate any pocket on the front of the bag.**
+
+---
+
+# SOLUTION (4–6.5s)
+
+One hand slowly opens the main zipper.
+
+Both hands gently spread the opening to reveal the spacious interior.
+
+The camera briefly focuses inside the bag.
+
+The zipper remains fully consistent with the reference.
+
+No structural changes.
+
+---
+
+# CTA (6.5–8s)
+
+The zipper is gently closed.
+
+The hands smooth the bag one last time.
+
+One hand exits the frame.
+
+The remaining hand naturally points downward below the bag.
+
+Hold for a brief moment.
+
+Fade out.
+
+---
+
+# FINAL GENERATION RULES
+
+Follow the reference images with **maximum fidelity**.
+
+Do not improvise.
+
+Do not stylize.
+
+Do not redesign.
+
+Do not add features.
+
+Do not remove features.
+
+The final bag must be visually indistinguishable from the reference images, with the **only external pocket located exclusively on the side**, never on the front.
+
+**Output: One continuous 8-second ultra-realistic video with only natural hand movements, no audio, no text, and exact product consistency.**
+sem nenhum áudio só movimentos`
+  },
+  {
+    id: 'p-veo-3-camiseta',
+    title: 'Universal VEO 3 Prompt (English) – Silent UGC Product Showcase',
+    type: 'lifestyle',
+    category: 'Moda',
+    videoUrl: 'https://drive.google.com/file/d/1ZVp6tMFE50An_ZbmmWP9AgkzhoqrdPbV/preview',
+    content: `## **Universal VEO 3 Prompt (English) – Silent UGC Product Showcase | No Speech | Hyper-Realistic**
+
+> **Use the uploaded reference images as the ONLY reference for the T-shirt. The garment MUST remain 100% identical to the reference images throughout the entire video.**
+>
+> **DO NOT redesign, reinterpret, stylize, replace, improve, simplify, or modify any part of the product. Preserve exactly the same fit, oversized silhouette, proportions, stitching, seams, fabric weight, cotton texture, sleeve length, collar, color, typography, front print placement, back illustration, line thickness, artwork, dimensions, wrinkles, drape, hem, and every visual detail exactly as shown in the reference images.**
+>
+> **The front text must remain exactly the same. The back artwork must remain exactly the same. Never invent new graphics, fonts, colors, shadows, embroidery, textures, labels, or details.**
+>
+> **The male model must remain the same person during the entire video. Never replace, morph, regenerate, or swap the model. Keep the same face, hairstyle, gray hair, beard, tattoos, skin tone, body proportions, age, expression, clothing fit, pants, shoes, watch, and realistic appearance with perfect temporal consistency.**
+>
+> Create a **hyper-realistic vertical 9:16 UGC commercial** with cinematic 4K quality, authentic smartphone aesthetics, soft natural lighting, physically accurate fabric simulation, perfect anatomy, realistic hand interaction, and smooth camera movement.
+>
+> **There must be NO speech, NO subtitles, NO captions, NO text overlays, NO logos, NO watermarks, and NO background graphics. Only natural movements and ambient realism.**
+
+---
+
+## **Scene 1 – Visual Hook (0–2 seconds)**
+
+The video opens with a premium black gift box placed on a beautiful neutral textured rug.
+
+Only a pair of realistic human hands are visible.
+
+The hands slowly lift the elegant black lid, revealing the folded T-shirt inside.
+
+The hands carefully remove the T-shirt, unfold it naturally, and hold it close to the camera.
+
+First, the **front** is displayed for a moment.
+
+Then, with a smooth realistic movement, the shirt is turned to reveal the **back**.
+
+The camera captures the fabric texture, prints, stitching, collar, and premium cotton material.
+
+Everything looks natural, slow, luxurious, and human.
+
+---
+
+## **Scene 2 – Context (2–5 seconds)**
+
+Cut seamlessly to the **same male model** wearing the exact same T-shirt.
+
+The model slowly walks toward the camera with natural confidence.
+
+He stops naturally.
+
+He gently adjusts one sleeve.
+
+He lightly smooths the fabric across the chest.
+
+Then he slowly rotates 180 degrees to reveal the **back print**.
+
+Pause briefly.
+
+Rotate naturally back to the front.
+
+Every movement feels authentic, relaxed, and premium.
+
+The camera makes subtle handheld movements, creating a genuine UGC feeling.
+
+---
+
+## **Scene 3 – Solution (5–7 seconds)**
+
+The model smiles naturally.
+
+He lightly touches the chest area where the front print is located.
+
+Then he turns once more just enough to highlight the back artwork.
+
+The fabric moves realistically with gravity and body motion.
+
+No exaggerated posing.
+
+No fashion runway attitude.
+
+Only authentic human behavior.
+
+---
+
+## **Scene 4 – CTA (7–8 seconds)**
+
+The model returns to the front.
+
+Maintains eye contact with the camera.
+
+Gives a subtle genuine smile.
+
+Raises one hand naturally and points downward with his index finger, clearly indicating where the purchase link would be.
+
+Hold this final pose for one second.
+
+Fade out naturally.
+
+---
+
+## **Critical Consistency Requirements**
+
+* The T-shirt must remain **100% identical** to the uploaded reference images.
+* Never change the front print.
+* Never change the back artwork.
+* Never modify the oversized fit.
+* Never alter the collar shape.
+* Never change sleeve length.
+* Never alter the cotton texture.
+* Never change wrinkles or drape unnaturally.
+* Never add or remove labels.
+* Never modify colors.
+* Never replace the garment.
+* Never replace the model.
+* Keep the same gray-haired man with the same beard, tattoos, facial features, hairstyle, body proportions, clothing, shoes, and accessories throughout the video.
+* Perfect temporal consistency between every frame.
+* Hyper-realistic skin, hands, eyes, facial expressions, and natural body mechanics.
+* Natural breathing, blinking, and micro-expressions.
+* Premium cinematic realism with authentic human movement.
+* **No speech. No captions. No subtitles. No text. No logos. No watermarks. Only realistic movement and product presentation.**
+sem áudio só movimentos`
   }
 ];
 
