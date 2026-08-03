@@ -1,4 +1,4 @@
-export type Tab = 'narratives' | 'prompts' | 'products' | 'favorites';
+export type Tab = 'narratives' | 'prompts' | 'products' | 'favorites' | 'video-lessons';
 
 export interface PromptItem {
   id: string;

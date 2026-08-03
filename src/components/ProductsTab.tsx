@@ -97,54 +97,62 @@ export default function ProductsTab() {
 
   return (
     <div className="space-y-12 pb-20">
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-[2px] bg-emerald-600 rounded-full" />
-            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-emerald-400">
+      {/* Header */}
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-[2px] bg-emerald-600 rounded-full" />
+            <span className="text-[12px] font-black uppercase tracking-[0.4em] text-emerald-500/80">
               Achados Selecionados
             </span>
           </div>
-          <div className="flex items-end gap-3">
-            <h2 className="text-4xl font-black text-slate-900 tracking-tight">Produtos Garimpados</h2>
-            <span className="mb-1 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold border border-emerald-100 shadow-sm">
+          <div className="flex items-end gap-4">
+            <h2 className="text-5xl font-black text-slate-900 tracking-tight leading-none">Produtos Garimpados</h2>
+            <div className="mb-1 px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-2xl text-[13px] font-black border border-emerald-100 shadow-sm">
               {filteredProducts.length}
-            </span>
+            </div>
           </div>
-          <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
-            Uma curadoria exclusiva de peças e acessórios de alta qualidade para elevar o nível das suas produções.
+          <p className="text-slate-500 text-base max-w-lg font-medium leading-relaxed">
+            Curadoria exclusiva de itens de alta conversão para elevar o nível das suas produções.
           </p>
         </div>
 
         {/* Search Bar */}
         <div className="relative group">
-          <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-            <Search size={18} className="text-slate-400 group-focus-within:text-emerald-600 transition-colors" />
+          <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+            <Search size={20} className="text-slate-400 group-focus-within:text-emerald-600 transition-colors duration-300" />
           </div>
           <input
             type="text"
-            placeholder="Buscar por produto, estilo ou categoria..."
+            placeholder="Qual produto você está procurando?"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-14 pr-6 py-5 bg-white border border-slate-100 rounded-3xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-600 transition-all shadow-sm"
+            className="w-full pl-16 pr-8 py-6 bg-white border border-slate-100 rounded-[32px] text-base font-semibold focus:outline-none focus:ring-4 focus:ring-emerald-50 focus:border-emerald-600 transition-all shadow-[0_8px_30px_rgb(0,0,0,0.02)] placeholder:text-slate-300"
           />
         </div>
       </div>
 
       {/* Category Tabs */}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2.5 p-2.5 bg-slate-100/40 backdrop-blur-md rounded-[32px] border border-slate-200/40">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
+            className={`px-6 py-3.5 rounded-[22px] text-[11px] font-black uppercase tracking-widest transition-all duration-500 flex items-center gap-2 relative overflow-hidden group/tab ${
               selectedCategory === cat
-                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-200'
-                : 'bg-white text-slate-400 hover:text-slate-600 border border-slate-100 hover:border-slate-200'
+                ? 'text-white shadow-xl shadow-emerald-100'
+                : 'text-slate-500 hover:text-slate-800 hover:bg-white/50'
             }`}
           >
-            <span>{cat}</span>
-            <span className={`px-1.5 py-0.5 rounded-md text-[9px] font-black ${selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'}`}>
+            {selectedCategory === cat && (
+              <motion.div
+                layoutId="activeProductTab"
+                className="absolute inset-0 bg-emerald-600"
+                transition={{ type: 'spring', bounce: 0.15, duration: 0.7 }}
+              />
+            )}
+            <span className="relative z-10">{cat}</span>
+            <span className={`relative z-10 px-2 py-0.5 rounded-lg text-[9px] font-black transition-colors ${selectedCategory === cat ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-400'}`}>
               {cat === 'Todos' ? products.length : products.filter(p => p.category === cat).length}
             </span>
           </button>
@@ -315,22 +323,22 @@ export default function ProductsTab() {
               <div className="p-8 md:p-12 flex flex-col flex-grow bg-gradient-to-br from-white to-slate-50/30">
                 {/* Stats Grid */}
                 {product.stats && (
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Pedidos</p>
-                      <p className="text-2xl font-black text-slate-900">{product.stats.orders}</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                    <div className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group-hover:border-indigo-100/50 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)]">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Pedidos</p>
+                      <p className="text-3xl font-black text-slate-900 tracking-tight">{product.stats.orders}</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">CTR</p>
-                      <p className="text-2xl font-black text-emerald-600">{product.stats.ctr}%</p>
+                    <div className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group-hover:border-emerald-100/50 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)]">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">CTR</p>
+                      <p className="text-3xl font-black text-emerald-600 tracking-tight">{product.stats.ctr}%</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Criadores</p>
-                      <p className="text-2xl font-black text-slate-900">{product.stats.creators}</p>
+                    <div className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group-hover:border-amber-100/50 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)]">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Criadores</p>
+                      <p className="text-3xl font-black text-slate-900 tracking-tight">{product.stats.creators}</p>
                     </div>
-                    <div className="bg-slate-50/80 p-5 rounded-3xl border border-slate-100 transition-all duration-300 group-hover:bg-white">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Carrinho</p>
-                      <p className="text-2xl font-black text-slate-900">{product.stats.cart}</p>
+                    <div className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group-hover:border-rose-100/50 group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)]">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Carrinho</p>
+                      <p className="text-3xl font-black text-slate-900 tracking-tight">{product.stats.cart}</p>
                     </div>
                   </div>
                 )}
