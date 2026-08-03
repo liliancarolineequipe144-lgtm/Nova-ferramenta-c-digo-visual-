@@ -160,26 +160,26 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
                             toggleFavorite(item.id);
                             showToast(!currentlyFavorite ? 'Adicionado aos favoritos' : 'Removido dos favoritos', currentlyFavorite ? 'info' : 'success');
                           }}
-                          className={`p-3.5 rounded-2xl border transition-all duration-500 active:scale-90 group/fav ${
+                          className={`p-2.5 rounded-xl border transition-all duration-500 active:scale-90 group/fav ${
                             isFavorite(item.id)
                               ? 'bg-rose-50 border-rose-100 text-rose-500 shadow-sm'
                               : 'bg-white border-slate-100 text-slate-300 hover:text-rose-400 hover:border-rose-100'
                           }`}
                         >
-                          <Heart size={22} fill={isFavorite(item.id) ? "currentColor" : "none"} className="group-hover/fav:scale-110 transition-transform" />
+                          <Heart size={18} fill={isFavorite(item.id) ? "currentColor" : "none"} className="group-hover/fav:scale-110 transition-transform" />
                         </button>
                         <button
                           onClick={() => copyToClipboard(item.description, item.id)}
-                          className={`flex items-center gap-3 px-7 py-4 rounded-2xl font-black text-[12px] transition-all duration-500 shadow-sm active:scale-95 uppercase tracking-widest shrink-0 group/copy ${
+                          className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-black text-[10px] transition-all duration-500 shadow-sm active:scale-95 uppercase tracking-widest shrink-0 group/copy ${
                             copiedId === item.id
                               ? 'bg-emerald-500 text-white shadow-emerald-200'
-                              : 'bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-2xl hover:shadow-indigo-100'
+                              : 'bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-xl hover:shadow-indigo-100'
                           }`}
                         >
                           {copiedId === item.id ? (
-                            <><Check size={16} strokeWidth={3} /> Copiado</>
+                            <><Check size={14} strokeWidth={3} /> Copiado</>
                           ) : (
-                            <><Copy size={16} strokeWidth={3} className="group-hover/copy:scale-110 transition-transform" /> Copiar Estrutura</>
+                            <><Copy size={14} strokeWidth={3} className="group-hover/copy:scale-110 transition-transform" /> Copiar Estrutura</>
                           )}
                         </button>
                       </div>

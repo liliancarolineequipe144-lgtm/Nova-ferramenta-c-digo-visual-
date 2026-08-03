@@ -29,6 +29,51 @@ const LESSONS = [
     thumbnail: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
     description: 'Estratégias específicas para criar conteúdos de alta performance no nicho de casa e utilidades.',
     videoUrl: 'https://drive.google.com/file/d/19rVQC_k1iHPjTD0Z-LIWcS9dulM7TA59/preview'
+  },
+  {
+    id: 'lesson-ferramentas',
+    title: 'Ferramentas gratuitas',
+    duration: '09:30',
+    category: 'Ferramentas',
+    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop',
+    description: 'Conheça as melhores ferramentas gratuitas para criar e editar seus conteúdos com IA.',
+    videoUrl: 'https://drive.google.com/file/d/1auRm1vlT1Xmbb52mm24KAfX3UG9eNuId/preview'
+  },
+  {
+    id: 'lesson-tiktok-shop',
+    title: 'como se afiliar no tiktok shop',
+    duration: '07:45',
+    category: 'Vendas',
+    thumbnail: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda o passo a passo para se afiliar no TikTok Shop e começar a vender seus produtos.',
+    videoUrl: 'https://drive.google.com/file/d/1-Fs0sfjOK1ixSQHngigpzf71rHWq9waC/preview'
+  },
+  {
+    id: 'lesson-bolsa',
+    title: 'como fazer bolsa estilo provador pov',
+    duration: '07:20',
+    category: 'Produção',
+    thumbnail: 'https://images.unsplash.com/photo-1544816153-199d821e1bb6?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda a técnica de POV para mostrar produtos de moda com estilo de provador.',
+    videoUrl: 'https://drive.google.com/file/d/1oRqxivZdsVGZKO6e_Y_FbmZ3gC5xZh6i/preview'
+  },
+  {
+    id: 'lesson-live-products',
+    title: 'como colocar produtos na live',
+    duration: '09:15',
+    category: 'Live',
+    thumbnail: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda a gerenciar e exibir seus produtos de forma estratégica durante suas transmissões ao vivo.',
+    videoUrl: 'https://drive.google.com/file/d/1vgXzbpxLAOYTFu0SV6kQn5DMlfakiMDv/preview'
+  },
+  {
+    id: 'lesson-transicao',
+    title: 'como fazer transição de vestido',
+    duration: '06:15',
+    category: 'Edição',
+    thumbnail: 'https://images.unsplash.com/photo-1539109132381-31a1c97deeac?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda a criar transições suaves e profissionais de troca de roupa para seus vídeos.',
+    videoUrl: 'https://drive.google.com/file/d/1oXd6kU9l5sKNXoVQLHMDxbsY_vul3utC/preview'
   }
 ];
 
