@@ -3,6 +3,7 @@
 
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
   :root {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -24,14 +25,50 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
   }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+    @apply bg-white/60 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.02)];
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-800 to-slate-600;
+  }
+
+  .text-gradient-indigo {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-indigo-600 to-violet-600;
+  }
+
+  .card-shadow {
+    @apply shadow-[0_12px_40px_-12px_rgba(0,0,0,0.03),0_1px_1px_rgba(0,0,0,0.01)];
+  }
+
+  .card-shadow-hover {
+    @apply shadow-[0_24px_60px_-12px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.01)];
+  }
+
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-6 gap-6;
+  }
+
+  .border-gradient {
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .border-gradient::after {
+    content: '';
+    position: absolute;
+    top: -1px; bottom: -1px;
+    left: -1px; right: -1px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+    z-index: -1;
+    border-radius: inherit;
   }
 }

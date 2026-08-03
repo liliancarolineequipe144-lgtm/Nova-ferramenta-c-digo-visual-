@@ -41,46 +41,56 @@ export default function FavoritesTab({ toggleFavorite, isFavorite }: FavoritesTa
   const hasFavorites = favoritePrompts.length > 0 || favoriteNarratives.length > 0;
 
   return (
-    <div className="space-y-16 pb-20">
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-[2px] bg-rose-500 rounded-full" />
-          <span className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-400">
-            Sua Seleção
-          </span>
+    <div className="space-y-12 pb-20">
+      {/* Header Section */}
+      <div className="space-y-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-rose-500 rounded-full" />
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-rose-500/70">
+                Your Selection
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
+              Sua <span className="text-rose-500">Curadoria</span>
+            </h2>
+            <p className="text-slate-500 text-base md:text-lg max-w-lg font-medium leading-relaxed">
+              Acesso rápido aos seus comandos e roteiros estratégicos salvos para produção imediata.
+            </p>
+          </div>
+          <div className="px-6 py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-3xl shadow-sm hidden lg:flex items-center gap-4">
+            <div className="p-2.5 bg-rose-50 rounded-xl">
+              <Heart size={20} className="text-rose-500" fill="currentColor" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Favoritos</span>
+              <span className="text-2xl font-black text-slate-900 leading-none">{favoritePrompts.length + favoriteNarratives.length}</span>
+            </div>
+          </div>
         </div>
-        <div className="flex items-end gap-3">
-          <h2 className="text-4xl font-black text-slate-900 tracking-tight">Favoritos</h2>
-          <span className="mb-1 px-3 py-1 bg-rose-50 text-rose-500 rounded-full text-xs font-bold border border-rose-100 shadow-sm">
-            {favoritePrompts.length + favoriteNarratives.length}
-          </span>
-        </div>
-        <p className="text-slate-500 text-sm max-w-md font-medium leading-relaxed">
-          Sua biblioteca personalizada de prompts e narrativas estratégicas salvos.
-        </p>
       </div>
 
       {!hasFavorites ? (
-        <div className="py-20 text-center space-y-6 bg-white/40 backdrop-blur-xl rounded-[40px] border border-white/60 shadow-sm">
-          <div className="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center mx-auto text-rose-200">
+        <div className="py-32 text-center space-y-6 bg-slate-50/40 backdrop-blur-md rounded-[40px] border border-dashed border-slate-200">
+          <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto text-rose-200 shadow-sm border border-slate-100">
             <Heart size={40} />
           </div>
           <div className="space-y-2">
-            <p className="text-slate-600 font-black uppercase tracking-widest text-sm">Sua lista está vazia</p>
-            <p className="text-slate-400 text-sm font-medium">Toque no ícone de coração nos prompts para salvá-los aqui.</p>
+            <h3 className="text-xl font-black text-slate-900">Sua lista está vazia</h3>
+            <p className="text-slate-500 text-sm font-medium max-w-xs mx-auto">Favorite prompts e roteiros para acessá-los rapidamente aqui.</p>
           </div>
         </div>
       ) : (
-        <div className="space-y-20">
+        <div className="space-y-24">
           {/* Favorited Narratives */}
           {favoriteNarratives.length > 0 && (
             <div className="space-y-10">
               <div className="flex items-center gap-4">
-                <Brain className="text-indigo-600" size={24} />
-                <h3 className="text-xl font-black text-slate-900 uppercase tracking-wider">Narrativas Salvas</h3>
-                <span className="px-2.5 py-0.5 bg-indigo-50 text-indigo-600 rounded-lg text-[10px] font-black border border-indigo-100">
-                  {favoriteNarratives.length}
-                </span>
+                <div className="p-2 bg-indigo-50 rounded-lg">
+                  <Brain className="text-indigo-600" size={20} />
+                </div>
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-widest">Roteiros Salvos</h3>
               </div>
               <div className="grid grid-cols-1 gap-8">
                 {favoriteNarratives.map((item) => {
@@ -88,34 +98,39 @@ export default function FavoritesTab({ toggleFavorite, isFavorite }: FavoritesTa
                   return (
                     <motion.div 
                       key={item.id}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="group relative bg-white rounded-[40px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col md:flex-row hover:shadow-[0_48px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500"
+                      className="group relative bg-white rounded-[40px] overflow-hidden border border-slate-100/60 flex flex-col md:flex-row card-shadow hover:card-shadow-hover transition-all duration-700"
                     >
                       {item.videoUrl && (
-                        <div className="relative aspect-[9/16] md:w-[240px] bg-slate-900 overflow-hidden shrink-0">
+                        <div className="relative aspect-[9/16] md:w-[280px] bg-slate-950 overflow-hidden shrink-0">
                           <iframe
                             src={item.videoUrl}
-                            className="absolute inset-0 w-full h-full opacity-90 group-hover:opacity-100 transition-all duration-1000"
+                            className="absolute inset-0 w-full h-full opacity-60 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-[1.02]"
                             allow="autoplay"
                             title={item.title}
                           ></iframe>
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
                         </div>
                       )}
-                      <div className="p-8 flex-grow space-y-6">
-                        <div className="flex justify-between items-start gap-4">
-                          <div>
-                            <h4 className="text-xl font-black text-slate-900 mb-2">{item.title}</h4>
-                            <span className={`px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest ${cat.color} ${cat.bg} border border-current`}>
+                      <div className="p-10 flex flex-col flex-grow space-y-10">
+                        <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
+                          <div className="space-y-3">
+                            <span className={`inline-flex px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest ${cat.color} ${cat.bg} border border-current/10`}>
                               {cat.label}
                             </span>
+                            <h4 className="text-2xl font-black text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">{item.title}</h4>
                           </div>
-                          <div className="flex gap-2">
-                            <button onClick={() => toggleFavorite(item.id)} className="p-2 bg-rose-50 text-rose-500 rounded-xl border border-rose-100"><Heart size={16} fill="currentColor" /></button>
-                            <button onClick={() => copyToClipboard(item.description, item.id)} className={`p-2 rounded-xl transition-all ${copiedId === item.id ? 'bg-emerald-500 text-white' : 'bg-slate-900 text-white'}`}><Copy size={16} /></button>
+                          <div className="flex items-center gap-2.5 shrink-0">
+                            <button onClick={() => toggleFavorite(item.id)} className="p-2.5 bg-rose-50 text-rose-500 rounded-xl border border-rose-100 shadow-sm active:scale-90 transition-all"><Heart size={18} fill="currentColor" /></button>
+                            <button onClick={() => copyToClipboard(item.description, item.id)} className={`flex items-center gap-2 px-6 py-3.5 rounded-xl font-black text-[11px] uppercase tracking-widest transition-all shadow-sm active:scale-95 group/copy ${copiedId === item.id ? 'bg-emerald-500 text-white shadow-emerald-100' : 'bg-slate-900 text-white hover:bg-indigo-600'}`}>
+                              {copiedId === item.id ? <><Check size={14} /> Copiado</> : <><Copy size={14} /> Copiar</>}
+                            </button>
                           </div>
                         </div>
-                        <p className="text-sm text-slate-600 font-medium italic">"{item.description}"</p>
+                        <div className="relative flex-grow bg-slate-50/50 rounded-3xl p-8 border border-slate-100 group-hover:border-indigo-100/40 transition-colors">
+                          <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed italic line-clamp-4 group-hover:line-clamp-none transition-all duration-500">"{item.description}"</p>
+                        </div>
                       </div>
                     </motion.div>
                   );
@@ -128,11 +143,10 @@ export default function FavoritesTab({ toggleFavorite, isFavorite }: FavoritesTa
           {favoritePrompts.length > 0 && (
             <div className="space-y-10">
               <div className="flex items-center gap-4">
-                <Sparkles className="text-amber-500" size={24} />
-                <h3 className="text-xl font-black text-slate-900 uppercase tracking-wider">Prompts Salvos</h3>
-                <span className="px-2.5 py-0.5 bg-amber-50 text-amber-600 rounded-lg text-[10px] font-black border border-amber-100">
-                  {favoritePrompts.length}
-                </span>
+                <div className="p-2 bg-amber-50 rounded-lg">
+                  <Sparkles className="text-amber-500" size={20} />
+                </div>
+                <h3 className="text-lg font-black text-slate-900 uppercase tracking-widest">Prompts Salvos</h3>
               </div>
               <div className="grid grid-cols-1 gap-12">
                 {favoritePrompts.map((prompt) => {
@@ -140,35 +154,41 @@ export default function FavoritesTab({ toggleFavorite, isFavorite }: FavoritesTa
                   return (
                     <motion.div 
                       key={prompt.id}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="group relative bg-white rounded-[40px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col md:flex-row hover:shadow-[0_48px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500"
+                      className="group relative bg-white rounded-[40px] overflow-hidden border border-slate-100/60 flex flex-col md:flex-row card-shadow hover:card-shadow-hover transition-all duration-700"
                     >
                       {prompt.videoUrl && (
-                        <div className="relative aspect-[9/16] md:w-[240px] bg-slate-900 overflow-hidden shrink-0">
+                        <div className="relative aspect-[9/16] md:w-[280px] bg-slate-950 overflow-hidden shrink-0">
                           <iframe
                             src={prompt.videoUrl}
-                            className="absolute inset-0 w-full h-full opacity-80"
+                            className="absolute inset-0 w-full h-full opacity-60 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-[1.02]"
                             allow="autoplay"
                             title={prompt.title}
                           ></iframe>
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
                         </div>
                       )}
-                      <div className="p-8 flex-grow">
-                        <div className="flex justify-between items-start gap-4 mb-6">
-                          <div>
-                            <h4 className="text-xl font-black text-slate-900 mb-2">{prompt.title}</h4>
-                            <div className="flex gap-2">
-                              <span className={`px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest ${config.color} ${config.bg} border border-current`}>{prompt.category || 'Geral'}</span>
+                      <div className="p-10 flex flex-col flex-grow space-y-10">
+                        <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-2">
+                              <span className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest ${config.color} ${config.bg} border border-current/10`}>{prompt.category || 'Geral'}</span>
+                              <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[9px] font-black text-slate-400 uppercase tracking-widest">{prompt.type}</span>
                             </div>
+                            <h4 className="text-2xl font-black text-slate-900 leading-tight group-hover:text-amber-600 transition-colors">{prompt.title}</h4>
                           </div>
-                          <div className="flex gap-2">
-                            <button onClick={() => toggleFavorite(prompt.id)} className="p-2 bg-rose-50 text-rose-500 rounded-xl border border-rose-100"><Heart size={16} fill="currentColor" /></button>
-                            <button onClick={() => copyToClipboard(prompt.content, prompt.id)} className={`p-2 rounded-xl transition-all ${copiedId === prompt.id ? 'bg-emerald-500 text-white' : 'bg-slate-900 text-white'}`}><Copy size={16} /></button>
+                          <div className="flex items-center gap-2.5 shrink-0">
+                            <button onClick={() => toggleFavorite(prompt.id)} className="p-2.5 bg-rose-50 text-rose-500 rounded-xl border border-rose-100 shadow-sm active:scale-90 transition-all"><Heart size={18} fill="currentColor" /></button>
+                            <button onClick={() => copyToClipboard(prompt.content, prompt.id)} className={`flex items-center gap-2 px-6 py-3.5 rounded-xl font-black text-[11px] uppercase tracking-widest transition-all shadow-sm active:scale-95 group/copy ${copiedId === prompt.id ? 'bg-emerald-500 text-white shadow-emerald-100' : 'bg-slate-900 text-white hover:bg-amber-600'}`}>
+                              {copiedId === prompt.id ? <><Check size={14} /> Copiado</> : <><Copy size={14} /> Copiar</>}
+                            </button>
                           </div>
                         </div>
-                        <div className="prose prose-slate prose-sm max-w-none text-slate-600 font-medium">
-                          <ReactMarkdown>{prompt.content}</ReactMarkdown>
+                        <div className="relative flex-grow bg-slate-50/50 rounded-3xl p-8 border border-slate-100 group-hover:border-amber-100/40 transition-colors">
+                          <div className="prose prose-slate prose-sm max-w-none text-slate-600 font-semibold italic text-gradient line-clamp-6 group-hover:line-clamp-none transition-all duration-700">
+                            <ReactMarkdown>{prompt.content}</ReactMarkdown>
+                          </div>
                         </div>
                       </div>
                     </motion.div>

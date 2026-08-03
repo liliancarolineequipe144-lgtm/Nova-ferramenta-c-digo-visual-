@@ -16,41 +16,43 @@ export default function App() {
 
   return (
     <ToastProvider>
-      <div className="min-h-screen bg-[#FDFDFF] text-slate-900 pb-32 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-900">
+      <div className="min-h-screen bg-[#FAFAFC] text-slate-900 pb-32 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-900">
         {/* Header */}
-        <header className="sticky top-0 z-50 bg-white/40 backdrop-blur-3xl border-b border-slate-100/50 px-8 py-5 flex items-center justify-between">
+        <header className="sticky top-0 z-50 bg-white/40 backdrop-blur-2xl border-b border-slate-200/20 px-6 md:px-12 py-5 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img 
-              src="https://drive.google.com/uc?export=view&id=1xLuuT1QNNCrvjlb3-01w8ImpIdIQvN3X" 
-              alt="Logo" 
-              className="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-500 cursor-pointer" 
-              referrerPolicy="no-referrer"
-            />
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-indigo-500/20 to-violet-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
+              <img 
+                src="https://drive.google.com/uc?export=view&id=1xLuuT1QNNCrvjlb3-01w8ImpIdIQvN3X" 
+                alt="Logo" 
+                className="relative h-8 md:h-10 w-auto object-contain hover:scale-[1.02] transition-all duration-500 cursor-pointer active:scale-95" 
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-full border border-slate-100">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Live Updates</span>
+            <div className="flex items-center gap-2.5 px-4 py-2 bg-white/50 backdrop-blur-md rounded-full border border-slate-200/40 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+              <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Acesso Premium</span>
             </div>
           </div>
         </header>
 
         {/* Subtle Background Elements */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-          <div className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] bg-indigo-100/20 rounded-full blur-[140px] opacity-60" />
-          <div className="absolute top-[20%] -right-[10%] w-[50%] h-[70%] bg-rose-100/15 rounded-full blur-[120px] opacity-40" />
-          <div className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-emerald-50/30 rounded-full blur-[100px] opacity-50" />
+          <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-indigo-50/30 rounded-full blur-[120px] opacity-40 animate-pulse" style={{ animationDuration: '8s' }} />
+          <div className="absolute bottom-[-10%] right-[-5%] w-[60%] h-[60%] bg-rose-50/20 rounded-full blur-[100px] opacity-30 animate-pulse" style={{ animationDuration: '12s' }} />
         </div>
 
         {/* Main Content Area */}
-        <main className="relative max-w-4xl mx-auto px-6 pt-12 pb-44">
+        <main className="relative max-w-6xl mx-auto px-6 pt-12 pb-44">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.2 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             >
               {activeTab === 'narratives' && <NarrativesTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
               {activeTab === 'prompts' && <PromptsTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
@@ -60,41 +62,50 @@ export default function App() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Footer Instruction */}
+          {/* Footer Instruction (Bento Style) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto mt-24 mb-12 p-10 bg-white/40 backdrop-blur-xl rounded-[40px] border border-white/60 shadow-sm space-y-6 group"
+            className="mt-32 space-y-8"
           >
-            <div className="flex items-center gap-4 mb-2">
-              <div className="p-3 bg-indigo-50 rounded-2xl border border-indigo-100 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                <span className="text-2xl">💡</span>
-              </div>
-              <div className="flex flex-col">
-                <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.25em]">Dicas de Especialista</h4>
-                <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Aumente sua conversão</span>
-              </div>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-[1px] flex-grow bg-slate-200/50" />
+              <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.4em] px-4 whitespace-nowrap">Guia Estratégico</h4>
+              <div className="h-[1px] flex-grow bg-slate-200/50" />
             </div>
-            <div className="grid md:grid-cols-3 gap-8 pt-4">
-              <div className="space-y-3">
-                <div className="w-6 h-[1px] bg-indigo-200" />
-                <p className="text-[13px] font-medium text-slate-600 leading-relaxed italic">
-                  Nos prompts em inglês, basta alterar a fala onde estiver em português. App recomendável: <span className="text-indigo-600 font-bold not-italic underline decoration-indigo-200 underline-offset-4">flow</span>
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="w-6 h-[1px] bg-indigo-200" />
-                <p className="text-[13px] font-medium text-slate-600 leading-relaxed italic">
-                  Só trocar o nome do produto no prompt na hora de criar o seu conteúdo para manter a consistência estratégica.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="w-6 h-[1px] bg-indigo-200" />
-                <p className="text-[13px] font-medium text-slate-600 leading-relaxed italic">
-                  <span className="text-indigo-600 font-bold not-italic">Dica:</span> pegue esse prompt, coloque na IA com fotos do seu produto e peça para remodelar especificamente para ele.
-                </p>
-              </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { 
+                  title: "Workflow", 
+                  text: "Nos prompts em inglês, ajuste apenas as partes em português para manter a estrutura técnica intacta.",
+                  icon: "✨",
+                  color: "bg-indigo-50 text-indigo-600"
+                },
+                { 
+                  title: "Consistência", 
+                  text: "Substitua o nome do produto no prompt para replicar o estilo visual em diferentes itens da sua loja.",
+                  icon: "🎯",
+                  color: "bg-emerald-50 text-emerald-600"
+                },
+                { 
+                  title: "Escalabilidade", 
+                  text: "Use a IA para remodelar prompts baseados em fotos reais, gerando infinitas variações criativas.",
+                  icon: "🚀",
+                  color: "bg-amber-50 text-amber-600"
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="group p-8 bg-white border border-slate-100/60 rounded-[32px] card-shadow hover:card-shadow-hover transition-all duration-500">
+                  <div className={`w-12 h-12 ${item.color} rounded-2xl flex items-center justify-center text-xl mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500`}>
+                    {item.icon}
+                  </div>
+                  <h5 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-3">{item.title}</h5>
+                  <p className="text-sm font-medium text-slate-500 leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </main>

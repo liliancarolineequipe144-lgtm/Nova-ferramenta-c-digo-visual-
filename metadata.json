@@ -1,6 +1,6 @@
 {
-  "name": "Remix Remix Método do Código Visual",
-  "description": "App mobile para criadores de conteúdo com ganchos, CTAs, prompts de vídeo e ferramentas de transmissão.",
+  "name": "Remix | Método Código Visual",
+  "description": "Plataforma premium para criadores de conteúdo com biblioteca estratégica de prompts, narrativas validadas e curadoria de produtos de alta conversão.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

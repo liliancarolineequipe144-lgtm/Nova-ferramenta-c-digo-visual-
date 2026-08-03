@@ -82,98 +82,114 @@ export default function VideoLessonsTab() {
 
   return (
     <div className="space-y-12 pb-20">
-      {/* Header */}
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-[2px] bg-amber-600 rounded-full" />
-            <span className="text-[12px] font-black uppercase tracking-[0.4em] text-amber-500/80">
-              Academy
-            </span>
+      {/* Header Section */}
+      <div className="space-y-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-amber-500 rounded-full" />
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-amber-600/70">
+                Academy Content
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
+              Masterclass <br className="hidden md:block" /> <span className="text-amber-500">Vídeo Aulas</span>
+            </h2>
+            <p className="text-slate-500 text-base md:text-lg max-w-lg font-medium leading-relaxed">
+              Domine as ferramentas de IA e técnicas de produção que estão dominando o mercado digital.
+            </p>
           </div>
-          <div className="flex items-end gap-4">
-            <h2 className="text-5xl font-black text-slate-900 tracking-tight leading-none">Vídeo Aulas</h2>
-            <div className="mb-1 px-4 py-1.5 bg-amber-50 text-amber-600 rounded-2xl text-[13px] font-black border border-amber-100/50 shadow-sm">
-              {LESSONS.length}
+          <div className="px-6 py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-3xl shadow-sm hidden lg:flex items-center gap-4">
+            <div className="p-2.5 bg-amber-50 rounded-xl">
+              <PlayCircle size={20} className="text-amber-600" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Aulas</span>
+              <span className="text-2xl font-black text-slate-900 leading-none">{LESSONS.length}</span>
             </div>
           </div>
-          <p className="text-slate-500 text-base max-w-lg font-medium leading-relaxed">
-            Tutoriais exclusivos para dominar a criação de conteúdo com inteligência artificial e alta performance.
-          </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {LESSONS.map((lesson, index) => (
           <motion.div
             key={lesson.id}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            className="group bg-white rounded-[48px] overflow-hidden border border-slate-100 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)] hover:shadow-[0_60px_120px_-20px_rgba(0,0,0,0.1)] transition-all duration-700"
+            transition={{ delay: index * 0.05, duration: 0.5 }}
+            className="group flex flex-col bg-white rounded-[32px] overflow-hidden border border-slate-100/60 card-shadow hover:card-shadow-hover transition-all duration-700 h-full"
           >
             <div 
-              className="relative aspect-[9/16] bg-slate-900 overflow-hidden cursor-pointer"
+              className="relative aspect-[9/16] bg-slate-950 overflow-hidden cursor-pointer"
               onClick={() => lesson.videoUrl && setSelectedVideo(lesson.videoUrl)}
             >
               <iframe
                 src={lesson.videoUrl}
-                className="absolute inset-0 w-full h-full opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full opacity-60 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-[1.02] pointer-events-none"
                 title={lesson.title}
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-20 h-20 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-500">
-                  <PlayCircle size={40} className="text-amber-600 ml-1.5" />
+                <div className="w-14 h-14 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-500">
+                  <PlayCircle size={24} className="text-amber-600 ml-0.5" />
                 </div>
               </div>
-
-            </div>
-            <div className="p-10 space-y-6">
-              <div className="flex items-center gap-3">
-                <span className="px-4 py-1.5 bg-amber-50 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-100/50">
+              <div className="absolute top-5 left-5">
+                <span className="px-3 py-1.5 bg-black/40 backdrop-blur-md border border-white/10 text-white rounded-lg text-[9px] font-black uppercase tracking-widest">
                   {lesson.category}
                 </span>
               </div>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-black text-slate-900 leading-tight group-hover:text-amber-600 transition-colors duration-500">
-                  {lesson.title}
-                </h3>
-                <p className="text-slate-500 text-base font-medium leading-relaxed">
-                  {lesson.description}
-                </p>
+              <div className="absolute bottom-5 right-5">
+                <span className="px-2.5 py-1.5 bg-white/90 backdrop-blur-sm text-slate-900 rounded-lg text-[9px] font-black tracking-wider shadow-sm">
+                  {lesson.duration}
+                </span>
               </div>
-              <button 
-                onClick={() => lesson.videoUrl && setSelectedVideo(lesson.videoUrl)}
-                disabled={!lesson.videoUrl}
-                className={`w-full py-5 rounded-[24px] font-black text-[12px] uppercase tracking-[0.25em] transition-all duration-500 shadow-lg active:scale-[0.98] ${
-                  lesson.videoUrl 
-                  ? 'bg-slate-900 text-white hover:bg-amber-600 shadow-slate-100 hover:shadow-amber-200' 
-                  : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
-                }`}
-              >
-                {lesson.videoUrl ? 'Assistir Agora' : 'Em Breve'}
-              </button>
+            </div>
+            
+            <div className="p-8 flex flex-col flex-grow space-y-5">
+              <h3 className="text-xl font-black text-slate-900 leading-tight group-hover:text-amber-600 transition-colors duration-500 line-clamp-2 min-h-[3rem]">
+                {lesson.title}
+              </h3>
+              <p className="text-slate-500 text-[13px] font-medium leading-relaxed line-clamp-3">
+                {lesson.description}
+              </p>
+              
+              <div className="pt-4 mt-auto">
+                <button 
+                  onClick={() => lesson.videoUrl && setSelectedVideo(lesson.videoUrl)}
+                  disabled={!lesson.videoUrl}
+                  className={`w-full py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 shadow-sm active:scale-95 ${
+                    lesson.videoUrl 
+                    ? 'bg-slate-900 text-white hover:bg-amber-600 shadow-slate-100 hover:shadow-xl hover:shadow-amber-100' 
+                    : 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                  }`}
+                >
+                  {lesson.videoUrl ? 'Assistir Agora' : 'Em Breve'}
+                </button>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Subscription Card */}
+      {/* Subscription Section */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="p-12 rounded-[48px] bg-slate-900 text-white relative overflow-hidden group"
+        className="relative group overflow-hidden"
       >
-        <div className="absolute -right-20 -top-20 w-80 h-80 bg-amber-600/20 rounded-full blur-[100px] group-hover:bg-amber-500/30 transition-colors duration-1000" />
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-10 text-center md:text-left">
-          <div className="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-[24px] flex items-center justify-center shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-700">
-            <Sparkles size={40} className="text-amber-400" />
+        <div className="absolute inset-0 bg-slate-900 rounded-[40px]" />
+        <div className="absolute -right-20 -top-20 w-80 h-80 bg-amber-600/10 rounded-full blur-[100px] group-hover:bg-amber-500/20 transition-colors duration-1000" />
+        
+        <div className="relative p-12 flex flex-col md:flex-row items-center gap-10">
+          <div className="w-20 h-20 bg-white/5 backdrop-blur-xl rounded-[28px] flex items-center justify-center shrink-0 border border-white/10 group-hover:scale-110 transition-transform duration-700 shadow-2xl">
+            <Sparkles size={36} className="text-amber-400" />
           </div>
-          <div className="space-y-3">
-            <h3 className="text-3xl font-black italic tracking-tight leading-none">Novos conteúdos semanais</h3>
-            <p className="text-slate-400 text-base font-medium max-lg leading-relaxed">
+          <div className="space-y-3 text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-black text-white italic tracking-tight leading-none">Novos conteúdos semanais</h3>
+            <p className="text-slate-400 text-base font-medium max-w-xl leading-relaxed">
               Mantenha-se atualizado com as últimas tendências e técnicas. Nossa biblioteca cresce junto com o mercado.
             </p>
           </div>

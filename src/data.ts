@@ -49,6 +49,13 @@ export const NARRATIVES: NarrativeItem[] = [
     title: 'Pegando a chave do carro',
     videoUrl: 'https://drive.google.com/file/d/1g3ZZpTv6KvjHsNqBkgdvLEeRCpumlho8/preview',
     description: 'Use the uploaded image as the **ONLY reference** for the clothing set **and for the appearance of the influencer**.\n\n**IMPORTANT:** The clothing set must be an exact copy of the reference image. Preserve the identical garment design, colors, fabric, texture, stitching, proportions, fit, silhouette, collar, sleeveless cut, waistband, pant length, and every visible detail. Do **NOT** redesign, improve, reinterpret, replace, or modify the outfit in any way.\n\nThe influencer must closely match the reference image, including hairstyle, facial features, skin tone, body proportions, smile, and overall appearance. She is wearing the exact same outfit from the reference image.\n\n### Scene\nCreate a **10-second ultra-realistic fashion UGC video** inside a modern, bright, elegant bedroom similar to the reference.\nThe influencer is standing full body, facing the camera with a warm, natural smile.\n\n### Visual Hook (First 3 seconds)\nWhile speaking, she naturally notices a car key placed on top of the bed beside her.\nShe reaches toward the bed, picks up the car key with one hand, smiles confidently at the camera, then casually holds the key while continuing to speak.\nAt the end of the sentence, she points downward with her index finger, as if indicating the product link or caption.\nHer movements must feel spontaneous and natural, like authentic social media content.\n\n### Camera\n* Handheld UGC style\n* Full-body framing\n* Eye-level perspective\n* 4K cinematic quality\n\n### Dialogue\n"Se você também ama um look elegante e versátil, aproveita que ainda está disponível."'
+  },
+  {
+    id: 'h-pov-bedding',
+    category: 'gancho',
+    title: 'POV Enxoval de Luxo',
+    videoUrl: 'https://drive.google.com/file/d/1qZstZZfK0fYTeNL5DPq_wHQVqauByUgl/preview',
+    description: '**Ultra-realistic POV (first-person perspective) video in VERTICAL PORTRAIT format (9:16, 1080×1920).**\n\nUse **EXACTLY** the bedding product shown in the reference image. Preserve **100%** of the original product\'s appearance, including all colors, patterns, textures, stitching, materials, shape, proportions, folds, and every visible detail. Do **not** modify, replace, invent, or reinterpret any aspect of the product.\n\nThe scene begins with the viewer walking into a modern, elegant bedroom. The exact same bedding set from the reference image is beautifully arranged on the bed, creating a luxurious and inviting atmosphere.\n\nThe viewer slowly approaches the bed and gently smooths the duvet with one hand, highlighting the fabric\'s texture. Next, they lightly fluff one of the pillows and run their hand across the bedding to emphasize its softness and premium finish.\n\nThe viewer then steps back slightly, allowing the entire bed to be visible for a brief moment. Finally, one hand naturally enters the frame and **points downward with the index finger**, holding the gesture for about one second as a clear call-to-action.\n\nThe bedroom features contemporary interior design, soft natural lighting through a window, elegant neutral décor, and a premium, cozy atmosphere. The bedding remains the central focus throughout the entire scene.\n\nShot on **iPhone 15 Pro**, 24mm lens, **f/1.8 aperture**, shallow depth of field, realistic lighting, soft shadows, cinematic handheld camera movement, natural motion, and professional product photography aesthetics. The scene should feel authentic, premium, and optimized for TikTok, Instagram Reels, and e-commerce advertising.\n\n**No text, no logos, no watermarks, no extra objects distracting from the scene. Maintain absolute fidelity to the reference product.**'
   }
 ];
 
@@ -1738,6 +1745,108 @@ Fade out naturally.
 * Premium cinematic realism with authentic human movement.
 * **No speech. No captions. No subtitles. No text. No logos. No watermarks. Only realistic movement and product presentation.**
 sem áudio só movimentos`
+  },
+  {
+    id: 'p-lencol-pov-2',
+    title: 'POV Enxoval de Luxo (Lençol)',
+    type: 'lifestyle',
+    category: 'Roupas de Cama',
+    videoUrl: 'https://drive.google.com/file/d/1VY6PSxMAq5bOO1ikkUa_BiHDEZGaZpqL/preview',
+    content: `@Airon IA - Vídeos com IA:Ultra-realistic POV (first-person perspective) photograph in VERTICAL PORTRAIT format (9:16, 1080x1920).
+Use EXACTLY the bedding product shown in the reference image. Preserve 100% of the original product's appearance, including all colors, patterns, textures, stitching, materials, shape, proportions, folds, and every visible detail. Do not modify, replace, invent, or reinterpret any aspect of the product.
+The viewer is holding the folded bedding set naturally with both hands in the foreground, as if they have just picked it up to admire it. The product occupies approximately 50–60% of the frame and remains the primary focus.
+In the background, there is a modern and elegant bedroom where the exact same bedding set from the reference image is already arranged perfectly on the bed, creating a cohesive and luxurious presentation. The bedroom should feature contemporary interior design, soft ambient lighting, clean decor, and a premium atmosphere.
+Shot on iPhone 15 Pro, 24mm lens, f/1.8 aperture, shallow depth of field, realistic lighting, soft shadows, and professional product photography aesthetics. The scene should feel natural, candid, and suitable for TikTok, Instagram Reels, and e-commerce advertising.
+No text, no logos, no watermarks, no extra objects distracting from the scene. Maintain absolute fidelity to the reference product.
+no final ela aponta para baixo`
+  },
+  {
+    id: 'p-flow-blusa-vestir',
+    title: 'FLOW — UGC ULTRA-REALISTA | VESTINDO A BLUSA',
+    type: 'lifestyle',
+    category: 'Blusas',
+    videoUrl: 'https://drive.google.com/file/d/1YTuI2oH-g3NxxxrAnAlSbc6CBtemq38p/preview',
+    content: `### **FLOW — UGC ULTRA-REALISTA | GANCHO VISUAL | VESTINDO A BLUSA | SEM ÁUDIO**
+
+**Scene Duration:** 8 seconds
+**Style:** Ultra-realistic UGC, cinematic realism, natural lighting, human behavior, continuous single shot.
+
+**Visual Hook:**
+The influencer is initially shown **from behind**, standing naturally while holding the blouse on a hanger at shoulder height. She remains relaxed for a brief moment, creating curiosity before putting it on.
+
+**Action Sequence (Continuous Motion):**
+
+The influencer gently removes the blouse from the hanger using both hands. She holds the blouse naturally by the lower hem, slightly opening the fabric while leaning her head forward. She smoothly guides her head through the neck opening, allowing the fabric to slide naturally over her hair and shoulders. Her hair reacts realistically, moving slightly as the collar passes over it.
+
+Next, she inserts one arm into the corresponding sleeve, extending it naturally until her hand emerges from the cuff. Without interruption, she repeats the same movement with the opposite arm. The blouse settles naturally onto her body under gravity, with realistic folds, stretching, compression, and soft fabric dynamics.
+
+After the blouse is fully on, she gently pulls the bottom hem downward to adjust the fit. She then lightly smooths the shoulders, collar, and sleeves using her fingertips with subtle, spontaneous gestures exactly as a real person would when dressing. She slowly turns her body toward the camera, ending with a confident, natural smile while the blouse remains perfectly positioned.
+
+### **Movement Quality Requirements**
+
+* Human, organic movements only.
+* Realistic body biomechanics.
+* Natural interaction between hands, fabric, hair, and body.
+* Hair reacts naturally while passing through the collar.
+* Fabric responds with realistic gravity, folds, tension, and inertia.
+* Fingers move independently with realistic articulation.
+* Natural breathing and subtle body balance throughout.
+* Slight weight shifts between feet.
+* Realistic shoulder, elbow, wrist, neck, and torso movement.
+* Clothing follows the body's movement naturally.
+* No robotic animation.
+* No exaggerated movements.
+* No clipping between body and clothing.
+* No deformation of the hands, body, face, or garment.
+* No morphing.
+* No frame glitches.
+* No sudden acceleration.
+* No unnatural poses.
+
+### **Product Consistency**
+
+The blouse must remain **exactly identical** to the reference image throughout the entire scene.
+
+* Same model.
+* Same color.
+* Same fabric.
+* Same texture.
+* Same stitching.
+* Same sleeves.
+* Same collar.
+* Same print.
+* Same proportions.
+* Same fit.
+* Same drape.
+
+Do not modify, replace, reinterpret, or redesign the blouse in any way.
+
+### **Character Consistency**
+
+The influencer's face, body proportions, hairstyle, hair color, skin tone, makeup, age, and overall identity must remain exactly the same throughout the scene.
+
+### **Camera**
+
+Single continuous shot. No cuts. No transitions. No zoom jumps. Natural handheld micro-movements only. The camera remains stable and follows the action smoothly.
+
+### **Audio**
+
+**Absolutely no audio of any kind.**
+
+* No voice.
+* No dialogue.
+* No narration.
+* No music.
+* No sound effects.
+* No ambient sounds.
+* No footsteps.
+* No clothing sounds.
+* No hanger sounds.
+* No breathing sounds.
+* No captions.
+* No subtitles.
+* No on-screen text.
+* Silent video only.`
   }
 ];
 
