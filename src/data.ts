@@ -1291,6 +1291,105 @@ A câmera inicia em um plano superior mostrando o **conjunto lilás completo** o
 * Nenhum texto na tela.
 * Nenhuma pessoa aparece além das mãos.
 * **Sem áudio, apenas movimentos naturais e suaves.**`
+  },
+  {
+    id: 'p-conjunto-ugc-8s',
+    title: 'UGC Fashion | Conjunto Elegante (8s)',
+    type: 'lifestyle',
+    category: 'Conjuntos',
+    videoUrl: 'https://drive.google.com/file/d/1ALdRSZvi4rGWi_i0kmuLo4yDgoVyGpP3/preview',
+    content: `Universal Prompt (English) – UGC Fashion Video | Brazilian Portuguese Speech | 8 Seconds**
+
+> Create a **hyper-realistic vertical 9:16 UGC fashion video** with cinematic 4K quality, perfect temporal consistency, natural human behavior, and authentic smartphone aesthetics.
+>
+> The influencer is wearing the **exact clothing shown in the reference image**. Preserve **100% of the garment's original design**, including silhouette, cut, fabric, texture, color, stitching, proportions, fit, finishing, trims, sleeves, collar, buttons, zippers, pockets, and every visual detail. Do not redesign, reinterpret, replace, or modify any aspect of the outfit.
+
+### Opening (0–1s)
+
+The video begins with the influencer's **palm completely covering the smartphone camera lens**, filling 100% of the frame.
+
+After a brief moment, she smoothly removes her hand, revealing herself. In the same continuous motion, she brushes a few strands of hair behind her ear naturally.
+
+She then makes a quick, subtle adjustment to the waist of her outfit, exactly like someone about to record a casual TikTok.
+
+### Main Scene (1–7s)
+
+She looks directly into the camera with a relaxed smile, gently shifting her weight while naturally showing the outfit through subtle body movement. The fabric moves realistically.
+
+She speaks **naturally in Brazilian Portuguese (pt-BR)** with perfect lip sync and authentic pronunciation.
+
+**Dialogue (approximately 8 seconds total):**
+
+> **"Esse conjunto resolveu meu dilema: elegante, confortável e sem gastar muito. Se você também ama praticidade, clica no link e garante o seu!"**
+
+**Narrative structure:**
+
+* **Gancho:** "Esse conjunto resolveu meu dilema..."
+* **Contexto:** "...elegante, confortável..."
+* **Solução:** "...sem gastar muito."
+* **CTA:** "Clica no link e garante o seu!"
+
+### Final Scene (7–8s)
+
+She naturally walks a step closer to the camera, smiles warmly, blows a quick kiss, then points downward with her index finger for less than one second, indicating the caption or purchase link.
+
+### Body Language
+
+* Relaxed posture.
+* Natural breathing.
+* Soft facial expressions.
+* Gentle torso movement.
+* Slight hip and leg repositioning.
+* Casual UGC behavior.
+* No runway poses.
+* No exaggerated influencer gestures.
+* Continuous, fluid human motion.
+
+### Camera
+
+* Vertical 9:16.
+* POV smartphone recording.
+* Chest-to-face height.
+* Very subtle handheld micro-movements.
+* No zoom.
+* No abrupt framing changes.
+* Natural indoor lighting.
+
+### Motion Quality
+
+* Ultra-realistic human movement.
+* Perfect body mechanics.
+* Natural hair physics.
+* Realistic fabric simulation.
+* No morphing.
+* No identity drift.
+* No frozen frames.
+* No repeated gestures.
+* No body deformation.
+* No extra fingers.
+
+### Identity Preservation
+
+Maintain the exact facial identity, hairstyle, skin texture, body proportions, and every clothing detail exactly as shown in the reference image throughout the entire video.
+
+### Restrictions
+
+* No captions.
+* No on-screen text.
+* No logos.
+* No UI elements.
+* No visual effects.
+* No beauty filters.
+* No skin smoothing.
+* No dancing.
+* No exaggerated poses.
+* No unrealistic gestures.
+
+### Audio
+
+* **No background music.**
+* **No sound effects.**
+* **Only the influencer's natural voice speaking in Brazilian Portuguese (pt-BR).**`
   }
 ];
 
@@ -1344,5 +1443,30 @@ export const GARIMPADOS: ProductItem[] = [
       'colocou esse óculos automáticamente você sobe de nível'
     ],
     hashtags: ['#mulheres', '#lookelegante', '#oculosfeminino', '#estilofeminino', '#acessorios', '#tiktokshop']
+  },
+  {
+    id: 'garimpo-4',
+    title: 'Conjunto Lilás Alfaiataria',
+    price: 'R$ 5,60',
+    status: 'Tendência do produto (últimos 7 dias )',
+    image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1000&auto=format&fit=crop',
+    video: 'https://drive.google.com/file/d/1-cmur1zUUQ0jDIL_COypojtWjrCd4EH-/preview',
+    link: 'https://vt.tiktok.com/ZS9rt7aAvFu1J-hKt4m/',
+    category: 'Conjuntos',
+    stats: {
+      orders: 25,
+      ctr: '5,9',
+      creators: 324,
+      cart: 244
+    },
+    commission: '5,60',
+    ticket: 'baixo',
+    style: 'ugc',
+    hooks: [
+      'esse conjunto lilás é a definição de elegância',
+      'finalmente achei um conjunto que veste bem e é barato',
+      'pode parar tudo e olhar o caimento desse conjunto'
+    ],
+    hashtags: ['#mulheres', '#lookelegante', '#lookdodia', '#estilofeminino', '#tiktokshop']
   }
 ];
