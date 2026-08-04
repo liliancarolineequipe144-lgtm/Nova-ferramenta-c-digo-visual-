@@ -74,6 +74,15 @@ const LESSONS = [
     thumbnail: 'https://images.unsplash.com/photo-1539109132381-31a1c97deeac?q=80&w=1000&auto=format&fit=crop',
     description: 'Aprenda a criar transições suaves e profissionais de troca de roupa para seus vídeos.',
     videoUrl: 'https://drive.google.com/file/d/1oXd6kU9l5sKNXoVQLHMDxbsY_vul3utC/preview'
+  },
+  {
+    id: 'lesson-tapete',
+    title: 'como fazer tapete de cozinha',
+    duration: '08:20',
+    category: 'Produção',
+    thumbnail: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda o passo a passo para criar vídeos de alta conversão para tapetes de cozinha usando IA.',
+    videoUrl: 'https://drive.google.com/file/d/1QnVmf98OirlB24vRtajXEtNiQ-GoJo3s/preview'
   }
 ];
 

@@ -1,5 +1,5 @@
 import { GARIMPADOS } from '../data';
-import { ShoppingBag, ExternalLink, Tag, Copy, Check, Trash2, Lock, X, Share2, Search } from 'lucide-react';
+import { ShoppingBag, ExternalLink, Tag, Copy, Check, Trash2, Lock, X, Share2, Search, Filter, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useMemo } from 'react';
 import { useToast } from '../hooks/useToast';
@@ -16,7 +16,12 @@ export default function ProductsTab() {
   const [error, setError] = useState(false);
   const { showToast } = useToast();
 
-  const categories = useMemo(() => ['Todos', ...new Set(products.map(p => p.category))], [products]);
+  const categories = useMemo(() => {
+    const cats = [...new Set(products.map(p => p.category))];
+    return ['Todos', ...cats.sort((a, b) => a.localeCompare(b))];
+  }, [products]);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const filteredProducts = useMemo(() => {
     return products.filter(p => {
@@ -139,24 +144,67 @@ export default function ProductsTab() {
                 className="w-full pl-14 pr-8 py-4 bg-white border border-slate-100 rounded-2xl text-sm font-semibold focus:outline-none focus:ring-4 focus:ring-emerald-50/50 focus:border-emerald-600/20 transition-all shadow-sm placeholder:text-slate-300"
               />
             </div>
-            {/* Category Tabs */}
-            <div className="flex items-center gap-1.5 p-1.5 bg-slate-50 border border-slate-100 rounded-2xl overflow-x-auto no-scrollbar">
-              {categories.map((cat) => {
-                const isActive = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
-                      isActive 
-                      ? 'bg-white text-slate-900 shadow-sm border border-slate-100' 
-                      : 'text-slate-400 hover:text-slate-600'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
+            {/* Category Dropdown */}
+            <div className="relative space-y-2">
+              <div className="flex items-center gap-2 px-1">
+                <Filter size={10} className="text-slate-400" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Filtrar Categoria</span>
+              </div>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center justify-between gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl text-sm font-black uppercase tracking-widest text-slate-900 shadow-sm hover:border-emerald-200 transition-all min-w-[220px]"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  {selectedCategory}
+                </span>
+                <motion.div
+                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown size={16} className="text-slate-400" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-40" 
+                      onClick={() => setIsDropdownOpen(false)} 
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      className="absolute right-0 mt-3 w-64 bg-white border border-slate-100 rounded-[24px] shadow-2xl z-50 overflow-hidden"
+                    >
+                      <div className="p-2 max-h-[320px] overflow-y-auto no-scrollbar">
+                        {categories.map((cat) => {
+                          const isActive = selectedCategory === cat;
+                          return (
+                            <button
+                              key={cat}
+                              onClick={() => {
+                                setSelectedCategory(cat);
+                                setIsDropdownOpen(false);
+                              }}
+                              className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                                isActive 
+                                ? 'bg-emerald-50 text-emerald-600' 
+                                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                              }`}
+                            >
+                              {cat}
+                              {isActive && <Check size={12} strokeWidth={3} />}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>

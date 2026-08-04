@@ -1847,6 +1847,73 @@ Single continuous shot. No cuts. No transitions. No zoom jumps. Natural handheld
 * No subtitles.
 * No on-screen text.
 * Silent video only.`
+  },
+  {
+    id: 'p-tapete-cozinha',
+    title: 'FLOW — UGC | COMERCIAL TAPETE COZINHA',
+    type: 'lifestyle',
+    category: 'Tapete',
+    videoUrl: 'https://drive.google.com/file/d/1_AyogAjgrOz7MS4CfDpPuJwuQinKN8VK/preview',
+    content: `## **VEO 3 Prompt (English) – Kitchen Mat Commercial**
+
+**Style:** Ultra-realistic | Natural | Humanized | No dialogue | No subtitles | No text | No audio
+
+### **IMPORTANT INSTRUCTIONS (DO NOT IGNORE)**
+
+* **DO NOT CHANGE THE PRODUCT IN ANY WAY.**
+* **The kitchen mats MUST be 100% identical to the reference image.**
+* Maintain the **exact same design, size, proportions, colors, border, print, texture, thickness, and overall appearance.**
+* **Do not redesign, simplify, replace, or reinterpret the mats.**
+* The influencer must be **natural, humanized, authentic, and expressive**, never looking like a mannequin or AI.
+* Smooth, realistic body language and facial expressions.
+* Bright modern kitchen with soft natural lighting.
+* **No speech.**
+* **No captions.**
+* **No text on screen.**
+* **No music.**
+* **No sound effects.**
+* Only realistic movements.
+
+---
+
+## **SCENE 1 – HOOK (Visual Hook)**
+
+The influencer enters carrying the rolled kitchen mat. She pretends it feels heavier than expected, smiles with curiosity, and quickly unrolls it on the floor in one smooth motion.
+
+**Visual Hook:** The mat unfolds dramatically across the kitchen floor.
+
+---
+
+## **SCENE 2 – CONTEXT**
+
+She kneels naturally and carefully aligns both mats in front of the sink, gently smoothing them with her hands while admiring how perfectly they fit the space.
+
+**Visual Hook:** Close-up of her hands adjusting the mats with attention to detail.
+
+---
+---
+
+## **SCENE 4 – SOLUTION**
+
+She steps onto the mats barefoot or with clean indoor shoes, smiling naturally. She shifts her weight comfortably while preparing something on the countertop, showing relaxation and comfort.
+
+**Visual Hook:** Gentle foot movement emphasizing comfort.
+
+---
+
+## **SCENE 5 – RESULT**
+
+She walks naturally across the kitchen, returns to the mats, looks satisfied, then gives a warm genuine smile toward the camera.
+
+**Visual Hook:** Comfortable natural movement while using the kitchen.
+
+---
+
+## **SCENE 6 – CTA**
+
+She walks toward the camera with a friendly smile, stops naturally, and **points both index fingers downward**, clearly indicating the purchase link below.
+
+**Visual Hook:** Downward pointing gesture held naturally for a moment before the video ends.`
   }
 ];
 
