@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Tab } from './types';
 import BottomNav from './components/BottomNav';
@@ -7,12 +7,31 @@ import PromptsTab from './components/PromptsTab';
 import ProductsTab from './components/ProductsTab';
 import FavoritesTab from './components/FavoritesTab';
 import VideoLessonsTab from './components/VideoLessonsTab';
+import Login from './components/Login';
 import { useFavorites } from './hooks/useFavorites';
 import { ToastProvider } from './hooks/useToast';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<Tab>('narratives');
   const { toggleFavorite, isFavorite } = useFavorites();
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-indigo-600/20 border-t-indigo-600 rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <Login onLogin={() => setIsAuthenticated(true)} />;
+  }
 
   return (
     <ToastProvider>
@@ -35,6 +54,14 @@ export default function App() {
               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Acesso Premium</span>
             </div>
+            <button 
+              onClick={() => {
+                setIsAuthenticated(false);
+              }}
+              className="text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-red-500 transition-colors"
+            >
+              Sair
+            </button>
           </div>
         </header>
 
