@@ -119,13 +119,13 @@ export default function ProductsTab() {
               Produtos selecionados com métricas validadas e alto potencial de viralização.
             </p>
           </div>
-          <div className="px-6 py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-3xl shadow-sm hidden lg:flex items-center gap-4">
-            <div className="p-2.5 bg-emerald-50 rounded-xl">
-              <ShoppingBag size={20} className="text-emerald-600" />
+          <div className="px-4 md:px-6 py-3 md:py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-2xl md:rounded-3xl shadow-sm flex items-center gap-3 md:gap-4">
+            <div className="p-2 md:p-2.5 bg-emerald-50 rounded-xl">
+              <ShoppingBag size={18} className="text-emerald-600 md:w-5 md:h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Garimpados</span>
-              <span className="text-2xl font-black text-slate-900 leading-none">{GARIMPADOS.length}</span>
+              <span className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Garimpados</span>
+              <span className="text-xl md:text-2xl font-black text-slate-900 leading-none">{GARIMPADOS.length}</span>
             </div>
           </div>
         </div>

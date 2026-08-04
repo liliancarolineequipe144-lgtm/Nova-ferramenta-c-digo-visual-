@@ -622,7 +622,7 @@ Still seated. She looks directly into the camera. Smiles naturally. Points downw
     title: 'Comando Narrativa Provador',
     type: 'sales',
     category: 'Universal',
-    content: `Faz uma narrativa de movimentos com esse produto com ganchos visuais na estrutura gancho-contexto- problema solução e cta, coloca em inglês que não pode alterar o produto e a influencer ser natural e humanizada sem fala , legenda , texto , só os movimentos na hora de gerar eu quero para veo 3.`
+    content: `Faz uma narrativa de movimentos em pov em texto escrito com esse produto com ganchos visuais na estrutura gancho-contexto-solução e cta, coloca em inglês que não pode alterar o produto e a influencer ser natural e humanizada sem fala , legenda , texto ,específica que quero sem nenhum áudio só os movimentos na hora de gerar eu quero para veo 3.1 lite`
   },
   {
     id: 'p-narrativa-cinematografica',
@@ -1921,41 +1921,47 @@ She walks toward the camera with a friendly smile, stops naturally, and **points
     type: 'lifestyle',
     category: 'Cortina',
     videoUrl: 'https://drive.google.com/file/d/1_u6if-lIz_TMLvt9Q6ErW5gSgB6j6G_3/preview',
-    content: `## **Veo 3 Prompt (Optimized) – Curtain Commercial**
+    content: `## **Veo 3.1 Lite Prompt – POV Curtain Narrative (Silent UGC)**
 
-**Style:** Ultra-realistic TikTok Shop commercial | 9:16 vertical | 8 seconds
+**Style:** Ultra-realistic POV | 9:16 Vertical | 8 Seconds | No Audio | No Text
 
-### **IMPORTANT INSTRUCTIONS**
-**Use the uploaded reference image as the ONLY visual reference. The influencer MUST be exactly the same person from the reference image. The curtain MUST remain exactly identical in color, fabric, texture, folds, dimensions, installation, lighting, and position. Do NOT modify, replace, redesign, or reinterpret the influencer, curtain, room, furniture, camera angle, composition, or clothing. Only animate natural human movements.**
-
----
-
-### **Scene 1 (0.0–2.0s) – Visual Hook**
-The influencer quickly slides one side of the curtain closed with one smooth motion. As soon as it closes, the room becomes noticeably darker, creating an immediate "wow" effect. She looks surprised and smiles naturally.
-
-**Speech (Brazilian Portuguese):**
-*"Olha isso... a diferença é absurda!"*
+### **CORE MANDATES**
+* **DO NOT ALTER THE PRODUCT:** The curtain must remain 100% identical to the reference image (color, fabric, texture, folds).
+* **IDENTITY CONSISTENCY:** The influencer must be natural, humanized, and identical to the reference.
+* **SILENT EXECUTION:** No speech, no dialogue, no subtitles, no captions, no on-screen text.
+* **ABSOLUTELY NO AUDIO:** The output must be completely silent.
 
 ---
 
-### **Scene 2 (2.0–5.5s) – Context + Solution**
-She gently opens the curtain halfway to reveal the beautiful voile layer, then lightly runs her hand over the fabric, showing its elegant texture. She nods with approval while looking back at the camera.
-
-**Speech (Brazilian Portuguese):**
-*"Uma cortina que bloqueia a luz e ainda deixa sua casa muito mais elegante."*
+### **SCENE 1 – THE HOOK (POV Visual Surprise)**
+**Action:** Handheld POV. The camera (viewer's eyes) is positioned close to the curtain. A hand enters the frame naturally and quickly pulls the blackout curtain shut. 
+**Visual Result:** The room transitions instantly from bright daylight to a deep, comfortable shadow. The influencer is seen in the frame reacting with a genuine, silent "wow" expression and a satisfied smile.
 
 ---
 
-### **Scene 3 (5.5–8.0s) – CTA**
-She takes two natural steps toward the camera, smiles confidently, extends her arm, and points her index finger downward, clearly indicating the purchase link below while maintaining eye contact with the viewer.
-
-**Speech (Brazilian Portuguese):**
-*"Já deixei o link aqui embaixo. Aproveita!"*
+### **SCENE 2 – CONTEXT (The Elegant Detail)**
+**Action:** POV moves closer to the fabric. The influencer’s hand gently slides across the delicate voile layer underneath. 
+**Visual Result:** Focus on the rich texture and high-quality finish of the fabric. The movement is slow and appreciative, highlighting the "Context" of premium quality.
 
 ---
 
-### **Technical Instructions**
-Ultra-realistic cinematic quality, realistic fabric physics, natural facial expressions, realistic skin texture, smooth body motion, perfect lip sync in Brazilian Portuguese, soft daylight, highly detailed, trending TikTok Shop ad style, no captions, no subtitles, no text on screen, no logos, no camera shake, no morphing, no wardrobe changes, no scene transitions that alter the reference image, and **absolutely no changes to the influencer or the curtain—only realistic movements.**`
+### **SCENE 3 – SOLUTION (The Result)**
+**Action:** POV pulls back slightly. The influencer is seen standing comfortably in the perfectly shaded room, looking relaxed. She gives a thumbs up or a simple, approving nod toward the camera, demonstrating the "Solution" of a perfect blackout environment.
+
+---
+
+### **SCENE 4 – CTA (Direct Action)**
+**Action:** The influencer walks closer to the camera with a friendly, inviting smile. She stops naturally and **points her index finger directly downward**, clearly indicating the link below.
+**Visual Result:** The gesture is held for a moment to ensure clarity.
+
+---
+
+### **TECHNICAL REQUIREMENTS (VEO 3.1 LITE)**
+* **Cinematic Realism:** High-fidelity skin textures, natural hair movement, and realistic fabric physics.
+* **Lighting:** Soft, natural daylight transitioning to a realistic indoor shadow.
+* **Motion:** Fluid, organic human movements without robotic stiffness or morphing.
+* **No Post-Production:** No logos, no watermarks, no overlay text.
+* **Consistency:** Zero changes to the influencer’s appearance or product details throughout the 8 seconds.`
   }
 ];
 

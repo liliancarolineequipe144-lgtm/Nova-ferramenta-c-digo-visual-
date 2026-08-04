@@ -1,6 +1,7 @@
-import { Brain, PlayCircle, Copy, Check, Target, Zap, MessageCircle, Heart, Search } from 'lucide-react';
+import { Brain, PlayCircle, Copy, Check, Target, Zap, MessageCircle, Heart, Search, ChevronDown, Filter, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { NARRATIVES } from '../data';
+import { NARRATIVES, VIDEO_PROMPTS, GARIMPADOS } from '../data';
+import { LESSONS } from './VideoLessonsTab';
 import { useState, useMemo } from 'react';
 import { useToast } from '../hooks/useToast';
 
@@ -13,9 +14,12 @@ interface NarrativesTabProps {
 
 export default function NarrativesTab({ toggleFavorite, isFavorite }: NarrativesTabProps) {
   const [activeCategory, setActiveCategory] = useState<NarrativeCategory>('gancho');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const { showToast } = useToast();
+
+  const totalMaterials = VIDEO_PROMPTS.length + NARRATIVES.length + GARIMPADOS.length + LESSONS.length;
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
@@ -30,6 +34,10 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
     { id: 'solucao', label: 'Solução', icon: Target, color: 'text-emerald-600', bg: 'bg-emerald-50', accent: 'bg-emerald-600' },
     { id: 'cta', label: 'CTA', icon: MessageCircle, color: 'text-blue-600', bg: 'bg-blue-50', accent: 'bg-blue-600' },
   ] as const;
+
+  const sortedCategories = useMemo(() => {
+    return [...categories].sort((a, b) => a.label.localeCompare(b.label));
+  }, []);
 
   const filteredItems = useMemo(() => {
     return NARRATIVES.filter(item => {
@@ -53,24 +61,20 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
-              Narrativas de <br className="hidden md:block" /> <span className="text-gradient-indigo">Alta Conversão</span>
+              Narrativas de <br className="hidden md:block" /> <span className="text-indigo-600">Alta Conversão</span>
             </h2>
             <p className="text-slate-500 text-base md:text-lg max-w-lg font-medium leading-relaxed">
               Estruturas validadas para transformar visualizações em desejo de compra imediata.
             </p>
           </div>
-          <div className="hidden lg:flex flex-col items-end gap-3">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-100 shadow-sm overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="w-full h-full object-cover grayscale opacity-80" />
-                </div>
-              ))}
-              <div className="w-10 h-10 rounded-full border-2 border-white bg-indigo-600 flex items-center justify-center text-[10px] font-black text-white shadow-sm">
-                +2k
-              </div>
+          <div className="px-4 md:px-6 py-3 md:py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-2xl md:rounded-3xl shadow-sm flex items-center gap-3 md:gap-4">
+            <div className="p-2 md:p-2.5 bg-indigo-50 rounded-xl">
+              <Layers size={18} className="text-indigo-600 md:w-5 md:h-5" />
             </div>
-            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">Criadores Ativos</span>
+            <div className="flex flex-col">
+              <span className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Total de Materiais</span>
+              <span className="text-xl md:text-2xl font-black text-slate-900 leading-none">{totalMaterials}</span>
+            </div>
           </div>
         </div>
 
@@ -88,25 +92,72 @@ export default function NarrativesTab({ toggleFavorite, isFavorite }: Narratives
                 className="w-full pl-14 pr-8 py-4 bg-white border border-slate-100 rounded-2xl text-sm font-semibold focus:outline-none focus:ring-4 focus:ring-indigo-50/50 focus:border-indigo-600/20 transition-all shadow-sm placeholder:text-slate-300"
               />
             </div>
-            {/* Category Tabs */}
-            <div className="flex items-center gap-1.5 p-1.5 bg-slate-50 border border-slate-100 rounded-2xl overflow-x-auto no-scrollbar">
-              {categories.map((cat) => {
-                const isActive = activeCategory === cat.id;
-                return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
-                      isActive 
-                      ? 'bg-white text-slate-900 shadow-sm border border-slate-100' 
-                      : 'text-slate-400 hover:text-slate-600'
-                    }`}
-                  >
-                    <cat.icon size={14} className={isActive ? cat.color : 'opacity-50'} />
-                    {cat.label}
-                  </button>
-                );
-              })}
+            
+            {/* Category Dropdown */}
+            <div className="relative space-y-2">
+              <div className="flex items-center gap-2 px-1">
+                <Filter size={10} className="text-slate-400" />
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Filtrar Etapa</span>
+              </div>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center justify-between gap-3 px-6 py-4 bg-white border border-slate-100 rounded-2xl text-sm font-black uppercase tracking-widest text-slate-900 shadow-sm hover:border-indigo-200 transition-all min-w-[220px]"
+              >
+                <span className="flex items-center gap-2">
+                  <span className={`w-1.5 h-1.5 rounded-full ${categories.find(c => c.id === activeCategory)?.accent || 'bg-indigo-500'}`} />
+                  {categories.find(c => c.id === activeCategory)?.label}
+                </span>
+                <motion.div
+                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown size={16} className="text-slate-400" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-40" 
+                      onClick={() => setIsDropdownOpen(false)} 
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      className="absolute right-0 mt-3 w-64 bg-white border border-slate-100 rounded-[24px] shadow-2xl z-50 overflow-hidden"
+                    >
+                      <div className="p-2 max-h-[320px] overflow-y-auto no-scrollbar">
+                        {sortedCategories.map((cat) => {
+                          const isActive = activeCategory === cat.id;
+                          const Icon = cat.icon;
+                          return (
+                            <button
+                              key={cat.id}
+                              onClick={() => {
+                                setActiveCategory(cat.id);
+                                setIsDropdownOpen(false);
+                              }}
+                              className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                                isActive 
+                                ? 'bg-indigo-50 text-indigo-600' 
+                                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <Icon size={14} className={isActive ? cat.color : 'opacity-50'} />
+                                {cat.label}
+                              </div>
+                              {isActive && <Check size={12} strokeWidth={3} />}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { PlayCircle, Sparkles, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 
-const LESSONS = [
+export const LESSONS = [
   {
     id: 'lesson-master',
     title: 'Seja bem vindos',
@@ -108,13 +108,13 @@ export default function VideoLessonsTab() {
               Domine as ferramentas de IA e técnicas de produção que estão dominando o mercado digital.
             </p>
           </div>
-          <div className="px-6 py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-3xl shadow-sm hidden lg:flex items-center gap-4">
-            <div className="p-2.5 bg-amber-50 rounded-xl">
-              <PlayCircle size={20} className="text-amber-600" />
+          <div className="px-4 md:px-6 py-3 md:py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-2xl md:rounded-3xl shadow-sm flex items-center gap-3 md:gap-4">
+            <div className="p-2 md:p-2.5 bg-amber-50 rounded-xl">
+              <PlayCircle size={18} className="text-amber-600 md:w-5 md:h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Aulas</span>
-              <span className="text-2xl font-black text-slate-900 leading-none">{LESSONS.length}</span>
+              <span className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Aulas</span>
+              <span className="text-xl md:text-2xl font-black text-slate-900 leading-none">{LESSONS.length}</span>
             </div>
           </div>
         </div>

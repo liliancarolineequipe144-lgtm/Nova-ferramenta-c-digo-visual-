@@ -1,9 +1,10 @@
-import { VIDEO_PROMPTS } from '../data';
-import { Sparkles, Copy, Check, Heart, Globe, Search, ChevronDown, Filter } from 'lucide-react';
+import { VIDEO_PROMPTS, NARRATIVES, GARIMPADOS } from '../data';
+import { Sparkles, Copy, Check, Heart, Globe, Search, ChevronDown, Filter, Layers } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
 import { useToast } from '../hooks/useToast';
+import { LESSONS } from './VideoLessonsTab';
 
 interface PromptsTabProps {
   toggleFavorite: (id: string) => void;
@@ -29,6 +30,7 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
   }, []);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const totalMaterials = VIDEO_PROMPTS.length + NARRATIVES.length + GARIMPADOS.length + LESSONS.length;
 
   const categoryConfig = {
     'Universal': { icon: Globe, color: 'text-emerald-600', bg: 'bg-emerald-50/50', accent: 'bg-emerald-600' },
@@ -71,13 +73,24 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
               Prompts otimizados para gerar imagens e vídeos ultra-realistas que prendem a atenção.
             </p>
           </div>
-          <div className="px-6 py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-3xl shadow-sm hidden lg:flex items-center gap-4">
-            <div className="p-2.5 bg-amber-50 rounded-xl">
-              <Sparkles size={20} className="text-amber-600" />
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-2xl md:rounded-3xl shadow-sm flex items-center gap-3 md:gap-4">
+              <div className="p-2 md:p-2.5 bg-amber-50 rounded-xl">
+                <Sparkles size={18} className="text-amber-600 md:w-5 md:h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Prompts</span>
+                <span className="text-xl md:text-2xl font-black text-slate-900 leading-none">{VIDEO_PROMPTS.length}</span>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Modelos</span>
-              <span className="text-2xl font-black text-slate-900 leading-none">{VIDEO_PROMPTS.length}</span>
+            <div className="px-4 md:px-6 py-3 md:py-4 bg-white/40 backdrop-blur-md border border-slate-200/40 rounded-2xl md:rounded-3xl shadow-sm flex items-center gap-3 md:gap-4">
+              <div className="p-2 md:p-2.5 bg-indigo-50 rounded-xl">
+                <Layers size={18} className="text-indigo-600 md:w-5 md:h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Total Geral</span>
+                <span className="text-xl md:text-2xl font-black text-slate-900 leading-none">{totalMaterials}</span>
+              </div>
             </div>
           </div>
         </div>
