@@ -1914,6 +1914,48 @@ She walks naturally across the kitchen, returns to the mats, looks satisfied, th
 She walks toward the camera with a friendly smile, stops naturally, and **points both index fingers downward**, clearly indicating the purchase link below.
 
 **Visual Hook:** Downward pointing gesture held naturally for a moment before the video ends.`
+  },
+  {
+    id: 'p-cortina-premium',
+    title: 'FLOW — UGC | COMERCIAL CORTINA BLACKOUT',
+    type: 'lifestyle',
+    category: 'Cortina',
+    videoUrl: 'https://drive.google.com/file/d/1_u6if-lIz_TMLvt9Q6ErW5gSgB6j6G_3/preview',
+    content: `## **Veo 3 Prompt (Optimized) – Curtain Commercial**
+
+**Style:** Ultra-realistic TikTok Shop commercial | 9:16 vertical | 8 seconds
+
+### **IMPORTANT INSTRUCTIONS**
+**Use the uploaded reference image as the ONLY visual reference. The influencer MUST be exactly the same person from the reference image. The curtain MUST remain exactly identical in color, fabric, texture, folds, dimensions, installation, lighting, and position. Do NOT modify, replace, redesign, or reinterpret the influencer, curtain, room, furniture, camera angle, composition, or clothing. Only animate natural human movements.**
+
+---
+
+### **Scene 1 (0.0–2.0s) – Visual Hook**
+The influencer quickly slides one side of the curtain closed with one smooth motion. As soon as it closes, the room becomes noticeably darker, creating an immediate "wow" effect. She looks surprised and smiles naturally.
+
+**Speech (Brazilian Portuguese):**
+*"Olha isso... a diferença é absurda!"*
+
+---
+
+### **Scene 2 (2.0–5.5s) – Context + Solution**
+She gently opens the curtain halfway to reveal the beautiful voile layer, then lightly runs her hand over the fabric, showing its elegant texture. She nods with approval while looking back at the camera.
+
+**Speech (Brazilian Portuguese):**
+*"Uma cortina que bloqueia a luz e ainda deixa sua casa muito mais elegante."*
+
+---
+
+### **Scene 3 (5.5–8.0s) – CTA**
+She takes two natural steps toward the camera, smiles confidently, extends her arm, and points her index finger downward, clearly indicating the purchase link below while maintaining eye contact with the viewer.
+
+**Speech (Brazilian Portuguese):**
+*"Já deixei o link aqui embaixo. Aproveita!"*
+
+---
+
+### **Technical Instructions**
+Ultra-realistic cinematic quality, realistic fabric physics, natural facial expressions, realistic skin texture, smooth body motion, perfect lip sync in Brazilian Portuguese, soft daylight, highly detailed, trending TikTok Shop ad style, no captions, no subtitles, no text on screen, no logos, no camera shake, no morphing, no wardrobe changes, no scene transitions that alter the reference image, and **absolutely no changes to the influencer or the curtain—only realistic movements.**`
   }
 ];
 
