@@ -2011,6 +2011,125 @@ NO CAPTIONS.
 NO TEXT.
 NO WRITTEN WORDS.
 ONLY VISUAL ACTIONS AND NATURAL BODY MOVEMENTS.`
+  },
+  {
+    id: 'p-curtain-rod',
+    title: 'FLOW — UGC | COMERCIAL CORTINA',
+    type: 'lifestyle',
+    category: 'Cortina',
+    videoUrl: 'https://drive.google.com/file/d/1kRQp9WXopFYlUGjhbA8EE9LrqPD5e4H7/preview',
+    content: `### VEO 3 — ULTRA-REALISTIC UGC PRODUCT VIDEO — MOVEMENTS ONLY
+
+Create a short, ultra-realistic UGC-style product video using the **exact product shown in the reference image**.
+
+The female influencer must look **natural, humanized, authentic, and spontaneous**, with realistic body movements and natural facial expressions. She must interact with the product naturally, as if she were demonstrating it in her own home.
+
+### IMPORTANT — PRODUCT PRESERVATION:
+
+**Do not alter, redesign, replace, distort, or change the product in any way.**
+The product must remain **exactly identical to the reference image**, preserving its original shape, color, texture, material, size, and all visible details.
+
+### AUDIO AND TEXT RESTRICTIONS:
+
+* **NO SPEECH**
+* **NO VOICEOVER**
+* **NO AUDIO**
+* **NO MUSIC**
+* **NO SOUND EFFECTS**
+* **NO TEXT ON SCREEN**
+* **NO SUBTITLES**
+* **NO CAPTIONS**
+* **NO WRITTEN WORDS**
+
+The video must communicate the entire story **only through natural movements, gestures, facial expressions, and visual actions**.
+
+### NARRATIVE — HOOK → CONTEXT → PROBLEM → SOLUTION → CTA
+
+**HOOK:**
+The influencer naturally grabs the curtain rod and looks at it with a subtle, confident expression, immediately drawing attention to the product. She holds it naturally with both hands and briefly shows it toward the camera.
+
+**CONTEXT:**
+She walks naturally toward the window while holding the curtain rod. She begins positioning it carefully above the window, demonstrating how practical and easy it is to use.
+
+**PROBLEM:**
+She briefly looks at the window and gestures naturally as if showing that the space needs a curtain and better finishing. Her expression subtly communicates that the window is incomplete without the curtain.
+
+**SOLUTION:**
+She takes the curtain and naturally places the curtain rings/grommets onto the rod, one by one, with realistic hand movements. She then adjusts the curtain carefully, slides it along the rod, and arranges the fabric naturally so it hangs beautifully and evenly. She gently smooths and organizes the curtain with her hands, creating a realistic before-and-after transformation.
+
+**CTA:**
+At the end, she stands naturally in front of the finished curtain, smiles at the camera, and makes a clear but natural **downward-pointing gesture with one hand**, indicating where the product link would be located. **Do not show any text, captions, subtitles, or visual link.** The CTA must be communicated **only through her gesture**.
+
+### FINAL VISUAL STYLE:
+
+The entire video should feel like a **real, authentic UGC product demonstration**, with natural human movements, realistic hand interactions, subtle facial expressions, smooth transitions, and believable physical interaction with the curtain and curtain rod.
+
+**ONLY MOVEMENTS. NO SPEECH. NO AUDIO. NO TEXT. NO CAPTIONS. NO SUBTITLES.**`
+  },
+  {
+    id: 'p-curtain-colors',
+    title: 'FLOW — UGC | TROCA DE CORES CORTINA',
+    type: 'lifestyle',
+    category: 'Cortina',
+    videoUrl: 'https://drive.google.com/file/d/1Pv-D9CqxYwx4AIERL_1JHFChhyDcfF5Q/preview',
+    content: `**VEO 3 Prompt (English)**
+
+Use the uploaded reference image as the **only reference** for the curtain and the influencer.
+
+**Do not change the influencer in any way.** Keep the exact same face, body, hairstyle, makeup, clothing, accessories, pose style, room, lighting, camera angle, framing, window, and background throughout the entire video.
+
+**Do not change the curtain model.** Keep the exact same fabric, texture, stitching, pleats, transparency, dimensions, fullness, folds, header, drape, and position. **Only the curtain color changes.** The color transformation must affect **100% of the curtain**, from top to bottom and edge to edge. No partial color changes, gradients, mixed colors, or untransformed sections.
+
+### Scene 1
+
+The curtain is **pink**. The influencer gently slides her hand across the curtain, smiles naturally, then snaps her fingers.
+
+### Transition 1
+
+At the exact moment of the finger snap, the **entire curtain instantly changes** from **pink to beige**. The complete curtain changes color simultaneously while preserving the exact same model, folds, and fabric.
+
+### Scene 2
+
+The influencer lightly opens and closes the beige curtain to show its movement, then snaps her fingers again.
+
+### Transition 2
+
+The **entire curtain instantly changes** from **beige to white**. Nothing else changes.
+
+### Scene 3
+
+The influencer gently smooths the white curtain with one hand, then snaps her fingers.
+
+### Transition 3
+
+The **entire curtain instantly changes** from **white to black**. The curtain remains identical in every detail except color.
+
+### Scene 4
+
+The influencer softly adjusts the black curtain, then snaps her fingers one final time.
+
+### Transition 4
+
+The **entire curtain instantly changes** from **black to gray**. The transformation covers the complete curtain from top to bottom without affecting the wall, window, room, or influencer.
+
+### Ending
+
+The influencer walks one step toward the camera, smiles naturally, and **points downward with her index finger** to indicate the purchase link. Hold the pointing pose for the final second.
+
+### Requirements
+
+* Ultra-realistic.
+* Smooth, natural movements.
+* Perfect finger-snap synchronized color transitions.
+* The curtain color change must be **instant** and affect the **entire curtain at once**.
+* No morphing, stretching, flickering, deformation, ghosting, or warping.
+* Do not alter the curtain design or dimensions.
+* Keep the same influencer, clothing, lighting, room, camera angle, and framing throughout.
+* **No dialogue.**
+* **No subtitles.**
+* **No captions.**
+* **No text on screen.**
+* **No logos or watermarks.**`
   }
 ];
 
