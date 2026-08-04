@@ -1962,6 +1962,55 @@ She walks toward the camera with a friendly smile, stops naturally, and **points
 * **Motion:** Fluid, organic human movements without robotic stiffness or morphing.
 * **No Post-Production:** No logos, no watermarks, no overlay text.
 * **Consistency:** Zero changes to the influencer’s appearance or product details throughout the 8 seconds.`
+  },
+  {
+    id: 'p-airfryer-liners',
+    title: 'FLOW — UGC | COMERCIAL PROTETOR AIR FRYER',
+    type: 'lifestyle',
+    category: 'Cozinha',
+    videoUrl: 'https://drive.google.com/file/d/1OnCI6FiwEueBi9Cddp0kcWQ_7N4xVG5w/preview',
+    content: `Create an 8-second vertical product demonstration video using the exact product shown in the reference image. DO NOT ALTER, MODIFY, REPLACE, REDESIGN, OR CHANGE THE PRODUCT IN ANY WAY. The silicone air fryer liners must remain exactly as shown in the reference image, preserving their original shape, size variations, color, texture, fluted edges, and realistic appearance.
+
+The influencer should look natural, humanized, friendly, and realistic, with authentic facial expressions and smooth natural body movements. She must behave like a real person demonstrating a product in a modern home kitchen. No exaggerated acting or artificial movements.
+
+IMPORTANT: THE TOTAL VIDEO DURATION MUST BE EXACTLY 8 SECONDS.
+
+IMPORTANT: NO AUDIO OF ANY KIND. NO VOICEOVER, NO SPEECH, NO DIALOGUE, NO MUSIC, NO SOUND EFFECTS, NO AMBIENT SOUND, NO BACKGROUND NOISE. THE VIDEO MUST BE COMPLETELY SILENT.
+
+The video must contain ONLY natural visual movements, with NO subtitles, NO captions, NO written text, NO on-screen text, NO logos, NO graphics, and NO additional visual elements.
+
+SCENE 1 — HOOK (0–1.5 seconds):
+The influencer stands naturally beside the black air fryer on the kitchen counter. She quickly looks at the camera with a curious, friendly expression and gestures toward the air fryer, creating immediate visual interest. She then reaches naturally for the air fryer handle.
+
+SCENE 2 — CONTEXT (1.5–3 seconds):
+She opens the air fryer drawer smoothly and naturally. The camera briefly moves closer to reveal the silicone liner inside the air fryer with food being cooked inside it. The product must remain exactly identical to the reference image.
+
+SCENE 3 — SOLUTION / PRODUCT FUNCTIONALITY (3–5.5 seconds):
+The influencer carefully removes the silicone liner from inside the air fryer and holds it toward the camera. She gently flexes or bends the silicone liner with both hands to visually demonstrate its flexible and practical functionality. The movement should clearly show that the liner is reusable, flexible, and easy to handle, without using any text or spoken explanation.
+
+SCENE 4 — CTA (5.5–8 seconds):
+She places the complete set of silicone liners, with all the different sizes clearly visible, neatly arranged on the kitchen counter in front of her. She smiles naturally at the camera, blows a friendly kiss toward the viewer, and immediately points downward with one hand, clearly indicating the link or shopping button below the video. End with her finger pointing downward and a natural, inviting smile.
+
+CAMERA STYLE:
+Ultra-realistic social media product advertisement. Natural handheld camera movement with subtle smooth motion. Realistic lighting, realistic skin texture, natural facial expressions, authentic human gestures, modern cozy kitchen environment. Use close-up shots when showing the silicone liner functionality and product details. Maintain visual continuity throughout the entire 8-second video.
+
+STRICT PRODUCT CONSISTENCY:
+The product must remain 100% identical to the reference image throughout the entire video. Do not change the product's design, color, shape, proportions, texture, size, or number of pieces. Do not generate a different product. Do not add or remove product pieces. The final set displayed on the counter must accurately represent the silicone liners shown in the reference image.
+
+FINAL REQUIREMENT:
+EXACTLY 8 SECONDS TOTAL.
+COMPLETELY SILENT.
+NO AUDIO.
+NO VOICE.
+NO SPEECH.
+NO MUSIC.
+NO SOUND EFFECTS.
+NO AMBIENT SOUND.
+NO SUBTITLES.
+NO CAPTIONS.
+NO TEXT.
+NO WRITTEN WORDS.
+ONLY VISUAL ACTIONS AND NATURAL BODY MOVEMENTS.`
   }
 ];
 

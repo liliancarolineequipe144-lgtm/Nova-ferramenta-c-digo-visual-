@@ -43,6 +43,7 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
     'Bolsas': { icon: Sparkles, color: 'text-amber-600', bg: 'bg-amber-50/50', accent: 'bg-amber-600' },
     'Moda': { icon: Globe, color: 'text-blue-600', bg: 'bg-blue-50/50', accent: 'bg-blue-600' },
     'Roupas de Cama': { icon: Sparkles, color: 'text-emerald-600', bg: 'bg-emerald-50/50', accent: 'bg-emerald-600' },
+    'Cozinha': { icon: Sparkles, color: 'text-orange-600', bg: 'bg-orange-50/50', accent: 'bg-orange-600' },
   } as const;
 
   const filteredPrompts = useMemo(() => {
