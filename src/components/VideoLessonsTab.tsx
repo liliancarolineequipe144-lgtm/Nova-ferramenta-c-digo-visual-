@@ -83,6 +83,15 @@ export const LESSONS = [
     thumbnail: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
     description: 'Aprenda o passo a passo para criar vídeos de alta conversão para tapetes de cozinha usando IA.',
     videoUrl: 'https://drive.google.com/file/d/1QnVmf98OirlB24vRtajXEtNiQ-GoJo3s/preview'
+  },
+  {
+    id: 'lesson-extra-1',
+    title: 'Como fazer a cortina',
+    duration: '07:40',
+    category: 'Produção',
+    thumbnail: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda novas técnicas de criação de conteúdo com IA para potencializar seus resultados.',
+    videoUrl: 'https://drive.google.com/file/d/1ftUQWOG93j6VKth9vvXFfRcxU2sptQF9/preview'
   }
 ];
 
