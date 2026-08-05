@@ -10,4 +10,5 @@ export const AUTHORIZED_NUMBERS = [
   '9291707791', // geiciele
   '24981482480', // Geisa oliveira
   '6692421943',
+  '3784139473', // achadinhos
 ];
