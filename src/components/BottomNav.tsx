@@ -1,4 +1,4 @@
-import { Anchor, MessageSquare, ShoppingBag, Brain, Heart, PlayCircle } from 'lucide-react';
+import { LayoutDashboard, MessageSquare, ShoppingBag, Brain, Heart, PlayCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Tab } from '../types';
 import { useFavorites } from '../hooks/useFavorites';
@@ -12,6 +12,7 @@ export default function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
   const { favorites } = useFavorites();
   
   const tabs = [
+    { id: 'dashboard', label: 'Painel', icon: LayoutDashboard },
     { id: 'narratives', label: 'Narrativas', icon: Brain },
     { id: 'prompts', label: 'Prompts', icon: MessageSquare },
     { id: 'products', label: 'Produtos', icon: ShoppingBag },

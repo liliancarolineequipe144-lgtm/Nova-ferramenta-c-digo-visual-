@@ -4,7 +4,7 @@ import { Lock, Smartphone, ChevronRight, AlertCircle } from 'lucide-react';
 import { AUTHORIZED_NUMBERS } from '../auth';
 
 interface LoginProps {
-  onLogin: () => void;
+  onLogin: (phone: string) => void;
 }
 
 export default function Login({ onLogin }: LoginProps) {
@@ -21,7 +21,7 @@ export default function Login({ onLogin }: LoginProps) {
     setTimeout(() => {
       const cleanPhone = phone.replace(/\D/g, '');
       if (AUTHORIZED_NUMBERS.includes(cleanPhone)) {
-        onLogin();
+        onLogin(cleanPhone);
       } else {
         setError(true);
         setIsSubmitting(false);

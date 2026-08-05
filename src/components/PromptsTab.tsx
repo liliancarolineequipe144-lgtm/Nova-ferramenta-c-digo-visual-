@@ -1,10 +1,9 @@
-import { VIDEO_PROMPTS, NARRATIVES, GARIMPADOS } from '../data';
+import { VIDEO_PROMPTS, NARRATIVES, GARIMPADOS, LESSONS } from '../data';
 import { Sparkles, Copy, Check, Heart, Globe, Search, ChevronDown, Filter, Layers } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
 import { useToast } from '../hooks/useToast';
-import { LESSONS } from './VideoLessonsTab';
 
 interface PromptsTabProps {
   toggleFavorite: (id: string) => void;

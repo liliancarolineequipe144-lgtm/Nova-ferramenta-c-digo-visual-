@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Tab } from './types';
 import BottomNav from './components/BottomNav';
+import DashboardTab from './components/DashboardTab';
 import NarrativesTab from './components/NarrativesTab';
 import PromptsTab from './components/PromptsTab';
 import ProductsTab from './components/ProductsTab';
@@ -10,14 +11,21 @@ import VideoLessonsTab from './components/VideoLessonsTab';
 import Login from './components/Login';
 import { useFavorites } from './hooks/useFavorites';
 import { ToastProvider } from './hooks/useToast';
+import { AUTHORIZED_NUMBERS, AUTHORIZED_USERS } from './auth';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<Tab>('narratives');
+  const [userName, setUserName] = useState('');
+  const [activeTab, setActiveTab] = useState<Tab>('dashboard');
   const { toggleFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
+    const savedAuth = localStorage.getItem('auth_user');
+    if (savedAuth && AUTHORIZED_NUMBERS.includes(savedAuth)) {
+      setIsAuthenticated(true);
+      setUserName(AUTHORIZED_USERS[savedAuth] || 'Criativo');
+    }
     setIsLoading(false);
   }, []);
 
@@ -30,7 +38,11 @@ export default function App() {
   }
 
   if (!isAuthenticated) {
-    return <Login onLogin={() => setIsAuthenticated(true)} />;
+    return <Login onLogin={(phone) => {
+      localStorage.setItem('auth_user', phone);
+      setIsAuthenticated(true);
+      setUserName(AUTHORIZED_USERS[phone] || 'Criativo');
+    }} />;
   }
 
   return (
@@ -57,6 +69,7 @@ export default function App() {
             <button 
               onClick={() => {
                 setIsAuthenticated(false);
+                localStorage.removeItem('auth_user');
               }}
               className="text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-red-500 transition-colors"
             >
@@ -81,6 +94,7 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             >
+              {activeTab === 'dashboard' && <DashboardTab setActiveTab={setActiveTab} userName={userName} />}
               {activeTab === 'narratives' && <NarrativesTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
               {activeTab === 'prompts' && <PromptsTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
               {activeTab === 'products' && <ProductsTab />}

@@ -1,4 +1,14 @@
-export type Tab = 'narratives' | 'prompts' | 'products' | 'favorites' | 'video-lessons';
+export type Tab = 'dashboard' | 'narratives' | 'prompts' | 'products' | 'favorites' | 'video-lessons';
+
+export interface LessonItem {
+  id: string;
+  title: string;
+  duration: string;
+  category: string;
+  thumbnail: string;
+  description: string;
+  videoUrl?: string;
+}
 
 export interface PromptItem {
   id: string;

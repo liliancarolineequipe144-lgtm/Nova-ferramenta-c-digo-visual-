@@ -1,7 +1,6 @@
 import { Brain, PlayCircle, Copy, Check, Target, Zap, MessageCircle, Heart, Search, ChevronDown, Filter, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { NARRATIVES, VIDEO_PROMPTS, GARIMPADOS } from '../data';
-import { LESSONS } from './VideoLessonsTab';
+import { NARRATIVES, VIDEO_PROMPTS, GARIMPADOS, LESSONS } from '../data';
 import { useState, useMemo } from 'react';
 import { useToast } from '../hooks/useToast';
 
