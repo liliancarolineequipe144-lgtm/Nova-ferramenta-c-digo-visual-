@@ -2130,6 +2130,14 @@ The influencer walks one step toward the camera, smiles naturally, and **points 
 * **No captions.**
 * **No text on screen.**
 * **No logos or watermarks.**`
+  },
+  {
+    id: 'p-glasses-car',
+    title: 'Óculos de Sol | Luxo no Carro',
+    type: 'lifestyle',
+    category: 'Óculos',
+    videoUrl: 'https://drive.google.com/file/d/1yNDDTSbG5WqepSW4Y9Qa8r93oI75TM_6/preview',
+    content: `> 9:16 mobile format, POV shot. A feminine medium-brown (morena) hand with realistic skin texture and elegant nude almond-shaped nails picks up **the exact same rimless rectangular sunglasses shown in the reference image**, preserving every detail: frameless rectangular lenses, gold metal hardware, black temples, identical proportions, lens tint, and design. **Do not change the sunglasses in any way.** The camera stays at eye level as the glasses are lifted from an aesthetic wooden car dashboard, revealing the lens tint against a bright sunny beach highway in the background. Natural summer daylight, ultra-realistic, luxury lifestyle, trending TikTok UGC style, smooth handheld movement. **At the end of the shot, the woman lowers the sunglasses slightly and extends her index finger, pointing downward toward the bottom center of the screen, clearly indicating where the product link/button appears.** High realism, cinematic lighting, premium smartphone commercial look.`
   }
 ];
 

@@ -92,6 +92,15 @@ export const LESSONS = [
     thumbnail: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1000&auto=format&fit=crop',
     description: 'Aprenda novas técnicas de criação de conteúdo com IA para potencializar seus resultados.',
     videoUrl: 'https://drive.google.com/file/d/1ftUQWOG93j6VKth9vvXFfRcxU2sptQF9/preview'
+  },
+  {
+    id: 'lesson-glasses-prompt',
+    title: 'Como remodelar o prompt de óculos',
+    duration: '06:45',
+    category: 'Prompts',
+    thumbnail: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1000&auto=format&fit=crop',
+    description: 'Aprenda a técnica para ajustar e remodelar seus prompts especificamente para o nicho de óculos.',
+    videoUrl: 'https://drive.google.com/file/d/1cK9CNcm6s54G-sOTmwIBo7dqNneYGM1m/preview'
   }
 ];
 
