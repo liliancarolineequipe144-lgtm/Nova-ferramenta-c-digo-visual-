@@ -2240,6 +2240,149 @@ The influencer walks one step toward the camera, smiles naturally, and **points 
     category: 'Óculos',
     videoUrl: 'https://drive.google.com/file/d/1yNDDTSbG5WqepSW4Y9Qa8r93oI75TM_6/preview',
     content: `> 9:16 mobile format, POV shot. A feminine medium-brown (morena) hand with realistic skin texture and elegant nude almond-shaped nails picks up **the exact same rimless rectangular sunglasses shown in the reference image**, preserving every detail: frameless rectangular lenses, gold metal hardware, black temples, identical proportions, lens tint, and design. **Do not change the sunglasses in any way.** The camera stays at eye level as the glasses are lifted from an aesthetic wooden car dashboard, revealing the lens tint against a bright sunny beach highway in the background. Natural summer daylight, ultra-realistic, luxury lifestyle, trending TikTok UGC style, smooth handheld movement. **At the end of the shot, the woman lowers the sunglasses slightly and extends her index finger, pointing downward toward the bottom center of the screen, clearly indicating where the product link/button appears.** High realism, cinematic lighting, premium smartphone commercial look.`
+  },
+  {
+    id: 'p-fashion-tshirts',
+    title: 'FLOW — UGC | MODA T-SHIRTS',
+    type: 'lifestyle',
+    category: 'Moda',
+    videoUrl: 'https://drive.google.com/file/d/1susK5liNkpwWBp45DPIiswEhqqIr2TW9/preview',
+    content: `# **Veo 3.1 Lite – Ultra-Realistic UGC POV Fashion Prompt (8 seconds)**
+
+## **IMPORTANT – STRICT REQUIREMENTS**
+
+* **DO NOT CHANGE the products in any way.**
+* The three t-shirts must remain **100% identical** to the reference products, preserving:
+
+  * exact colors;
+  * the three-heart prints;
+  * print placement;
+  * fabric texture;
+  * stitching;
+  * sleeve length;
+  * collar shape;
+  * proportions;
+  * silhouette.
+* The beige t-shirt must remain exactly the same with **three hearts in orange and pink tones**.
+* The fuchsia/pink t-shirt must remain exactly the same with **three hearts in orange, pink, and green tones**.
+* The white t-shirt must remain exactly the same with **three animal-print hearts in orange, pink, and green**.
+* The influencer must remain the **same woman** throughout the entire video.
+* Keep the same face, hairstyle, body proportions, makeup, skin tone, accessories, and overall appearance.
+* She must look like a **real human**, not CGI.
+* Natural facial expressions.
+* Natural body language.
+* Smooth realistic movements.
+* Soft natural lighting.
+* Premium fashion UGC aesthetic.
+* Vertical **9:16**.
+* **No product deformation.**
+* **No clothing glitches.**
+* **No morphing.**
+* **No extra fingers.**
+* **No duplicated limbs.**
+* **No camera shake.**
+* **No visual artifacts.**
+
+## **ABSOLUTE AUDIO RESTRICTIONS**
+
+**NO AUDIO OF ANY KIND.**
+
+* No voice.
+* No dialogue.
+* No narration.
+* No subtitles.
+* No captions.
+* No on-screen text.
+* No music.
+* No sound effects.
+* No ambient sound.
+* No footsteps.
+* No clothing sounds.
+* No transition sounds.
+
+**Generate a completely silent video.**
+
+---
+
+# **Scene 1 — HOOK (0s–2s)**
+
+POV perspective.
+
+Inside a bright, cozy bedroom with soft natural daylight.
+
+The influencer enters the frame holding the **three folded t-shirts exactly as shown in the reference image**.
+
+She walks toward the bed and gently places the t-shirts on the white bedding.
+
+She casually picks up the **beige t-shirt with three hearts in orange and pink tones**, looks at it with a subtle smile, and lightly lifts it toward the camera.
+
+She brings the shirt close enough that the fabric naturally fills the frame.
+
+---
+
+# **Scene 2 — CONTEXT (2s–4s)**
+
+As the fabric moves away from the camera, she is now wearing the **beige t-shirt with three hearts in orange and pink tones**.
+
+The t-shirt remains exactly identical to the reference.
+
+She casually tucks a small part of the shirt into her jeans with one hand.
+
+She smiles naturally.
+
+She runs one hand through her hair.
+
+A seamless natural transition occurs.
+
+She is now wearing the **white t-shirt with three animal-print hearts in orange, pink, and green**.
+
+She turns slightly toward a nearby mirror and adjusts the sleeve naturally.
+
+---
+
+# **Scene 3 — SOLUTION (4s–6s)**
+
+Another smooth seamless transition.
+
+She is now wearing the **fuchsia/pink t-shirt with three hearts in orange, pink, and green tones**.
+
+The t-shirt remains exactly identical to the reference.
+
+She walks a few steps across the room.
+
+She gently smooths the front of the shirt with both hands.
+
+She looks out the window for a brief moment, then turns back toward the camera with a relaxed smile.
+
+Natural movements only.
+
+---
+
+# **Scene 4 — CTA (6s–8s)**
+
+Still wearing the **fuchsia/pink t-shirt with three hearts**.
+
+She sits softly on the edge of the bed.
+
+She reaches for a pair of sunglasses resting beside her.
+
+She casually holds the sunglasses in one hand.
+
+With her other hand, she points downward naturally, indicating where the product link would appear.
+
+She finishes with a warm, friendly smile while maintaining eye contact with the camera.
+
+The video ends naturally.
+
+**No speech.**
+
+**No captions.**
+
+**No text.**
+
+**No audio.**
+
+**Only realistic human movements.**`
   }
 ];
 
