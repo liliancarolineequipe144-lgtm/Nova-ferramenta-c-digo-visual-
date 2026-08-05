@@ -12,6 +12,7 @@ export const AUTHORIZED_USERS: Record<string, string> = {
   '6692421943': 'Visitante',
   '3784139473': 'Achadinhos',
   '8298045615': 'Jaqueline',
+  '169997075305': 'Ana Carolina',
 };
 
 export const AUTHORIZED_NUMBERS = Object.keys(AUTHORIZED_USERS);
