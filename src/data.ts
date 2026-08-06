@@ -328,6 +328,135 @@ Iluminação natural suave, sombras realistas, textura fiel do tecido, movimento
 **Áudio:** tom espontâneo, natural, como uma criadora mostrando uma compra para as seguidoras, sincronizado com os movimentos das mãos enquanto abre a embalagem, retira o vestido, alisa o tecido e exibe a peça.`
   },
   {
+    id: 'p-vestido-transicao',
+    type: 'lifestyle',
+    category: 'Vestido',
+    title: 'Vestido Vinho | Transição & Showcase',
+    videoUrl: 'https://drive.google.com/file/d/1RLG3g1wbYJJQHmo0xgRM1u7ZCqvjt5E1/preview',
+    content: `# **Veo 3.1 Lite – Ultra-Realistic UGC Fashion Prompt (8 seconds)**
+
+## **IMPORTANT – STRICT REQUIREMENTS**
+
+* **DO NOT CHANGE the dress in any way.**
+* The dress must remain **100% identical** to the reference image, preserving:
+
+  * exact burgundy/wine color;
+  * smocked bodice;
+  * shoulder straps with tied bows;
+  * skirt length;
+  * silhouette;
+  * fabric texture;
+  * stitching;
+  * proportions;
+  * fit and drape.
+* The dress must remain exactly the same throughout the entire video.
+* **No color changes.**
+* **No wardrobe changes after the dress is worn.**
+* The influencer must remain the **same woman** throughout the video.
+* Preserve the same face, hairstyle, skin tone, body proportions and natural appearance.
+* She must look like a real human, never CGI.
+* Natural facial expressions.
+* Smooth, relaxed body language.
+* Soft natural daylight inside a modern, elegant bedroom.
+* Premium fashion UGC aesthetic.
+* Vertical 9:16.
+* **No clothing deformation.**
+* **No morphing.**
+* **No visual glitches.**
+* **No extra fingers.**
+* **No duplicated limbs.**
+* **No camera shake.**
+* **No visual artifacts.**
+
+---
+
+## **ABSOLUTE AUDIO RESTRICTIONS**
+
+**NO AUDIO OF ANY KIND.**
+
+* No voice.
+* No dialogue.
+* No narration.
+* No subtitles.
+* No captions.
+* No on-screen text.
+* No music.
+* No sound effects.
+* No ambient sound.
+* No footsteps.
+* No clothing sounds.
+
+**Generate a completely silent video.**
+
+---
+
+# **Scene 1 — HOOK (0s–2s)**
+
+POV perspective.
+
+Inside a bright, modern bedroom with soft natural daylight.
+
+The influencer has just come out of the shower and is wearing a soft white bathrobe.
+
+She holds the **exact dress from the reference image** on a wooden hanger with one hand.
+
+She smiles naturally at the camera.
+
+With her free hand, she gently runs her fingers through her slightly damp hair in a relaxed, feminine movement.
+
+She walks toward the camera and softly covers the entire lens with her hand.
+
+---
+
+# **Scene 2 — CONTEXT (2s–4s)**
+
+When her hand leaves the lens, she is now wearing **the exact same dress from the reference image**.
+
+She naturally smooths one side of her hair behind her ear.
+
+Then she slowly slides one hand over the front of the dress, highlighting the fabric and elegant fit.
+
+She smiles subtly while maintaining eye contact with the camera.
+
+---
+
+# **Scene 3 — SOLUTION (4s–6s)**
+
+She takes a small step closer to the camera.
+
+Using both hands naturally, she lightly holds the sides of the skirt and lets the fabric fall naturally, showing the beautiful drape and movement of the dress without spinning or twirling.
+
+She then gently runs one hand down the skirt, emphasizing the lightweight fabric and comfortable fit.
+
+Her movements remain slow, elegant and realistic.
+
+---
+
+# **Scene 4 — CTA (6s–8s)**
+
+She walks naturally toward the bed.
+
+She picks up a stylish handbag and a pair of sunglasses resting on top of the bed.
+
+She holds them naturally while returning her gaze to the camera.
+
+With a warm smile, she points downward with her free hand, indicating where the purchase link would appear.
+
+She holds the pose for a brief moment.
+
+The video ends naturally.
+
+**No speech.**
+
+**No captions.**
+
+**No text.**
+
+**No audio.**
+
+**Only realistic, human movements with a premium fashion UGC aesthetic.**`
+  },
+  {
     id: 'veo-3-universal',
     title: 'VEO 3 PROMPT',
     type: 'lifestyle',
