@@ -170,11 +170,14 @@ export default function DashboardTab({ setActiveTab, userName }: DashboardTabPro
             </div>
             <div className="relative z-10 space-y-6">
               <h4 className="text-xl font-black leading-tight">Dica do Dia</h4>
-              <p className="text-indigo-100 text-sm font-medium leading-relaxed">
-                "Use a técnica de match-cut para transições de roupas e cores. Isso aumenta a retenção em até 40%."
+              <p className="text-indigo-100 text-sm font-medium leading-relaxed italic">
+                "Os prompts são para esses produtos específicos. Você precisa remodelar para o seu produto: coloque a imagem do seu produto no ChatGPT com o prompt e escreva: 'remodele esse prompt para esse produto'."
               </p>
-              <button className="w-full py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
-                Acessar Estratégias
+              <button 
+                onClick={() => setActiveTab('prompts')}
+                className="w-full py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300"
+              >
+                Ver Prompts
               </button>
             </div>
           </div>

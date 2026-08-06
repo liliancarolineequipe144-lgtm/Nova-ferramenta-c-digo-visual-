@@ -300,6 +300,34 @@ She looks directly into the camera. Maintains a natural, confident smile. Slowly
     videoUrl: 'https://drive.google.com/file/d/1UQb9bDhgtrusypw-LEjEJloBTBpisGmG/preview'
   },
   {
+    id: 'p-vestido-vinho',
+    type: 'lifestyle',
+    category: 'Vestido',
+    title: 'Vestido Vinho | POV Unboxing',
+    videoUrl: 'https://drive.google.com/file/d/154Q9fxBauYEVKnvMSOeaMIpYcN2mhSL7/preview',
+    content: `**PROMPT – FLOW IA**
+
+Fotografia ultra-realista em vídeo vertical 9:16, estilo POV (primeira pessoa), câmera posicionada acima do tapete, como se a própria pessoa estivesse olhando para baixo. Utilize **exatamente o vestido da imagem de referência**, preservando fielmente sua modelagem, comprimento, tecido, textura, cor vinho, franzido no busto, alças com laços, caimento, costuras, proporções e todos os detalhes originais. Não modificar absolutamente nenhum detalhe do vestido.
+
+A cena acontece **sobre o mesmo tapete da imagem de referência**, mantendo a mesma aparência, cor, textura, iluminação e ambiente do quarto.
+
+Duas mãos femininas morenas entram suavemente no enquadramento segurando um pacote de embalagem transparente. A embalagem parece recém-chegada e revela o vestido da referência dobrado cuidadosamente.
+
+As mãos apoiam o pacote delicadamente sobre o tapete. Em seguida, abrem a embalagem com movimentos naturais e lentos, retirando **o mesmo vestido da imagem de referência**.
+
+As mãos posicionam o vestido cuidadosamente sobre o centro do tapete, alinhando-o de forma elegante. Depois passam as mãos suavemente sobre o tecido, alisando pequenas dobras e esticando o vestido de maneira delicada para destacar seu caimento, sem deformar a peça.
+
+Após alguns segundos exibindo o vestido totalmente aberto, as mãos seguram novamente a peça pelas alças, retiram o vestido lentamente para fora do enquadramento e deixam apenas o tapete visível. O movimento deve ser contínuo, cinematográfico e natural, sem cortes bruscos.
+
+Iluminação natural suave, sombras realistas, textura fiel do tecido, movimentos humanos fluidos, foco preciso no vestido, aparência de vídeo gravado com smartphone premium, extremamente realista.
+
+### Fala (PT-BR)
+
+**POV:** "Olha o vestido que acabou de chegar... sério, essa cor vinho é linda . O tecido é  delicado, e o caimento ficou perfeito. deixei o link disponível 
+
+**Áudio:** tom espontâneo, natural, como uma criadora mostrando uma compra para as seguidoras, sincronizado com os movimentos das mãos enquanto abre a embalagem, retira o vestido, alisa o tecido e exibe a peça.`
+  },
+  {
     id: 'veo-3-universal',
     title: 'VEO 3 PROMPT',
     type: 'lifestyle',
