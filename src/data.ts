@@ -2663,5 +2663,29 @@ export const GARIMPADOS: ProductItem[] = [
     ticket: 'baixo',
     style: 'provador',
     hashtags: ['#presentediadospais', '#camisetapersonslizada', '#ideiadepresente', '#tiktokshop88']
+  },
+  {
+    id: 'z-garimpo-blusinha',
+    title: 'Blusinha Queridinha',
+    price: 'R$ 8,50',
+    status: 'Produto para escalar - Tendência do produto (últimos 7 dias)',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop',
+    video: 'https://drive.google.com/file/d/1Xxb3R8r6mxd-kU-SpKe5l5wKnjSmaSqK/preview',
+    link: 'https://vt.tiktok.com/ZS9hxjRek1gJ8-q3Tmr/',
+    category: 'Blusas',
+    stats: {
+      orders: 17,
+      ctr: '3,1',
+      creators: 799,
+      cart: 256
+    },
+    commission: '8,50',
+    ticket: 'baixo',
+    style: 'pov',
+    hooks: [
+      'Essa blusinha virou minha queridinha',
+      'Ganchos Visuais: No cabide, No balcão, Na cama, No tapete'
+    ],
+    hashtags: ['#mulheres', '#lookelegante', '#lookdodia', '#estilofeminino', '#tiktokshopbr88']
   }
 ];

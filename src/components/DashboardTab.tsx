@@ -10,7 +10,7 @@ import {
   PlayCircle,
   FileText
 } from 'lucide-react';
-import { VIDEO_PROMPTS, NARRATIVES, LESSONS } from '../data';
+import { VIDEO_PROMPTS, NARRATIVES, LESSONS, GARIMPADOS } from '../data';
 import { AUTHORIZED_NUMBERS } from '../auth';
 
 import { Tab } from '../types';
@@ -23,6 +23,7 @@ export default function DashboardTab({ setActiveTab }: DashboardTabProps) {
   const recentUpdates = [
     ...VIDEO_PROMPTS.slice(-3).map(p => ({ ...p, updateType: 'Prompt' as const })),
     ...LESSONS.slice(-2).map(l => ({ ...l, updateType: 'Aula' as const })),
+    ...GARIMPADOS.slice(-2).map(p => ({ ...p, updateType: 'Produto' as const })),
   ].sort((a, b) => b.id.localeCompare(a.id)).slice(0, 3);
 
   return (
@@ -62,21 +63,33 @@ export default function DashboardTab({ setActiveTab }: DashboardTabProps) {
                   ease: "easeInOut"
                 }
               }}
-              onClick={() => setActiveTab(update.updateType === 'Aula' ? 'video-lessons' : 'prompts')}
+              onClick={() => {
+                if (update.updateType === 'Aula') setActiveTab('video-lessons');
+                else if (update.updateType === 'Prompt') setActiveTab('prompts');
+                else if (update.updateType === 'Produto') setActiveTab('products');
+              }}
               className="flex items-center gap-6 p-8 bg-white border border-indigo-100/50 rounded-[32px] hover:border-indigo-300 hover:shadow-2xl hover:shadow-indigo-100/50 transition-all group cursor-pointer active:scale-[0.99] relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/20 to-transparent opacity-50" />
               <div className={`w-16 h-16 flex items-center justify-center rounded-2xl ${
-                update.updateType === 'Aula' ? 'bg-amber-50 text-amber-600' : 'bg-indigo-50 text-indigo-600'
+                update.updateType === 'Aula' ? 'bg-amber-50 text-amber-600' : 
+                update.updateType === 'Produto' ? 'bg-emerald-50 text-emerald-600' :
+                'bg-indigo-50 text-indigo-600'
               }`}>
-                {update.updateType === 'Aula' ? <PlayCircle size={28} /> : <Sparkles size={28} />}
+                {update.updateType === 'Aula' ? <PlayCircle size={28} /> : 
+                 update.updateType === 'Produto' ? <LayoutDashboard size={28} /> :
+                 <Sparkles size={28} />}
               </div>
               <div className="flex-grow">
                 <div className="flex items-center gap-3 mb-2">
                   <span className={`text-[10px] font-black uppercase tracking-widest ${
-                    update.updateType === 'Aula' ? 'text-amber-600' : 'text-indigo-600'
+                    update.updateType === 'Aula' ? 'text-amber-600' : 
+                    update.updateType === 'Produto' ? 'text-emerald-600' :
+                    'text-indigo-600'
                   }`}>
-                    {update.updateType === 'Aula' ? 'Aula Exclusiva' : 'Prompt Premium'}
+                    {update.updateType === 'Aula' ? 'Aula Exclusiva' : 
+                     update.updateType === 'Produto' ? 'Novo Garimpo' :
+                     'Prompt Premium'}
                   </span>
                   <span className="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full border border-emerald-100 text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
