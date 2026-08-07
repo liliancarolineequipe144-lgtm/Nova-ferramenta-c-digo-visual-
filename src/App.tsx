@@ -94,7 +94,7 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             >
-              {activeTab === 'dashboard' && <DashboardTab setActiveTab={setActiveTab} userName={userName} />}
+              {activeTab === 'dashboard' && <DashboardTab setActiveTab={setActiveTab} />}
               {activeTab === 'narratives' && <NarrativesTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
               {activeTab === 'prompts' && <PromptsTab toggleFavorite={toggleFavorite} isFavorite={isFavorite} />}
               {activeTab === 'products' && <ProductsTab />}
