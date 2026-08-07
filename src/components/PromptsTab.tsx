@@ -65,8 +65,8 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          originalPrompt: originalContent,
-          idea: data.idea,
+          originalPrompt: originalContent || '',
+          idea: data.idea || '',
           imageData: data.image
         })
       });
@@ -74,9 +74,10 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
       const resultData = await response.json();
       if (!response.ok) throw new Error(resultData.error || 'Erro ao remodelar prompt');
       
-      updateRemodelState(promptId, { result: resultData.prompt });
+      updateRemodelState(promptId, { result: resultData.prompt || '' });
       showToast('Prompt remodelado com sucesso!');
     } catch (err: any) {
+
       console.error(err);
       showToast(err.message || 'Erro ao remodelar prompt. Tente novamente.', 'error');
     } finally {
@@ -715,7 +716,7 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                     </div>
 
                     <div className="grid grid-cols-1 gap-6">
-                      {parseNarratives(generatedPrompt).map((narrative, idx) => (
+                      {parseNarratives(generatedPrompt || '').map((narrative, idx) => (
                         <div 
                           key={idx} 
                           className="group/narrative bg-slate-50/50 rounded-[32px] border border-slate-100 hover:border-indigo-100 transition-all overflow-hidden"

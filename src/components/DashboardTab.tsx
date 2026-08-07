@@ -21,10 +21,10 @@ interface DashboardTabProps {
 
 export default function DashboardTab({ setActiveTab }: DashboardTabProps) {
   const recentUpdates = [
-    ...VIDEO_PROMPTS.slice(-3).map(p => ({ ...p, updateType: 'Prompt' as const })),
-    ...LESSONS.slice(-2).map(l => ({ ...l, updateType: 'Aula' as const })),
-    ...GARIMPADOS.slice(-2).map(p => ({ ...p, updateType: 'Produto' as const })),
-  ].sort((a, b) => b.id.localeCompare(a.id)).slice(0, 3);
+    ...(VIDEO_PROMPTS || []).slice(-3).map(p => ({ ...p, updateType: 'Prompt' as const })),
+    ...(LESSONS || []).slice(-2).map(l => ({ ...l, updateType: 'Aula' as const })),
+    ...(GARIMPADOS || []).slice(-2).map(p => ({ ...p, updateType: 'Produto' as const })),
+  ].sort((a, b) => (b.id || '').localeCompare(a.id || '')).slice(0, 3);
 
   return (
     <div className="space-y-10 pb-20">
@@ -126,7 +126,7 @@ export default function DashboardTab({ setActiveTab }: DashboardTabProps) {
             <h4 className="text-base font-black uppercase tracking-widest text-indigo-400">Dica do Dia</h4>
           </div>
           <p className="text-xl md:text-2xl font-bold leading-relaxed italic text-slate-300">
-            "os prompts sao para esses produtos você precisa remodelar para seu produto , coloque a imagem do seu produto no chat gbt e o prompt e escreva : remodele esse prompt para esse produto"
+            "Agora você pode remodelar qualquer prompt diretamente aqui no app! Use a aba de Prompts, selecione um estilo e clique em 'Remodelar' para adaptar para seu produto com IA."
           </p>
         </div>
       </motion.div>

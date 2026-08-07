@@ -42,30 +42,35 @@ INSTRUÇÕES:
 6. Mantenha o idioma do prompt original (se for Português, responda em Português; se for Inglês, responda em Inglês).
 7. NÃO inclua explicações, apenas o prompt remodelado final.`;
 
-      const modelsToTry = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.1-pro-preview"];
+      const modelsToTry = [
+        "gemini-3.6-flash", 
+        "gemini-flash-latest", 
+        "gemini-3.1-pro-preview", 
+        "gemini-2.0-flash-exp", 
+        "gemini-1.5-flash"
+      ];
       let text = "";
       let lastError: any = null;
 
-      // Prepare input for Interactions API
-      const input: any[] = [{ type: 'text', text: promptText }];
+      const parts: any[] = [{ text: promptText }];
       if (imageData) {
         const [prefix, data] = imageData.split(',');
         const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        input.push({
-          type: 'image',
-          data: data,
-          mime_type: mimeType
+        parts.push({
+          inlineData: {
+            data: data,
+            mimeType: mimeType
+          }
         });
       }
 
       for (const modelName of modelsToTry) {
         try {
-          const interaction = await ai.interactions.create({
+          const response = await ai.models.generateContent({
             model: modelName,
-            input: input,
+            contents: { parts }
           });
-          
-          text = interaction.output_text || "";
+          text = response.text || "";
           if (text) break;
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);
@@ -119,7 +124,7 @@ INSTRUÇÕES:
         2. CONTEXTO: O problema ou situação inicial.
         3. SOLUÇÃO: Como o produto resolve ou brilha.
         4. CTA (Call to Action): Chamada clara para ação.
-
+ 
         IMPORTANTE:
         - Separe cada vídeo com o marcador "--- VIDEO [N] ---" (onde [N] é o número do vídeo).
         - Mantenha a constância da influencer e do produto em todas as cenas.
@@ -134,36 +139,39 @@ INSTRUÇÕES:
         Linguagem em Português do Brasil.`;
       }
 
-      const modelsToTry = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.1-pro-preview"];
+      const modelsToTry = [
+        "gemini-3.6-flash", 
+        "gemini-flash-latest", 
+        "gemini-3.1-pro-preview", 
+        "gemini-2.0-flash-exp", 
+        "gemini-1.5-flash"
+      ];
       let text = "";
       let lastError: any = null;
 
-      // Prepare input for Interactions API
-      const input: any[] = [{ type: 'text', text: promptText }];
+      const parts: any[] = [{ text: promptText }];
       if (imageData) {
         const [prefix, data] = imageData.split(',');
         const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        input.push({
-          type: 'image',
-          data: data,
-          mime_type: mimeType
+        parts.push({
+          inlineData: {
+            data: data,
+            mimeType: mimeType
+          }
         });
       }
 
       for (const modelName of modelsToTry) {
         try {
-          const interaction = await ai.interactions.create({
+          const response = await ai.models.generateContent({
             model: modelName,
-            input: input,
+            contents: { parts }
           });
-          
-          text = interaction.output_text || "";
+          text = response.text || "";
           if (text) break; // Success!
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);
           lastError = error;
-          
-          // Wait a bit before trying next model to handle transient quota spikes
           await new Promise(resolve => setTimeout(resolve, 500));
           continue;
         }
