@@ -17,6 +17,77 @@ async function startServer() {
   app.use(express.json({ limit: '20mb' }));
 
   // API Routes
+  app.post("/api/remodel-prompt", async (req, res) => {
+    try {
+      const { originalPrompt, idea, imageData } = req.body;
+      
+      if (!process.env.GEMINI_API_KEY) {
+        return res.status(500).json({ error: "GEMINI_API_KEY is not configured" });
+      }
+
+      const promptText = `Como um especialista em marketing de vídeo UGC e engenharia de prompts de alta estética, seu objetivo é REMODELAR um prompt existente para um novo produto ou ideia.
+
+PROMPT ORIGINAL:
+"${originalPrompt}"
+
+NOVA IDEIA/CONTEXTO:
+"${idea || 'Nenhuma ideia adicional fornecida, foque na imagem.'}"
+
+INSTRUÇÕES:
+1. Analise a imagem de referência fornecida para capturar cores, texturas, estilo do produto e iluminação.
+2. Mantenha a estrutura e a alta estética do prompt original, mas ADAPTE-O para o novo produto e ideia.
+3. Se o original for uma narrativa de vários vídeos, mantenha a estrutura de vários vídeos.
+4. Se o original for um prompt técnico de cena única, mantenha esse formato.
+5. Melhore o prompt original se possível, tornando-o ainda mais atraente e visualmente descritivo.
+6. Mantenha o idioma do prompt original (se for Português, responda em Português; se for Inglês, responda em Inglês).
+7. NÃO inclua explicações, apenas o prompt remodelado final.`;
+
+      const parts: any[] = [{ text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        
+        parts.push({
+          inlineData: {
+            data: data,
+            mimeType: mimeType
+          }
+        });
+      }
+
+      const modelsToTry = ["gemini-3.6-flash", "gemini-2.0-flash", "gemini-flash-latest"];
+      let text = "";
+      let lastError: any = null;
+
+      for (const modelName of modelsToTry) {
+        try {
+          const result = await ai.models.generateContent({
+            model: modelName,
+            contents: [{ role: 'user', parts }]
+          });
+          
+          text = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          if (text) break;
+        } catch (error: any) {
+          console.error(`Error with model ${modelName}:`, error.message);
+          lastError = error;
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          continue;
+        }
+      }
+
+      if (!text && lastError) throw lastError;
+      
+      res.json({ prompt: text });
+    } catch (error: any) {
+      console.error("Error remodeling prompt:", error);
+      if (error.message?.includes('429') || error.status === 'RESOURCE_EXHAUSTED' || error.message?.includes('quota')) {
+        return res.status(429).json({ error: "Limite de cota atingido. Por favor, tente novamente em alguns instantes." });
+      }
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   app.post("/api/generate-prompt", async (req, res) => {
     try {
       const { product, type, imageData } = req.body;

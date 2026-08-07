@@ -19,6 +19,68 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
   const [searchQuery, setSearchQuery] = useState('');
   const { showToast } = useToast();
 
+  // Remodeling State
+  const [remodelingData, setRemodelingData] = useState<Record<string, {
+    image: string | null;
+    idea: string;
+    isRemodeling: boolean;
+    result: string | null;
+    isExpanded: boolean;
+  }>>({});
+
+  const updateRemodelState = (id: string, updates: any) => {
+    setRemodelingData(prev => ({
+      ...prev,
+      [id]: { ...(prev[id] || { image: null, idea: '', isRemodeling: false, result: null, isExpanded: false }), ...updates }
+    }));
+  };
+
+  const remodelFileInputRef = useRef<HTMLInputElement>(null);
+  const [activeRemodelId, setActiveRemodelId] = useState<string | null>(null);
+
+  const handleRemodelImageUpload = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        updateRemodelState(id, { image: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemodel = async (promptId: string, originalContent: string) => {
+    const data = remodelingData[promptId];
+    if (!data?.image) {
+      showToast('Por favor, faça upload de uma imagem de referência', 'error');
+      return;
+    }
+
+    updateRemodelState(promptId, { isRemodeling: true });
+    try {
+      const response = await fetch('/api/remodel-prompt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          originalPrompt: originalContent,
+          idea: data.idea,
+          imageData: data.image
+        })
+      });
+
+      const resultData = await response.json();
+      if (!response.ok) throw new Error(resultData.error || 'Erro ao remodelar prompt');
+      
+      updateRemodelState(promptId, { result: resultData.prompt });
+      showToast('Prompt remodelado com sucesso!');
+    } catch (err: any) {
+      console.error(err);
+      showToast(err.message || 'Erro ao remodelar prompt. Tente novamente.', 'error');
+    } finally {
+      updateRemodelState(promptId, { isRemodeling: false });
+    }
+  };
+
   // Generator State
   const [productName, setProductName] = useState('');
   const [selectedType, setSelectedType] = useState<'UGC' | 'Provador'>('UGC');
@@ -380,6 +442,124 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                             {copiedId === prompt.id ? <><Check size={14} /> Copiado</> : <><Copy size={14} /> Copiar Prompt</>}
                           </button>
                         </div>
+                      </div>
+
+                      {/* Remodel Section */}
+                      <div className="pt-6 border-t border-slate-100 space-y-6">
+                        <div className="flex items-center justify-between">
+                          <button
+                            onClick={() => updateRemodelState(prompt.id, { isExpanded: !remodelingData[prompt.id]?.isExpanded })}
+                            className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-indigo-600 hover:text-indigo-700 transition-colors"
+                          >
+                            <RefreshCcw size={14} className={remodelingData[prompt.id]?.isExpanded ? 'rotate-180' : ''} />
+                            {remodelingData[prompt.id]?.isExpanded ? 'Fechar Adaptação' : 'Adaptar para meu Produto'}
+                          </button>
+                        </div>
+
+                        <AnimatePresence>
+                          {remodelingData[prompt.id]?.isExpanded && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-indigo-50/30 rounded-[32px] border border-indigo-100/50">
+                                {/* Image Upload for Remodel */}
+                                <div className="space-y-3">
+                                  <label className="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Foto do seu Produto
+                                  </label>
+                                  <div 
+                                    onClick={() => {
+                                      setActiveRemodelId(prompt.id);
+                                      remodelFileInputRef.current?.click();
+                                    }}
+                                    className={`relative aspect-video rounded-2xl border-2 border-dashed transition-all cursor-pointer overflow-hidden flex flex-col items-center justify-center gap-3 ${
+                                      remodelingData[prompt.id]?.image ? 'border-indigo-500 bg-white' : 'border-slate-200 hover:border-indigo-300 bg-white/50'
+                                    }`}
+                                  >
+                                    {remodelingData[prompt.id]?.image ? (
+                                      <>
+                                        <img src={remodelingData[prompt.id].image!} alt="Preview" className="absolute inset-0 w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 text-white">
+                                          <Upload size={16} />
+                                          <span className="text-[8px] font-black uppercase tracking-widest">Trocar</span>
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Upload size={20} className="text-slate-300" />
+                                        <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Enviar Foto</span>
+                                      </>
+                                    )}
+                                  </div>
+                                  <input 
+                                    type="file" 
+                                    className="hidden" 
+                                    accept="image/*"
+                                    ref={activeRemodelId === prompt.id ? remodelFileInputRef : null}
+                                    onChange={(e) => handleRemodelImageUpload(e, prompt.id)}
+                                  />
+                                </div>
+
+                                {/* Idea Textarea */}
+                                <div className="space-y-3">
+                                  <label className="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                                    Sua Ideia (Opcional)
+                                  </label>
+                                  <textarea
+                                    value={remodelingData[prompt.id]?.idea || ''}
+                                    onChange={(e) => updateRemodelState(prompt.id, { idea: e.target.value })}
+                                    placeholder="Ex: Quero focar no brilho do tecido..."
+                                    className="w-full h-[100px] px-4 py-3 bg-white border border-slate-100 rounded-2xl text-[11px] font-semibold focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-600/20 transition-all resize-none"
+                                  />
+                                  <button
+                                    onClick={() => handleRemodel(prompt.id, prompt.content)}
+                                    disabled={remodelingData[prompt.id]?.isRemodeling || !remodelingData[prompt.id]?.image}
+                                    className={`w-full py-3 rounded-xl font-black text-[9px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
+                                      remodelingData[prompt.id]?.isRemodeling || !remodelingData[prompt.id]?.image
+                                      ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
+                                      : 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-100'
+                                    }`}
+                                  >
+                                    {remodelingData[prompt.id]?.isRemodeling ? (
+                                      <><RefreshCcw size={14} className="animate-spin" /> Remodelando...</>
+                                    ) : (
+                                      <><Sparkles size={14} /> Remodelar Prompt</>
+                                    )}
+                                  </button>
+                                </div>
+
+                                {/* Remodel Result */}
+                                {remodelingData[prompt.id]?.result && (
+                                  <div className="md:col-span-2 mt-4 space-y-3">
+                                    <div className="flex items-center justify-between">
+                                      <span className="text-[9px] font-black uppercase tracking-widest text-emerald-600 flex items-center gap-1.5">
+                                        <div className="w-1 h-1 bg-emerald-500 rounded-full animate-pulse" />
+                                        Prompt Adaptado
+                                      </span>
+                                      <button
+                                        onClick={() => copyToClipboard(remodelingData[prompt.id].result!, `remodel-${prompt.id}`)}
+                                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest transition-all ${
+                                          copiedId === `remodel-${prompt.id}`
+                                          ? 'bg-emerald-500 text-white'
+                                          : 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200'
+                                        }`}
+                                      >
+                                        {copiedId === `remodel-${prompt.id}` ? <Check size={10} strokeWidth={3} /> : <Copy size={10} />}
+                                        Copiar
+                                      </button>
+                                    </div>
+                                    <div className="p-5 bg-white border border-emerald-100 rounded-2xl prose prose-slate prose-sm max-h-[200px] overflow-y-auto no-scrollbar italic text-slate-600 font-medium">
+                                      <ReactMarkdown>{remodelingData[prompt.id].result!}</ReactMarkdown>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
 
                       <div className="relative flex-grow bg-slate-50/50 rounded-3xl p-8 md:p-10 border border-slate-100 group-hover:border-indigo-100/40 transition-colors overflow-hidden">
