@@ -99,6 +99,15 @@ export const LESSONS: LessonItem[] = [
     thumbnail: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1000&auto=format&fit=crop',
     description: 'Aprenda a técnica para ajustar e remodelar seus prompts especificamente para o nicho de óculos.',
     videoUrl: 'https://drive.google.com/file/d/1cK9CNcm6s54G-sOTmwIBo7dqNneYGM1m/preview'
+  },
+  {
+    id: 'lesson-extra-exclusiva',
+    title: 'Como atualizar a ferramenta',
+    duration: '08:45',
+    category: 'Estratégia',
+    thumbnail: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1000&auto=format&fit=crop',
+    description: 'Novas técnicas e estratégias atualizadas para potencializar seus resultados.',
+    videoUrl: 'https://drive.google.com/file/d/1XrxxtD5nLlKyGGtiveNCDCmKnJ7Z9hm-/preview'
   }
 ];
 
@@ -457,90 +466,6 @@ The video ends naturally.
 **Only realistic, human movements with a premium fashion UGC aesthetic.**`
   },
   {
-    id: 'p-narrativa-universal-1',
-    title: 'VEO 3 — NARRATIVA 01',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** Influencer de roupão segura o vestido vinho no cabide e faz um estalo de dedos. Transição imediata para ela vestida.
-**Cena 2 (Contexto):** Ela se olha no espelho ajustando os laços do ombro.
-**Cena 3 (Solução):** Caminha para a câmera mostrando o movimento e o franzido do busto.
-**Cena 4 (CTA):** Aponta para baixo com um sorriso e pisca para a lente.
-
-**Fala Sugerida:** "Aquele look que te deixa pronta em segundos. O caimento desse burgundy é surreal. Link aqui embaixo!"`
-  },
-  {
-    id: 'p-narrativa-universal-2',
-    title: 'VEO 3 — NARRATIVA 02',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** POV abrindo o pacote e revelando o vestido vinho.
-**Cena 2 (Contexto):** Ela girando no quarto com o vestido, luz natural batendo no tecido.
-**Cena 3 (Solução):** Close nas mãos alisando o tecido, mostrando que não amassa e é premium.
-**Cena 4 (CTA):** Coloca os óculos de sol e faz sinal de 'arrasta pra cima' ou aponta o link.
-
-**Fala Sugerida:** "Incrível como esse unboxing superou minhas expectativas. A cor é ainda mais linda ao vivo. Garante o seu no link!"`
-  },
-  {
-    id: 'p-narrativa-universal-3',
-    title: 'VEO 3 — NARRATIVA 03',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** Mostra dois cabides, escolhe o vestido vinho e puxa contra a câmera.
-**Cena 2 (Contexto):** Já vestida, terminando de colocar o brinco ou perfume.
-**Cena 3 (Solução):** Caminha até a janela mostrando a elegância do corte em luz plena.
-**Cena 4 (CTA):** Pega a bolsa e aponta para o link antes de sair do quadro.
-
-**Fala Sugerida:** "Minha escolha pra hoje não podia ser outra. Esse vestido é puro luxo e super versátil. O link tá aqui!"`
-  },
-  {
-    id: 'p-narrativa-universal-4',
-    title: 'VEO 3 — NARRATIVA 04',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** Hand transition (mão na lente) saindo de um look básico para o vestido vinho.
-**Cena 2 (Contexto):** Ela se ajeita e dá uma volta completa, mostrando o caimento das costas.
-**Cena 3 (Solução):** Close no busto franzido e na textura do tecido enquanto ela caminha.
-**Cena 4 (CTA):** Senta na cama e aponta para o botão de compra com entusiasmo.
-
-**Fala Sugerida:** "Transformação completa com uma peça só. Esse modelo valoriza demais o corpo. Clica no link e aproveita!"`
-  },
-  {
-    id: 'p-narrativa-universal-5',
-    title: 'VEO 3 — NARRATIVA 05',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** Joga o vestido por cima dela e a cena corta para ela já pronta.
-**Cena 2 (Contexto):** Mostra o look com sandália rasteira, provando que é um look 'fresco' de verão.
-**Cena 3 (Solução):** Passa a mão na saia do vestido destacando o movimento fluido.
-**Cena 4 (CTA):** Manda um beijo e aponta para o link no rodapé.
-
-**Fala Sugerida:** "O vestido mais fresco e elegante que você vai ter no armário. Tô apaixonada nesses detalhes. Link disponível aqui!"`
-  },
-  {
-    id: 'p-narrativa-universal-6',
-    title: 'VEO 3 — NARRATIVA 06',
-    type: 'universal',
-    category: 'Universal',
-    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
-
-**Cena 1 (Gancho):** Ela entra no quadro com a sacola, tira o vestido e abraça a peça.
-**Cena 2 (Contexto):** Transição para ela usando o look completo em um ambiente de café/varanda.
-**Cena 3 (Solução):** Mostra que o vestido é elegante sem esforço para qualquer hora do dia.
-**Cena 4 (CTA):** Faz um sinal de convite e aponta para o link de compra.
-
-**Fala Sugerida:** "Recebido favorito do mês! Esse vinho é a cor da estação e o caimento é 10/10. O link está aqui embaixo!"`
-  },
-  {
     id: 'veo-3-universal',
     title: 'VEO 3 PROMPT',
     type: 'lifestyle',
@@ -784,6 +709,14 @@ No sound effects.
 **Final result:** A hyper-realistic TikTok/Reels-style fashion video that starts with the influencer's hand completely covering the camera lens, transitions naturally into a relaxed outfit presentation, and ends with her approaching very close to the camera, blowing a kiss, and naturally pointing downward with a warm, genuine smile.
 
 sem áudio só movimentos`
+  },
+  {
+    id: 'universal-mirror-selfie',
+    title: 'Mirror Selfie — Phone Case',
+    type: 'universal',
+    category: 'Universal',
+    videoUrl: 'https://drive.google.com/file/d/1OGErDKR4ckQXxf23iNhJtPnvbW13Xq25/preview',
+    content: `9:16 mobile format. A fashionable young woman holding her phone up to a clean aesthetic mirror, taking a video. Her phone has a stylish [COR/ESTILO] phone case that matches her casual outfit. Modern minimalist bedroom background, bright natural daylight, camera screen reflection effect, shot on iPhone 15 style, realistic movement, trending TikTok look.`
   },
   {
     id: 'p-oculos-sol',

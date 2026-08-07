@@ -49,11 +49,23 @@ export default function DashboardTab({ setActiveTab }: DashboardTabProps) {
             <motion.div
               key={update.id}
               initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0,
+                boxShadow: ["0 0 0px rgba(79, 70, 229, 0)", "0 0 20px rgba(79, 70, 229, 0.15)", "0 0 0px rgba(79, 70, 229, 0)"]
+              }}
+              transition={{ 
+                delay: idx * 0.1,
+                boxShadow: {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
               onClick={() => setActiveTab(update.updateType === 'Aula' ? 'video-lessons' : 'prompts')}
-              className="flex items-center gap-6 p-8 bg-white border border-slate-100 rounded-[32px] hover:border-indigo-100 hover:shadow-2xl hover:shadow-indigo-50/50 transition-all group cursor-pointer active:scale-[0.99]"
+              className="flex items-center gap-6 p-8 bg-white border border-indigo-100/50 rounded-[32px] hover:border-indigo-300 hover:shadow-2xl hover:shadow-indigo-100/50 transition-all group cursor-pointer active:scale-[0.99] relative overflow-hidden"
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/20 to-transparent opacity-50" />
               <div className={`w-16 h-16 flex items-center justify-center rounded-2xl ${
                 update.updateType === 'Aula' ? 'bg-amber-50 text-amber-600' : 'bg-indigo-50 text-indigo-600'
               }`}>
