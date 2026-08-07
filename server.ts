@@ -8,6 +8,11 @@ dotenv.config();
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY || "",
+  httpOptions: {
+    headers: {
+      'User-Agent': 'aistudio-build',
+    }
+  }
 });
 
 async function startServer() {
@@ -45,30 +50,29 @@ INSTRUÇÕES:
       const modelsToTry = [
         "gemini-3.6-flash", 
         "gemini-flash-latest", 
-        "gemini-3.1-pro-preview", 
-        "gemini-2.0-flash-exp", 
-        "gemini-1.5-flash"
+        "gemini-3.1-pro-preview",
+        "gemini-3.1-flash-lite"
       ];
       let text = "";
       let lastError: any = null;
 
-      const parts: any[] = [{ text: promptText }];
-      if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        parts.push({
-          inlineData: {
-            data: data,
-            mimeType: mimeType
+      const contents = imageData ? {
+        parts: [
+          { text: promptText },
+          {
+            inlineData: {
+              data: imageData.split(',')[1],
+              mimeType: imageData.match(/:(.*?);/)?.[1] || 'image/jpeg'
+            }
           }
-        });
-      }
+        ]
+      } : promptText;
 
       for (const modelName of modelsToTry) {
         try {
           const response = await ai.models.generateContent({
             model: modelName,
-            contents: { parts }
+            contents: contents
           });
           text = response.text || "";
           if (text) break;
@@ -142,30 +146,29 @@ INSTRUÇÕES:
       const modelsToTry = [
         "gemini-3.6-flash", 
         "gemini-flash-latest", 
-        "gemini-3.1-pro-preview", 
-        "gemini-2.0-flash-exp", 
-        "gemini-1.5-flash"
+        "gemini-3.1-pro-preview",
+        "gemini-3.1-flash-lite"
       ];
       let text = "";
       let lastError: any = null;
 
-      const parts: any[] = [{ text: promptText }];
-      if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        parts.push({
-          inlineData: {
-            data: data,
-            mimeType: mimeType
+      const contents = imageData ? {
+        parts: [
+          { text: promptText },
+          {
+            inlineData: {
+              data: imageData.split(',')[1],
+              mimeType: imageData.match(/:(.*?);/)?.[1] || 'image/jpeg'
+            }
           }
-        });
-      }
+        ]
+      } : promptText;
 
       for (const modelName of modelsToTry) {
         try {
           const response = await ai.models.generateContent({
             model: modelName,
-            contents: { parts }
+            contents: contents
           });
           text = response.text || "";
           if (text) break; // Success!

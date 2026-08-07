@@ -71,7 +71,14 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
         })
       });
 
-      const resultData = await response.json();
+      let resultData;
+      const textResponse = await response.text();
+      try {
+        resultData = JSON.parse(textResponse);
+      } catch (e) {
+        throw new Error('Erro na resposta do servidor');
+      }
+      
       if (!response.ok) throw new Error(resultData.error || 'Erro ao remodelar prompt');
       
       updateRemodelState(promptId, { result: resultData.prompt || '' });
@@ -129,7 +136,14 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
         })
       });
 
-      const data = await response.json();
+      let data;
+      const textResponse = await response.text();
+      try {
+        data = JSON.parse(textResponse);
+      } catch (e) {
+        throw new Error('Erro na resposta do servidor');
+      }
+      
       if (!response.ok) throw new Error(data.error || 'Erro ao gerar prompt');
       
       setGeneratedPrompt(data.prompt);
