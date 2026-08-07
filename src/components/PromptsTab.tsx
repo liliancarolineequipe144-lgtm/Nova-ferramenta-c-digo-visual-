@@ -38,15 +38,18 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
   const remodelFileInputRef = useRef<HTMLInputElement>(null);
   const [activeRemodelId, setActiveRemodelId] = useState<string | null>(null);
 
-  const handleRemodelImageUpload = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+  const handleRemodelImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!activeRemodelId) return;
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        updateRemodelState(id, { image: reader.result as string });
+        updateRemodelState(activeRemodelId, { image: reader.result as string });
       };
       reader.readAsDataURL(file);
     }
+    // Reset the input so the same file can be selected again if needed
+    e.target.value = '';
   };
 
   const handleRemodel = async (promptId: string, originalContent: string) => {
@@ -473,7 +476,9 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                                   <div 
                                     onClick={() => {
                                       setActiveRemodelId(prompt.id);
-                                      remodelFileInputRef.current?.click();
+                                      setTimeout(() => {
+                                        remodelFileInputRef.current?.click();
+                                      }, 0);
                                     }}
                                     className={`relative aspect-video rounded-2xl border-2 border-dashed transition-all cursor-pointer overflow-hidden flex flex-col items-center justify-center gap-3 ${
                                       remodelingData[prompt.id]?.image ? 'border-indigo-500 bg-white' : 'border-slate-200 hover:border-indigo-300 bg-white/50'
@@ -494,13 +499,6 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                                       </>
                                     )}
                                   </div>
-                                  <input 
-                                    type="file" 
-                                    className="hidden" 
-                                    accept="image/*"
-                                    ref={activeRemodelId === prompt.id ? remodelFileInputRef : null}
-                                    onChange={(e) => handleRemodelImageUpload(e, prompt.id)}
-                                  />
                                 </div>
 
                                 {/* Idea Textarea */}
@@ -540,7 +538,10 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                                         Prompt Adaptado
                                       </span>
                                       <button
-                                        onClick={() => copyToClipboard(remodelingData[prompt.id].result!, `remodel-${prompt.id}`)}
+                                        onClick={() => {
+                                          const res = remodelingData[prompt.id]?.result;
+                                          if (res) copyToClipboard(res, `remodel-${prompt.id}`);
+                                        }}
                                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest transition-all ${
                                           copiedId === `remodel-${prompt.id}`
                                           ? 'bg-emerald-500 text-white'
@@ -552,7 +553,7 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
                                       </button>
                                     </div>
                                     <div className="p-5 bg-white border border-emerald-100 rounded-2xl prose prose-slate prose-sm max-h-[200px] overflow-y-auto no-scrollbar italic text-slate-600 font-medium">
-                                      <ReactMarkdown>{remodelingData[prompt.id].result!}</ReactMarkdown>
+                                      <ReactMarkdown>{remodelingData[prompt.id]?.result || ''}</ReactMarkdown>
                                     </div>
                                   </div>
                                 )}
@@ -772,6 +773,13 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
           </div>
         </motion.div>
       )}
+      <input 
+        type="file" 
+        className="hidden" 
+        accept="image/*"
+        ref={remodelFileInputRef}
+        onChange={handleRemodelImageUpload}
+      />
     </div>
   );
 }

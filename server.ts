@@ -42,36 +42,35 @@ INSTRUÇÕES:
 6. Mantenha o idioma do prompt original (se for Português, responda em Português; se for Inglês, responda em Inglês).
 7. NÃO inclua explicações, apenas o prompt remodelado final.`;
 
-      const parts: any[] = [{ text: promptText }];
-      if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        
-        parts.push({
-          inlineData: {
-            data: data,
-            mimeType: mimeType
-          }
-        });
-      }
-
-      const modelsToTry = ["gemini-3.6-flash", "gemini-2.0-flash", "gemini-flash-latest"];
+      const modelsToTry = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.1-pro-preview"];
       let text = "";
       let lastError: any = null;
 
+      // Prepare input for Interactions API
+      const input: any[] = [{ type: 'text', text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        input.push({
+          type: 'image',
+          data: data,
+          mime_type: mimeType
+        });
+      }
+
       for (const modelName of modelsToTry) {
         try {
-          const result = await ai.models.generateContent({
+          const interaction = await ai.interactions.create({
             model: modelName,
-            contents: [{ role: 'user', parts }]
+            input: input,
           });
           
-          text = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          text = interaction.output_text || "";
           if (text) break;
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);
           lastError = error;
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          await new Promise(resolve => setTimeout(resolve, 500));
           continue;
         }
       }
@@ -135,38 +134,37 @@ INSTRUÇÕES:
         Linguagem em Português do Brasil.`;
       }
 
-      const parts: any[] = [{ text: promptText }];
-      if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        
-        parts.push({
-          inlineData: {
-            data: data,
-            mimeType: mimeType
-          }
-        });
-      }
-
-      const modelsToTry = ["gemini-3.6-flash", "gemini-2.0-flash", "gemini-flash-latest"];
+      const modelsToTry = ["gemini-3.6-flash", "gemini-flash-latest", "gemini-3.1-pro-preview"];
       let text = "";
       let lastError: any = null;
 
+      // Prepare input for Interactions API
+      const input: any[] = [{ type: 'text', text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        input.push({
+          type: 'image',
+          data: data,
+          mime_type: mimeType
+        });
+      }
+
       for (const modelName of modelsToTry) {
         try {
-          const result = await ai.models.generateContent({
+          const interaction = await ai.interactions.create({
             model: modelName,
-            contents: [{ role: 'user', parts }]
+            input: input,
           });
           
-          text = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          text = interaction.output_text || "";
           if (text) break; // Success!
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);
           lastError = error;
           
           // Wait a bit before trying next model to handle transient quota spikes
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          await new Promise(resolve => setTimeout(resolve, 500));
           continue;
         }
       }
