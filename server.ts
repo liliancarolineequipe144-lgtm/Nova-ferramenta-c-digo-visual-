@@ -56,25 +56,26 @@ INSTRUÇÕES:
       let text = "";
       let lastError: any = null;
 
-      const contents = imageData ? {
-        parts: [
-          { text: promptText },
-          {
-            inlineData: {
-              data: imageData.split(',')[1],
-              mimeType: imageData.match(/:(.*?);/)?.[1] || 'image/jpeg'
-            }
-          }
-        ]
-      } : promptText;
+      // Prepare input for Interactions API
+      const input: any[] = [{ type: 'text', text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        input.push({
+          type: 'image',
+          data: data,
+          mime_type: mimeType
+        });
+      }
 
       for (const modelName of modelsToTry) {
         try {
-          const response = await ai.models.generateContent({
+          const interaction = await ai.interactions.create({
             model: modelName,
-            contents: contents
+            input: input,
           });
-          text = response.text || "";
+          
+          text = interaction.output_text || "";
           if (text) break;
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);
@@ -152,25 +153,26 @@ INSTRUÇÕES:
       let text = "";
       let lastError: any = null;
 
-      const contents = imageData ? {
-        parts: [
-          { text: promptText },
-          {
-            inlineData: {
-              data: imageData.split(',')[1],
-              mimeType: imageData.match(/:(.*?);/)?.[1] || 'image/jpeg'
-            }
-          }
-        ]
-      } : promptText;
+      // Prepare input for Interactions API
+      const input: any[] = [{ type: 'text', text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        input.push({
+          type: 'image',
+          data: data,
+          mime_type: mimeType
+        });
+      }
 
       for (const modelName of modelsToTry) {
         try {
-          const response = await ai.models.generateContent({
+          const interaction = await ai.interactions.create({
             model: modelName,
-            contents: contents
+            input: input,
           });
-          text = response.text || "";
+          
+          text = interaction.output_text || "";
           if (text) break; // Success!
         } catch (error: any) {
           console.error(`Error with model ${modelName}:`, error.message);

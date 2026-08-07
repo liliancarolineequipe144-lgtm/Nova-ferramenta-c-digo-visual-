@@ -76,7 +76,8 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
       try {
         resultData = JSON.parse(textResponse);
       } catch (e) {
-        throw new Error('Erro na resposta do servidor');
+        console.error('Raw response:', textResponse);
+        throw new Error('Erro na resposta do servidor. Verifique sua conexão ou tente novamente.');
       }
       
       if (!response.ok) throw new Error(resultData.error || 'Erro ao remodelar prompt');
@@ -141,7 +142,8 @@ export default function PromptsTab({ toggleFavorite, isFavorite }: PromptsTabPro
       try {
         data = JSON.parse(textResponse);
       } catch (e) {
-        throw new Error('Erro na resposta do servidor');
+        console.error('Raw response:', textResponse);
+        throw new Error('Erro na resposta do servidor. Verifique sua conexão ou tente novamente.');
       }
       
       if (!response.ok) throw new Error(data.error || 'Erro ao gerar prompt');
