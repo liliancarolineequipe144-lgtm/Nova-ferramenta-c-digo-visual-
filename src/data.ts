@@ -101,7 +101,7 @@ export const LESSONS: LessonItem[] = [
     videoUrl: 'https://drive.google.com/file/d/1cK9CNcm6s54G-sOTmwIBo7dqNneYGM1m/preview'
   },
   {
-    id: 'lesson-extra-exclusiva',
+    id: 'z-lesson-atualizar-ferramenta',
     title: 'Como atualizar a ferramenta',
     duration: '08:45',
     category: 'Estratégia',
@@ -709,14 +709,6 @@ No sound effects.
 **Final result:** A hyper-realistic TikTok/Reels-style fashion video that starts with the influencer's hand completely covering the camera lens, transitions naturally into a relaxed outfit presentation, and ends with her approaching very close to the camera, blowing a kiss, and naturally pointing downward with a warm, genuine smile.
 
 sem áudio só movimentos`
-  },
-  {
-    id: 'universal-mirror-selfie',
-    title: 'Mirror Selfie — Phone Case',
-    type: 'universal',
-    category: 'Universal',
-    videoUrl: 'https://drive.google.com/file/d/1OGErDKR4ckQXxf23iNhJtPnvbW13Xq25/preview',
-    content: `9:16 mobile format. A fashionable young woman holding her phone up to a clean aesthetic mirror, taking a video. Her phone has a stylish [COR/ESTILO] phone case that matches her casual outfit. Modern minimalist bedroom background, bright natural daylight, camera screen reflection effect, shot on iPhone 15 style, realistic movement, trending TikTok look.`
   },
   {
     id: 'p-oculos-sol',
@@ -2557,6 +2549,22 @@ The video ends naturally.
 **No audio.**
 
 **Only realistic human movements.**`
+  },
+  {
+    id: 'z-universal-mirror-selfie',
+    title: 'Mirror Selfie — Phone Case',
+    type: 'universal',
+    category: 'Universal',
+    videoUrl: 'https://drive.google.com/file/d/1OGErDKR4ckQXxf23iNhJtPnvbW13Xq25/preview',
+    content: `9:16 mobile format. A fashionable young woman holding her phone up to a clean aesthetic mirror, taking a video. Her phone has a stylish [COR/ESTILO] phone case that matches her casual outfit. Modern minimalist bedroom background, bright natural daylight, camera screen reflection effect, shot on iPhone 15 style, realistic movement, trending TikTok look.`
+  },
+  {
+    id: 'z-p-bolsa-pink-pov',
+    title: 'Bolsa Pink | POV Detalhado',
+    type: 'lifestyle',
+    category: 'Bolsas',
+    videoUrl: 'https://drive.google.com/file/d/1_sWV3BRrmow5KFMjcigynI-7O-np75UG/preview',
+    content: `A subtle POV camera movement over the scene. Gentle hands move slightly while holding the bright pink handbag, adjusting the grip with slow, natural micro-movements. Soft natural sunlight shifting gently through the sheer curtain in the background, creating smooth, delicate light rays. The darker pink purse stays sitting still on the fluffy white rug. Keep all details, colors, textures, hardware, and shape of the handbags completely intact and distortion-free. High quality, realistic motion, smooth 4k cinematic lighting.`
   }
 ];
 
