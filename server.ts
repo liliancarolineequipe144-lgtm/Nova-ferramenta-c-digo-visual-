@@ -1,0 +1,137 @@
+import express from "express";
+import path from "path";
+import { createServer as createViteServer } from "vite";
+import { GoogleGenAI } from "@google/genai";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY || "",
+});
+
+async function startServer() {
+  const app = express();
+  const PORT = 3000;
+
+  app.use(express.json({ limit: '20mb' }));
+
+  // API Routes
+  app.post("/api/generate-prompt", async (req, res) => {
+    try {
+      const { product, type, imageData } = req.body;
+      
+      if (!process.env.GEMINI_API_KEY) {
+        return res.status(500).json({ error: "GEMINI_API_KEY is not configured" });
+      }
+
+      let promptText = "";
+      if (type === 'Provador') {
+        promptText = `Create a high-fidelity video generation prompt in ENGLISH for Veo 3.1 Lite. 
+        Product: "${product}".
+        
+        Structure: Hook > Context > Solution > CTA.
+        Style: POV (Point of View) movements, natural and humanized influencer.
+        
+        CONSTRAINTS:
+        - The influencer must remain consistent.
+        - The product must remain exactly as described/shown.
+        - NO speech, NO captions, NO text overlays, NO audio.
+        - Focus ONLY on realistic human movements and visual hooks in each scene.
+        - Premium fashion UGC aesthetic.
+        
+        Output the prompt as a detailed technical description for a video model, ensuring the narrative flow of movements is clear.`;
+      } else if (type === 'UGC') {
+        promptText = `Como um especialista em marketing de vídeo UGC (User Generated Content), crie 6 narrativas curtas (aproximadamente 8 segundos cada) para o produto: "${product}".
+        
+        Cada narrativa deve seguir a estrutura:
+        1. GANCHO (Hook): Algo visual ou auditivo para prender a atenção nos primeiros 2 segundos.
+        2. CONTEXTO: O problema ou situação inicial.
+        3. SOLUÇÃO: Como o produto resolve ou brilha.
+        4. CTA (Call to Action): Chamada clara para ação.
+
+        IMPORTANTE:
+        - Separe cada vídeo com o marcador "--- VIDEO [N] ---" (onde [N] é o número do vídeo).
+        - Mantenha a constância da influencer e do produto em todas as cenas.
+        - Use ganchos visuais criativos em cada cena.
+        - Estruture para 6 vídeos de 8 segundos.
+        - Inclua falas diferentes e naturais para cada vídeo.
+        - Linguagem em Português do Brasil.
+        - Se houver uma imagem de referência, use os detalhes visuais dela (cores, texturas, estilo) para enriquecer o prompt.`;
+      } else {
+        promptText = `Crie um prompt detalhado e profissional para geração de vídeo/imagem do produto: "${product}". 
+        Foque em alta estética, realismo e iluminação cinematográfica.
+        Linguagem em Português do Brasil.`;
+      }
+
+      const parts: any[] = [{ text: promptText }];
+      if (imageData) {
+        const [prefix, data] = imageData.split(',');
+        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+        
+        parts.push({
+          inlineData: {
+            data: data,
+            mimeType: mimeType
+          }
+        });
+      }
+
+      const modelsToTry = ["gemini-3.6-flash", "gemini-2.0-flash", "gemini-flash-latest"];
+      let text = "";
+      let lastError: any = null;
+
+      for (const modelName of modelsToTry) {
+        try {
+          const result = await ai.models.generateContent({
+            model: modelName,
+            contents: [{ role: 'user', parts }]
+          });
+          
+          text = result.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          if (text) break; // Success!
+        } catch (error: any) {
+          console.error(`Error with model ${modelName}:`, error.message);
+          lastError = error;
+          
+          // Wait a bit before trying next model to handle transient quota spikes
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          continue;
+        }
+      }
+
+      if (!text && lastError) {
+        throw lastError;
+      }
+      
+      res.json({ prompt: text });
+    } catch (error: any) {
+      console.error("Error generating prompt:", error);
+      if (error.message?.includes('429') || error.status === 'RESOURCE_EXHAUSTED' || error.message?.includes('quota')) {
+        return res.status(429).json({ error: "Limite de cota atingido. Por favor, tente novamente em alguns instantes." });
+      }
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Vite middleware for development
+  if (process.env.NODE_ENV !== "production") {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: "spa",
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  }
+
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+startServer();

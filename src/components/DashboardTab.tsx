@@ -171,7 +171,7 @@ export default function DashboardTab({ setActiveTab, userName }: DashboardTabPro
             <div className="relative z-10 space-y-6">
               <h4 className="text-xl font-black leading-tight">Dica do Dia</h4>
               <p className="text-indigo-100 text-sm font-medium leading-relaxed italic">
-                "Os prompts são para esses produtos específicos. Você precisa remodelar para o seu produto: coloque a imagem do seu produto no ChatGPT com o prompt e escreva: 'remodele esse prompt para esse produto'."
+                "os prompts sao para esses produtos você precisa remodelar para seu produto , coloque a imagem do seu produto no chat gbt e o prompt e escreva : remodele esse prompt para esse produto"
               </p>
               <button 
                 onClick={() => setActiveTab('prompts')}

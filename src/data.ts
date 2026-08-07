@@ -457,6 +457,90 @@ The video ends naturally.
 **Only realistic, human movements with a premium fashion UGC aesthetic.**`
   },
   {
+    id: 'p-narrativa-universal-1',
+    title: 'VEO 3 — NARRATIVA 01',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** Influencer de roupão segura o vestido vinho no cabide e faz um estalo de dedos. Transição imediata para ela vestida.
+**Cena 2 (Contexto):** Ela se olha no espelho ajustando os laços do ombro.
+**Cena 3 (Solução):** Caminha para a câmera mostrando o movimento e o franzido do busto.
+**Cena 4 (CTA):** Aponta para baixo com um sorriso e pisca para a lente.
+
+**Fala Sugerida:** "Aquele look que te deixa pronta em segundos. O caimento desse burgundy é surreal. Link aqui embaixo!"`
+  },
+  {
+    id: 'p-narrativa-universal-2',
+    title: 'VEO 3 — NARRATIVA 02',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** POV abrindo o pacote e revelando o vestido vinho.
+**Cena 2 (Contexto):** Ela girando no quarto com o vestido, luz natural batendo no tecido.
+**Cena 3 (Solução):** Close nas mãos alisando o tecido, mostrando que não amassa e é premium.
+**Cena 4 (CTA):** Coloca os óculos de sol e faz sinal de 'arrasta pra cima' ou aponta o link.
+
+**Fala Sugerida:** "Incrível como esse unboxing superou minhas expectativas. A cor é ainda mais linda ao vivo. Garante o seu no link!"`
+  },
+  {
+    id: 'p-narrativa-universal-3',
+    title: 'VEO 3 — NARRATIVA 03',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** Mostra dois cabides, escolhe o vestido vinho e puxa contra a câmera.
+**Cena 2 (Contexto):** Já vestida, terminando de colocar o brinco ou perfume.
+**Cena 3 (Solução):** Caminha até a janela mostrando a elegância do corte em luz plena.
+**Cena 4 (CTA):** Pega a bolsa e aponta para o link antes de sair do quadro.
+
+**Fala Sugerida:** "Minha escolha pra hoje não podia ser outra. Esse vestido é puro luxo e super versátil. O link tá aqui!"`
+  },
+  {
+    id: 'p-narrativa-universal-4',
+    title: 'VEO 3 — NARRATIVA 04',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** Hand transition (mão na lente) saindo de um look básico para o vestido vinho.
+**Cena 2 (Contexto):** Ela se ajeita e dá uma volta completa, mostrando o caimento das costas.
+**Cena 3 (Solução):** Close no busto franzido e na textura do tecido enquanto ela caminha.
+**Cena 4 (CTA):** Senta na cama e aponta para o botão de compra com entusiasmo.
+
+**Fala Sugerida:** "Transformação completa com uma peça só. Esse modelo valoriza demais o corpo. Clica no link e aproveita!"`
+  },
+  {
+    id: 'p-narrativa-universal-5',
+    title: 'VEO 3 — NARRATIVA 05',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** Joga o vestido por cima dela e a cena corta para ela já pronta.
+**Cena 2 (Contexto):** Mostra o look com sandália rasteira, provando que é um look 'fresco' de verão.
+**Cena 3 (Solução):** Passa a mão na saia do vestido destacando o movimento fluido.
+**Cena 4 (CTA):** Manda um beijo e aponta para o link no rodapé.
+
+**Fala Sugerida:** "O vestido mais fresco e elegante que você vai ter no armário. Tô apaixonada nesses detalhes. Link disponível aqui!"`
+  },
+  {
+    id: 'p-narrativa-universal-6',
+    title: 'VEO 3 — NARRATIVA 06',
+    type: 'universal',
+    category: 'Universal',
+    content: `**ESTRUTURA: GANCHO > CONTEXTO > SOLUÇÃO > CTA**
+
+**Cena 1 (Gancho):** Ela entra no quadro com a sacola, tira o vestido e abraça a peça.
+**Cena 2 (Contexto):** Transição para ela usando o look completo em um ambiente de café/varanda.
+**Cena 3 (Solução):** Mostra que o vestido é elegante sem esforço para qualquer hora do dia.
+**Cena 4 (CTA):** Faz um sinal de convite e aponta para o link de compra.
+
+**Fala Sugerida:** "Recebido favorito do mês! Esse vinho é a cor da estação e o caimento é 10/10. O link está aqui embaixo!"`
+  },
+  {
     id: 'veo-3-universal',
     title: 'VEO 3 PROMPT',
     type: 'lifestyle',
