@@ -23,10 +23,12 @@ async function startServer() {
 
   // API Routes
   app.post("/api/remodel-prompt", async (req, res) => {
+    console.log("[Server] /api/remodel-prompt - Request received");
     try {
       const { originalPrompt, idea, imageData } = req.body;
       
       if (!process.env.GEMINI_API_KEY) {
+        console.error("[Server] GEMINI_API_KEY missing");
         return res.status(500).json({ error: "GEMINI_API_KEY is not configured" });
       }
 
@@ -48,10 +50,10 @@ INSTRUÇÕES:
 7. NÃO inclua explicações, apenas o prompt remodelado final.`;
 
       const modelsToTry = [
-        "gemini-3.6-flash", 
-        "gemini-flash-latest", 
-        "gemini-3.1-pro-preview",
-        "gemini-3.1-flash-lite"
+        "gemini-3.6-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "gemini-2.5-flash"
       ];
       let text = "";
       let lastError: any = null;
@@ -59,26 +61,35 @@ INSTRUÇÕES:
       // Prepare input for Interactions API
       const input: any[] = [{ type: 'text', text: promptText }];
       if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        input.push({
-          type: 'image',
-          data: data,
-          mime_type: mimeType
-        });
+        try {
+          const [prefix, data] = imageData.split(',');
+          const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+          input.push({
+            type: 'image',
+            data: data,
+            mime_type: mimeType
+          });
+          console.log("[Server] Image data prepared", { mimeType });
+        } catch (e) {
+          console.error("[Server] Error processing image data:", e);
+        }
       }
 
       for (const modelName of modelsToTry) {
         try {
+          console.log(`[Server] Attempting model: ${modelName}`);
           const interaction = await ai.interactions.create({
             model: modelName,
             input: input,
           });
           
           text = interaction.output_text || "";
-          if (text) break;
+          if (text) {
+            console.log(`[Server] Success with ${modelName}`);
+            break;
+          }
         } catch (error: any) {
-          console.error(`Error with model ${modelName}:`, error.message);
+          console.error(`[Server] Error with model ${modelName}:`, error.message);
           lastError = error;
           await new Promise(resolve => setTimeout(resolve, 500));
           continue;
@@ -86,22 +97,25 @@ INSTRUÇÕES:
       }
 
       if (!text && lastError) throw lastError;
+      if (!text) throw new Error("Não foi possível gerar uma resposta. Tente novamente.");
       
       res.json({ prompt: text });
     } catch (error: any) {
-      console.error("Error remodeling prompt:", error);
+      console.error("[Server] Fatal error remodeling prompt:", error);
       if (error.message?.includes('429') || error.status === 'RESOURCE_EXHAUSTED' || error.message?.includes('quota')) {
         return res.status(429).json({ error: "Limite de cota atingido. Por favor, tente novamente em alguns instantes." });
       }
-      res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message || "Erro interno ao processar sua solicitação." });
     }
   });
 
   app.post("/api/generate-prompt", async (req, res) => {
+    console.log("[Server] /api/generate-prompt - Request received");
     try {
       const { product, type, imageData } = req.body;
       
       if (!process.env.GEMINI_API_KEY) {
+        console.error("[Server] GEMINI_API_KEY missing");
         return res.status(500).json({ error: "GEMINI_API_KEY is not configured" });
       }
 
@@ -145,10 +159,10 @@ INSTRUÇÕES:
       }
 
       const modelsToTry = [
-        "gemini-3.6-flash", 
-        "gemini-flash-latest", 
-        "gemini-3.1-pro-preview",
-        "gemini-3.1-flash-lite"
+        "gemini-3.6-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "gemini-2.5-flash"
       ];
       let text = "";
       let lastError: any = null;
@@ -156,26 +170,35 @@ INSTRUÇÕES:
       // Prepare input for Interactions API
       const input: any[] = [{ type: 'text', text: promptText }];
       if (imageData) {
-        const [prefix, data] = imageData.split(',');
-        const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
-        input.push({
-          type: 'image',
-          data: data,
-          mime_type: mimeType
-        });
+        try {
+          const [prefix, data] = imageData.split(',');
+          const mimeType = prefix.match(/:(.*?);/)?.[1] || 'image/jpeg';
+          input.push({
+            type: 'image',
+            data: data,
+            mime_type: mimeType
+          });
+          console.log("[Server] Image data prepared", { mimeType });
+        } catch (e) {
+          console.error("[Server] Error processing image data:", e);
+        }
       }
 
       for (const modelName of modelsToTry) {
         try {
+          console.log(`[Server] Attempting model: ${modelName}`);
           const interaction = await ai.interactions.create({
             model: modelName,
             input: input,
           });
           
           text = interaction.output_text || "";
-          if (text) break; // Success!
+          if (text) {
+            console.log(`[Server] Success with ${modelName}`);
+            break;
+          }
         } catch (error: any) {
-          console.error(`Error with model ${modelName}:`, error.message);
+          console.error(`[Server] Error with model ${modelName}:`, error.message);
           lastError = error;
           await new Promise(resolve => setTimeout(resolve, 500));
           continue;
@@ -185,14 +208,15 @@ INSTRUÇÕES:
       if (!text && lastError) {
         throw lastError;
       }
+      if (!text) throw new Error("Não foi possível gerar uma resposta. Tente novamente.");
       
       res.json({ prompt: text });
     } catch (error: any) {
-      console.error("Error generating prompt:", error);
+      console.error("[Server] Fatal error generating prompt:", error);
       if (error.message?.includes('429') || error.status === 'RESOURCE_EXHAUSTED' || error.message?.includes('quota')) {
         return res.status(429).json({ error: "Limite de cota atingido. Por favor, tente novamente em alguns instantes." });
       }
-      res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message || "Erro interno ao processar sua solicitação." });
     }
   });
 
